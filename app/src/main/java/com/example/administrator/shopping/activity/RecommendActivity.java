@@ -25,18 +25,19 @@ public class RecommendActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recommend);
-        rcv = (RecyclerView)findViewById(R.id.rcv01);
+        rcv = (RecyclerView) findViewById(R.id.rcv01);
         initView();
 //初始化数据
         initDatas();
 //设置适配器
-       // adapter = new MyOrderAllAdapter(getContext(),list);
-        adapter = new RecommendMoreAdapter(this,list);
+        // adapter = new MyOrderAllAdapter(getContext(),list);
+        adapter = new RecommendMoreAdapter(this, list);
         rcv.setAdapter(adapter);
     }
+
     private void initDatas() {
 //使用异步获取字符串
-        OkHttpUtils.getInstance().getStringAsync(this,"http://a.wowozhe.com/home/m?target=android&v=291&act=discovery_menu&json=",CircleBean.class,new OkHttpUtils.DataCallback<CircleBean>() {
+        OkHttpUtils.getInstance().getStringAsync(this, "http://a.wowozhe.com/home/m?target=android&v=291&act=discovery_menu&json=", CircleBean.class, new OkHttpUtils.DataCallback<CircleBean>() {
 //当数据下载完成后自动回到此方法
             //该方法中的所有代码运行在主线程中
 
@@ -49,9 +50,9 @@ public class RecommendActivity extends Activity {
     }
 
     //对RecyclerView进行设置
-     private void initView() {
-         rcv.setLayoutManager(new LinearLayoutManager(this));
-       // rcv.setLayoutManager(new LinearLayoutManager(getContext()));
+    private void initView() {
+        rcv.setLayoutManager(new LinearLayoutManager(this));
+        // rcv.setLayoutManager(new LinearLayoutManager(getContext()));
 //  rcv.setLayoutManager(new GridLayoutManager(getActivity(),2));//效果是网格的,3是3列
         // rcv.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL,true));//倒序排列
     }
