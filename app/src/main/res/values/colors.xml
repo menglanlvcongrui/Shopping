@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="blue">#0000ff</color>
+    <color name="blueTab">#01A2F2</color>
+    <color name="blueTabText">#01A2F2</color>
+    <color name="titlieColor">#01A2F2</color>
+    <color name="blueOne">#81cef4</color>
+    <color name="blueTwo">#b9cef4</color>
+    <color name="light_blue">#6593cb</color>
+    <color name="gray">#aaaaaa</color>
+    <color name="grayOne">#444444</color>
+    <color name="grayTwo">#666666</color>
+    <color name="grayThree">#999999</color>
+    <color name="tabTextColor">#4c4c4c</color>
+    <color name="grayFour">#CCCCCC</color>
+    <color name="grayFive">#f2f2f2</color>
+    <color name="graySex">#dddddd</color>
+    <color name="graySeven">#eff2f6</color>
+    <color name="grayten">#909090</color>
+    <color name="grayEight">#F3EDED</color>
+    <color name="grayNien">#BC763A</color>
+    <color name="grayEleven">#b4b4b4</color>
+    <color name="grayTwelve">#e1e1e1</color>
+    <color name="yellowOne">#e66f2e</color>
+    <color name="yellowTow">#e6702d</color>
+    <color name="red">#ff0000</color>
+    <color name="redOne">#FE363D</color>
+    <color name="redTwo">#FE8FB3</color>
+    <color name="redThree">#CC0066</color>
+    <color name="redFour">#CC0000</color>
+    <color name="redFive">#e62e2e</color>
+    <color name="redSix">#e62e2e</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000</color>
+    <color name="Towblack">#555</color>
+    <color name="Treeblack">#323232</color>
+    <color name="transtion">#00000000</color>
+
+</resources>

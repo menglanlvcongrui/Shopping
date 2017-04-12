@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <View
+        android:background="@color/grayFive"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/iv"
+            android:layout_gravity="center"
+            android:src="@mipmap/circle_display_picture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv1"
+                android:textSize="@dimen/text_size_three"
+                android:textColor="@color/Treeblack"
+                android:padding="10dp"
+                android:text="精选进口优质原生木浆维达抽纸盒装"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv2"
+                android:textSize="@dimen/text_size_three"
+                android:padding="10dp"
+                android:text="超韧细密湿氺不破130抽不破"
+                android:textColor="@color/Treeblack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <RelativeLayout
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:padding="10dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/money"
+                    android:textSize="@dimen/text_size_four"
+                    android:textColor="@color/redFive"
+                    android:text="￥"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:text="300"
+                    android:textSize="@dimen/text_size_four"
+                    android:textColor="@color/redFive"
+                    android:layout_toRightOf="@+id/money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:text="1"
+                    android:textSize="@dimen/text_size_four"
+                    android:layout_width="wrap_content"
+                    android:layout_toLeftOf="@+id/jian"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/jian"
+                    android:textSize="@dimen/text_size_four"
+                    android:layout_marginRight="5dp"
+                    android:layout_alignParentRight="true"
+                    android:text="件"
+                    android:textColor="@color/Treeblack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <View
+        android:background="@color/grayTwelve"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+<RelativeLayout
+    android:layout_marginTop="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_toLeftOf="@+id/tv_ti_xing_goods"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="共计："
+            android:textColor="@color/Treeblack"
+            android:textSize="@dimen/text_size_four"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:text="1"
+            android:textColor="@color/Treeblack"
+            android:textSize="@dimen/text_size_four"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="件商品"
+            android:textColor="@color/Treeblack"
+            android:textSize="@dimen/text_size_four"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="合计:"
+            android:layout_marginLeft="15dp"
+            android:textSize="@dimen/text_size_four"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:text="￥"
+            android:textColor="@color/redFive"
+            android:textSize="@dimen/text_size_four"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="500"
+            android:textColor="@color/redFive"
+            android:textSize="@dimen/text_size_four"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tv_ti_xing_goods"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="10dp"
+        android:background="@mipmap/affirm"
+        android:text="提醒发货"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:textColor="@color/yellowOne"
+        android:textSize="@dimen/text_size_four"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>
+</LinearLayout>

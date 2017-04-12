@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+<RelativeLayout
+    android:layout_margin="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:text="推荐"
+        android:textSize="@dimen/text_size_two"
+        android:layout_width="wrap_content"
+        android:textColor="@color/Treeblack"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:textColor="@color/Treeblack"
+        android:text="更多>>"
+        android:textSize="@dimen/text_size_three"
+        android:layout_height="wrap_content" />
+</RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/iv1"
+                android:layout_gravity="center"
+                android:src="@mipmap/circle_details_picture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_luxury"
+                android:layout_marginTop="5dp"
+                android:text="奢品大牌"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_size_three"
+                android:textColor="@color/Treeblack"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_money"
+                android:layout_marginTop="3dp"
+                android:text="满1000减100"
+                android:textSize="@dimen/text_size_three"
+                android:textColor="@color/grayten"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/iv2"
+                android:layout_gravity="center"
+                android:src="@mipmap/circle_details_picture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_marginTop="5dp"
+                android:text="奢品大牌"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_size_three"
+                android:textColor="@color/Treeblack"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_marginTop="3dp"
+                android:text="满1000减100"
+                android:textSize="@dimen/text_size_three"
+                android:textColor="@color/grayten"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/iv3"
+                android:layout_gravity="center"
+                android:src="@mipmap/circle_details_picture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_marginTop="5dp"
+                android:text="奢品大牌"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_size_three"
+                android:textColor="@color/Treeblack"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_marginTop="3dp"
+                android:text="满1000减100"
+                android:textSize="@dimen/text_size_three"
+                android:textColor="@color/grayten"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/iv4"
+                android:layout_gravity="center"
+                android:src="@mipmap/circle_details_picture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_marginTop="5dp"
+                android:text="奢品大牌"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_size_three"
+                android:textColor="@color/Treeblack"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_marginTop="3dp"
+                android:text="满1000减100"
+                android:textSize="@dimen/text_size_three"
+                android:textColor="@color/grayten"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/grayFive"
+        android:layout_height="10dp"/>
+</LinearLayout>

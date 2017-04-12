@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/grayFive"
+        android:layout_height="10dp"/>
+    <RelativeLayout
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="徐嘉应"
+            android:textSize="@dimen/text_size_two"
+            android:textColor="@color/Treeblack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="13218105401"
+            android:layout_alignParentRight="true"
+            android:textSize="@dimen/text_size_four"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+<TextView
+    android:padding="5dp"
+    android:text="苏州工业园区东平街299号欧瑞大厦521苏州工业园区东平街299号欧瑞大厦521"
+    android:layout_width="match_parent"
+    android:textSize="@dimen/text_size_four"
+    android:layout_height="wrap_content" />
+    <View
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:background="@color/grayTwelve"
+        android:layout_height="1dp"/>
+   <RelativeLayout
+       android:layout_marginTop="5dp"
+       android:padding="5dp"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+       <LinearLayout
+           android:layout_width="wrap_content"
+           android:orientation="horizontal"
+           android:layout_height="wrap_content">
+           <ImageView
+               android:layout_marginLeft="5dp"
+               android:layout_width="wrap_content"
+               android:src="@drawable/default_address"
+               android:layout_height="wrap_content" />
+           <TextView
+               android:layout_marginLeft="5dp"
+               android:text="默认地址"
+               android:textColor="@color/yellowOne"
+               android:textSize="@dimen/text_size_four"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content" />
+       </LinearLayout>
+
+       <TextView
+           android:drawableLeft="@mipmap/edit"
+           android:text="  编辑"
+           android:textColor="@color/Treeblack"
+           android:textSize="@dimen/text_size_four"
+           android:layout_toLeftOf="@+id/delete"
+           android:layout_marginRight="10dp"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content" />
+       <TextView
+           android:textColor="@color/Treeblack"
+           android:drawableLeft="@mipmap/deleted"
+           android:id="@+id/delete"
+           android:textSize="@dimen/text_size_four"
+           android:layout_alignParentRight="true"
+           android:text="  删除"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content" />
+   </RelativeLayout>
+</LinearLayout>

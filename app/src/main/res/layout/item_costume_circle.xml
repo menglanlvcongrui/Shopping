@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+     <LinearLayout
+         android:orientation="horizontal"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content">
+         <ImageView
+             android:layout_gravity="center"
+             android:src="@mipmap/circle_details_picture"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content" />
+         <TextView
+             android:textSize="@dimen/text_size_two"
+             android:textColor="@color/Treeblack"
+             android:text="装饰人体的物品总称。包括服装、鞋、帽、袜子、手套、围巾、领带、提包、阳伞、发饰等。古人，则是用来遮羞，而今人对于新事物的认识不断进步，服饰的材质，样式也多种多样。装饰人体的物品总称。包括服装、鞋、帽、袜子、手套、围巾、领带、提包、阳伞、发饰等。古人，则是用来遮羞，而今人对于新事物的认识不断进步，服饰的材质，样式也多种多样。"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content" />
+     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:src="@mipmap/circle_picture"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:src="@mipmap/circle_picture"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:src="@mipmap/circle_picture"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>
