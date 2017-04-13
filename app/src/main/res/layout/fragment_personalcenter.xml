@@ -30,9 +30,6 @@
                 android:gravity="center_horizontal"
                 android:text="个人中心"
                 android:textColor="@color/white"
-
-
-
                 android:textSize="@dimen/text_size_one" />
         </RelativeLayout>-->
         <RelativeLayout
