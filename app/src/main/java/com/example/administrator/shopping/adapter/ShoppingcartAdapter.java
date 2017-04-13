@@ -33,6 +33,7 @@ public class ShoppingcartAdapter extends BaseAdapter implements View.OnClickList
     int total = 0, count = 0;//总价,件数
     int[] finish_isVisible;//是否显示完成页面
     int[] edit_isVisible;//是否显示编辑页面
+    int[] finishlist;//数据更新，计数数组（是否更新数据）
     public Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -51,21 +52,19 @@ public class ShoppingcartAdapter extends BaseAdapter implements View.OnClickList
                     break;
                 case 0x03://完成界面，进入编辑模式
                     for (int i = 0; i < cartlist.size(); i++) {
-                        numberlist[i] = i;
-                        isselect[i] = false;
                         finish_isVisible[i]=View.VISIBLE;
                         edit_isVisible[i]=View.GONE;
                     }
-                    notifyDataSetChanged();
+                   finishlist= numberlist;
+                    notifyDataSetInvalidated();
                     break;
                 case 0x04://编辑界面，进入完成界面（操作完成）
                     for (int i = 0; i < cartlist.size(); i++) {
-                        numberlist[i] = i;
-                        isselect[i] = false;
                         finish_isVisible[i]=View.GONE;
                         edit_isVisible[i]=View.VISIBLE;
                     }
-                    notifyDataSetChanged();
+                    numberlist=finishlist;
+                    notifyDataSetInvalidated();
                     break;
             }
         }
@@ -78,8 +77,10 @@ public class ShoppingcartAdapter extends BaseAdapter implements View.OnClickList
         numberlist = new int[cartlist.size()];
         finish_isVisible=new int[cartlist.size()];
         edit_isVisible=new int[cartlist.size()];
+        finishlist=new int[cartlist.size()];
         for (int i = 0; i < cartlist.size(); i++) {
             numberlist[i] = i;
+            finishlist[i]=i;
             isselect[i] = false;
             finish_isVisible[i]=View.GONE;
             edit_isVisible[i]=View.VISIBLE;
@@ -120,9 +121,37 @@ public class ShoppingcartAdapter extends BaseAdapter implements View.OnClickList
             holder = (ViewHolder) convertview.getTag();
         }
         holder.numbers.setText(numberlist[position] + "");
+        holder.number.setText(finishlist[position]+"");
         holder.check_cart.setChecked(isselect[position]);
         holder.liner_edit.setVisibility(edit_isVisible[position]);
         holder.liner_finish.setVisibility(finish_isVisible[position]);
+        holder.finish_reduce.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                for (int i = 0; i < cartlist.size(); i++) {
+                    if (finishlist[i] > 0) {
+                        if (position == i) {
+                            finishlist[position]--;
+                            notifyDataSetChanged();
+                        }
+                    }
+                }
+            }
+        });
+        holder.finish_add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                for (int i = 0; i < cartlist.size(); i++) {
+                    if (position == i) {
+                        finishlist[position]++;
+                        notifyDataSetChanged();
+                    }
+                }
+
+            }
+        });
+
+
         holder.reduce.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -193,8 +222,9 @@ public class ShoppingcartAdapter extends BaseAdapter implements View.OnClickList
                 Bundle bundle = new Bundle();
                 bundle.putString("total", String.valueOf(total));
                 bundle.putString("count", String.valueOf(count));
+                bundle.putBooleanArray("isselect",isselect);
                 message.setData(bundle);
-                message.what = 0x01;
+                message.what = 0x02;
                 ShoppingcartFragment.handler.sendMessage(message);
 
             }
@@ -209,21 +239,21 @@ public class ShoppingcartAdapter extends BaseAdapter implements View.OnClickList
     }
 
     class ViewHolder {
-        LinearLayout dot_selector,liner_edit,liner_finish;
-        CheckBox check_cart;
-        TextView numbers;
-        TextView money;
-        ImageView reduce, add;
+        LinearLayout liner_edit,liner_finish;//编辑页面布局/完成页面布局
+        CheckBox check_cart;//选择
+        TextView numbers,number;//数量
+        ImageView reduce, add,finish_reduce,finish_add;//1.编辑界面增加/减少按钮  2.完成界面增加/减少按钮
 
         public ViewHolder(View view) {
-            this.dot_selector = (LinearLayout) view.findViewById(R.id.dot_selector);
             this.check_cart = (CheckBox) view.findViewById(R.id.check_cart);
             this.numbers = (TextView) view.findViewById(R.id.one);
+            this.number=(TextView)view.findViewById(R.id.numbers);
             this.reduce = (ImageView) view.findViewById(R.id.reduce);
             this.add = (ImageView) view.findViewById(R.id.plus);
-            this.money = (TextView) view.findViewById(R.id.money);
             this.liner_finish=(LinearLayout)view.findViewById(R.id.liner_finish);
             this.liner_edit=(LinearLayout)view.findViewById(R.id.liner_edit);
+            this.finish_reduce=(ImageView)view.findViewById(R.id.finish_reduce);
+            this.finish_add=(ImageView)view.findViewById(R.id.finish_add);
         }
     }
 

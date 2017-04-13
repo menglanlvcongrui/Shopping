@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/grayFive"
     tools:context="com.example.administrator.shopping.fragment.ShoppingcartFragment">
 
     <RelativeLayout
@@ -39,7 +40,6 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@color/grayFive"
         android:divider="@null"></ListView>
 
     <RelativeLayout
