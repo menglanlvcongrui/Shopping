@@ -33,6 +33,7 @@ public class ForgetPasswordActivity extends AppCompatActivity {
                 Intent intent=new Intent();
                 intent.setClass(ForgetPasswordActivity.this,LoginsActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
     }
