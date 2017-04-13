@@ -17,14 +17,15 @@
             android:layout_height="match_parent"
             android:layout_marginRight="5dp"
             android:orientation="horizontal">
+
             <CheckBox
                 android:id="@+id/check_cart"
-                android:padding="5dp"
                 android:layout_width="40px"
                 android:layout_height="40px"
                 android:layout_gravity="center"
                 android:background="@drawable/shoppingcart_finish_selector"
-                android:button="@null" />
+                android:button="@null"
+                android:padding="5dp" />
         </LinearLayout>
 
         <ImageView
@@ -34,6 +35,41 @@
 
         <LinearLayout
             android:id="@+id/liner_finish"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/finish_reduce"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:src="@mipmap/reduce" />
+
+            <TextView
+                android:id="@+id/numbers"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="1"
+                android:textSize="@dimen/text_size_one" />
+
+            <ImageView
+                android:id="@+id/finish_add"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:src="@mipmap/plus" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/liner_edit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="5dp"
@@ -77,9 +113,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:padding="5dp"
                         android:layout_marginRight="5dp"
                         android:layout_toLeftOf="@+id/one"
+                        android:padding="5dp"
                         android:src="@mipmap/reduce" />
 
                     <TextView
@@ -98,9 +134,9 @@
                         android:id="@+id/plus"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="5dp"
                         android:layout_alignParentRight="true"
                         android:layout_gravity="center"
+                        android:padding="5dp"
                         android:src="@mipmap/plus" />
                 </LinearLayout>
 
