@@ -1,22 +1,23 @@
 package com.example.administrator.shopping.activity;
 
 import android.app.Activity;
-import android.support.v7.app.AppCompatActivity;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.widget.Toast;
-
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.ImageView;
 import com.example.administrator.shopping.R;
-import com.example.administrator.shopping.adapter.MyOrderAllAdapter;
 import com.example.administrator.shopping.adapter.RecommendMoreAdapter;
 import com.example.administrator.shopping.bean.CircleBean;
 import com.example.administrator.shopping.utils.OkHttpUtils;
 
 import java.util.ArrayList;
 
-public class RecommendActivity extends Activity {
+public class RecommendActivity extends AppCompatActivity {
     private RecyclerView rcv;
     private ArrayList<CircleBean.DataBean> list = new ArrayList<>();
     private RecommendMoreAdapter adapter;
@@ -24,8 +25,25 @@ public class RecommendActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //去掉标题栏
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
+        //是通知栏的颜色和头部颜色保持一致
+        if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.KITKAT) {
+            //透明状态栏
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            //透明导航栏
+//            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+        }
         setContentView(R.layout.activity_recommend);
         rcv = (RecyclerView) findViewById(R.id.rcv01);
+        //返回碎片中
+       ImageView iv_recommend_more_back= (ImageView) findViewById(R.id.iv_recommend_more_back);
+        iv_recommend_more_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         initView();
 //初始化数据
         initDatas();
