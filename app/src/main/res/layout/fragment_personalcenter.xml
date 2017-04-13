@@ -55,7 +55,8 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
             android:src="@mipmap/head" />
         <RelativeLayout
             android:id="@+id/my_order"
@@ -75,7 +76,7 @@
                 android:layout_toRightOf="@+id/tv_my_order"
                 android:gravity="center"
                 android:text="我的订单"
-                android:textSize="@dimen/text_size_two"
+                android:textSize="@dimen/text_size_three"
                 android:textColor="@color/Treeblack"
                 />
             <ImageView
@@ -107,8 +108,8 @@
                 android:layout_toRightOf="@+id/tv_goods_address"
                 android:gravity="center"
                 android:text="收货地址"
-                android:textColor="@color/Treeblack"
-                android:textSize="@dimen/text_size_two" />
+                android:textSize="@dimen/text_size_three"
+                android:textColor="@color/Treeblack" />
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -139,8 +140,9 @@
                 android:layout_toRightOf="@+id/tv_reset_password"
                 android:gravity="center"
                 android:text="重置密码"
+                android:textSize="@dimen/text_size_three"
                 android:textColor="@color/Treeblack"
-                android:textSize="@dimen/text_size_two" />
+                 />
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -166,8 +168,8 @@
                 android:layout_toRightOf="@+id/tv_user_agreement"
                 android:gravity="center"
                 android:text="用户协议"
-                android:textColor="@color/Treeblack"
-                android:textSize="@dimen/text_size_two" />
+                android:textSize="@dimen/text_size_three"
+                android:textColor="@color/Treeblack" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -201,8 +203,8 @@
                 android:layout_toRightOf="@+id/tv_clear_cache"
                 android:gravity="center"
                 android:text="清理缓存"
-                android:textColor="@color/Treeblack"
-                android:textSize="@dimen/text_size_two" />
+                android:textSize="@dimen/text_size_three"
+                android:textColor="@color/Treeblack" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -235,8 +237,8 @@
                 android:layout_toRightOf="@+id/tv_esc"
                 android:gravity="center"
                 android:text="退出账户"
-                android:textColor="@color/Treeblack"
-                android:textSize="@dimen/text_size_two" />
+                android:textSize="@dimen/text_size_three"
+                android:textColor="@color/Treeblack" />
 
             <ImageView
                 android:layout_width="wrap_content"

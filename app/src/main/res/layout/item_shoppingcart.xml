@@ -80,27 +80,26 @@
                 android:layout_height="wrap_content"
                 android:text="精选进口优质原生木浆维达抽纸盒装"
                 android:textColor="@color/Treeblack"
-                android:textSize="@dimen/text_size_two" />
+                android:textSize="@dimen/text_size_three" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-
                 <TextView
                     android:id="@+id/money"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="￥"
-                    android:textColor="@color/redFive"
-                    android:textSize="@dimen/text_size_two" />
+                    android:textSize="@dimen/text_size_three"
+                    android:textColor="@color/redFive" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/money"
                     android:text="30"
-                    android:textColor="@color/redFive"
-                    android:textSize="@dimen/text_size_two" />
+                    android:textSize="@dimen/text_size_three"
+                    android:textColor="@color/redFive" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -127,8 +126,8 @@
                         android:layout_toLeftOf="@+id/plus"
                         android:gravity="center"
                         android:text="1"
-                        android:textColor="@color/Treeblack"
-                        android:textSize="@dimen/text_size_two" />
+                        android:textSize="@dimen/text_size_three"
+                        android:textColor="@color/Treeblack" />
 
                     <ImageView
                         android:id="@+id/plus"
@@ -139,7 +138,6 @@
                         android:padding="5dp"
                         android:src="@mipmap/plus" />
                 </LinearLayout>
-
             </RelativeLayout>
         </LinearLayout>
     </LinearLayout>
