@@ -30,6 +30,7 @@
                 android:layout_marginBottom="10dp"
                 android:gravity="center_horizontal"
                 android:text="个人中心"
+
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_size_one" />
         </RelativeLayout>-->
@@ -38,6 +39,7 @@
             android:background="@color/redFive"
             android:layout_width="match_parent"
             android:layout_height="60dp">
+
             <RelativeLayout
                 android:layout_alignParentBottom="true"
                 android:layout_width="match_parent"
