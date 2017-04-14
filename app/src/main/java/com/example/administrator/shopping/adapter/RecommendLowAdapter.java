@@ -34,7 +34,7 @@ public   class RecommendLowAdapter extends RecyclerView.Adapter<RecommendLowAdap
 
     @Override
     public MyHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View inflate = inflater.inflate(R.layout.item_home_more, null);
+        View inflate = inflater.inflate(R.layout.item_recommend_low, null);
         parent.addView(inflate);
         return new MyHolder(inflate);
     }

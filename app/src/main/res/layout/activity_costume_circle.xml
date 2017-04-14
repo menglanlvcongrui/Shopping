@@ -6,23 +6,32 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.administrator.shopping.activity.CostumeCircleActivity">
-<RelativeLayout
-    android:padding="10dp"
-    android:background="@color/redFive"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <ImageView
-        android:src="@mipmap/back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:text="服饰圈"
-        android:textColor="@color/white"
-        android:textSize="@dimen/text_size_one"
-        android:layout_centerInParent="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-</RelativeLayout>
+    <RelativeLayout
+        android:padding="10dp"
+        android:background="@color/redFive"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+        <RelativeLayout
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_centerVertical="true"
+                android:padding="5dp"
+                android:id="@+id/iv_costume_circle"
+                android:layout_width="wrap_content"
+                android:src="@mipmap/back"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:text="服饰圈"
+                android:layout_centerInParent="true"
+                android:textSize="@dimen/text_size_one"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </RelativeLayout>
 <LinearLayout
     android:layout_margin="10dp"
     android:background="@drawable/edittext_costume_circle"

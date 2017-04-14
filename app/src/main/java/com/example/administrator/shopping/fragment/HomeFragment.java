@@ -150,10 +150,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
                 intent.setClass(getActivity(), RecommendActivity.class);
                 break;
             case R.id.tv_the_latest_goods_more:
-                intent.setClass(getActivity(), HomeTheLatestGoodsActivity.class);
+                //intent.setClass(getActivity(), HomeTheLatestGoodsActivity.class);
+                intent.setClass(getActivity(), RecommendActivity.class);
                 break;
             case R.id.tv_the_latest_look_more:
-                intent.setClass(getActivity(), HomeTheLatestLookActivity.class);
+               // intent.setClass(getActivity(), HomeTheLatestLookActivity.class);
+                intent.setClass(getActivity(), RecommendActivity.class);
                 break;
         }
         startActivity(intent);

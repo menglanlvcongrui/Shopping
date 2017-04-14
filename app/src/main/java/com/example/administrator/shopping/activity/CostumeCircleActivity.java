@@ -3,8 +3,10 @@ package com.example.administrator.shopping.activity;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 
 import com.example.administrator.shopping.R;
 
@@ -23,5 +25,12 @@ public class CostumeCircleActivity extends AppCompatActivity {
 //            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
         }
         setContentView(R.layout.activity_costume_circle);
+        ImageView iv_costume_circle= (ImageView) findViewById(R.id.iv_costume_circle);
+        iv_costume_circle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 }

@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     tools:context="com.example.administrator.shopping.fragment.PersonalcenterFragment">
     <LinearLayout
-        android:background="@color/grayFive"
+        android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -52,16 +52,18 @@
                     android:layout_height="wrap_content" />
             </RelativeLayout>
         </RelativeLayout>
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="30dp"
-            android:src="@mipmap/head" />
+        <RelativeLayout
+            android:background="@color/grayFive"
+            android:layout_width="match_parent"
+            android:layout_height="140dp">
+            <ImageView
+               android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@mipmap/head" />
+        </RelativeLayout>
         <RelativeLayout
             android:background="@color/white"
-            android:id="@+id/my_order"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp">
@@ -82,6 +84,8 @@
                 android:textColor="@color/Treeblack"
                 />
             <ImageView
+                android:padding="5dp"
+                android:id="@+id/my_order"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -89,12 +93,13 @@
                 android:src="@mipmap/personal_center_expandand" />
         </RelativeLayout>
         <View
+            android:layout_marginLeft="44dp"
+            android:layout_marginRight="16dp"
             android:background="@color/grayTwelve"
             android:layout_width="match_parent"
             android:layout_height="1dp"/>
         <RelativeLayout
             android:background="@color/white"
-            android:id="@+id/goods_address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp">
@@ -114,6 +119,8 @@
                 android:textSize="@dimen/text_size_three"
                 android:textColor="@color/Treeblack" />
             <ImageView
+                android:padding="5dp"
+                android:id="@+id/goods_address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -124,10 +131,8 @@
             android:background="@color/grayTwelve"
             android:layout_width="match_parent"
             android:layout_height="10dp"/>
-
         <RelativeLayout
             android:background="@color/white"
-            android:id="@+id/reset_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp">
@@ -148,6 +153,8 @@
                 android:textColor="@color/Treeblack"
                  />
             <ImageView
+                android:padding="5dp"
+                android:id="@+id/reset_password"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -155,12 +162,13 @@
                 android:src="@mipmap/personal_center_expandand" />
         </RelativeLayout>
         <View
+            android:layout_marginLeft="44dp"
+            android:layout_marginRight="16dp"
             android:background="@color/grayTwelve"
             android:layout_width="match_parent"
             android:layout_height="1dp"/>
         <RelativeLayout
             android:background="@color/white"
-            android:id="@+id/user_agreement"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp">
@@ -179,8 +187,9 @@
                 android:text="用户协议"
                 android:textSize="@dimen/text_size_three"
                 android:textColor="@color/Treeblack" />
-
             <ImageView
+                android:padding="5dp"
+                android:id="@+id/user_agreement"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -191,20 +200,16 @@
             android:background="@color/grayTwelve"
             android:layout_width="match_parent"
             android:layout_height="10dp"/>
-
         <RelativeLayout
             android:background="@color/white"
-            android:id="@+id/clear_cache"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp">
-
             <ImageView
                 android:id="@+id/tv_clear_cache"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@mipmap/clear_cache" />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -215,8 +220,9 @@
                 android:text="清理缓存"
                 android:textSize="@dimen/text_size_three"
                 android:textColor="@color/Treeblack" />
-
             <ImageView
+                android:padding="5dp"
+                android:id="@+id/clear_cache"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -224,22 +230,21 @@
                 android:src="@mipmap/personal_center_expandand" />
         </RelativeLayout>
         <View
+            android:layout_marginLeft="44dp"
+            android:layout_marginRight="16dp"
             android:background="@color/grayTwelve"
             android:layout_width="match_parent"
             android:layout_height="1dp"/>
         <RelativeLayout
-            android:id="@+id/esc"
             android:background="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp">
-
             <ImageView
                 android:id="@+id/tv_esc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@mipmap/esc" />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -250,15 +255,14 @@
                 android:text="退出账户"
                 android:textSize="@dimen/text_size_three"
                 android:textColor="@color/Treeblack" />
-
             <ImageView
+                android:id="@+id/esc"
+                android:padding="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:src="@mipmap/personal_center_expandand" />
         </RelativeLayout>
-
     </LinearLayout>
-
 </FrameLayout>

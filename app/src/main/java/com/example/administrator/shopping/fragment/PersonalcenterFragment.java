@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.example.administrator.shopping.Dialog.CleanDialog;
@@ -18,12 +19,12 @@ import com.example.administrator.shopping.activity.ResetPasswordActivity;
 import com.example.administrator.shopping.activity.UserAgreementActivity;
 
 public class PersonalcenterFragment extends Fragment implements View.OnClickListener {
-    private RelativeLayout my_order;
-    private RelativeLayout goods_address;
-    private RelativeLayout reset_password;
-    private RelativeLayout user_agreement;
-    private RelativeLayout clear_cache;
-    private RelativeLayout esc;
+    private ImageView my_order;
+    private ImageView  goods_address;
+    private ImageView  reset_password;
+    private ImageView  user_agreement;
+    private ImageView  clear_cache;
+    private ImageView  esc;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -35,12 +36,12 @@ public class PersonalcenterFragment extends Fragment implements View.OnClickList
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        my_order = (RelativeLayout) view.findViewById(R.id.my_order);
-        goods_address = (RelativeLayout) view.findViewById(R.id.goods_address);
-        reset_password = (RelativeLayout) view.findViewById(R.id.reset_password);
-        user_agreement = (RelativeLayout) view.findViewById(R.id.user_agreement);
-        clear_cache = (RelativeLayout) view.findViewById(R.id.clear_cache);
-        esc = (RelativeLayout) view.findViewById(R.id.esc);
+        my_order = (ImageView ) view.findViewById(R.id.my_order);
+        goods_address = (ImageView ) view.findViewById(R.id.goods_address);
+        reset_password = (ImageView ) view.findViewById(R.id.reset_password);
+        user_agreement = (ImageView ) view.findViewById(R.id.user_agreement);
+        clear_cache = (ImageView) view.findViewById(R.id.clear_cache);
+        esc = (ImageView ) view.findViewById(R.id.esc);
         my_order.setOnClickListener(this);
         goods_address.setOnClickListener(this);
         reset_password.setOnClickListener(this);
@@ -50,29 +51,33 @@ public class PersonalcenterFragment extends Fragment implements View.OnClickList
     }
 
     CleanDialog cleanDialog;
-
+    Intent intent=null;
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent();
         switch (v.getId()) {
             case R.id.my_order:
-                intent.setClass(getActivity(), MyOrderActivity.class);
+                intent=new Intent(getActivity(), MyOrderActivity.class);
                 break;
             case R.id.goods_address:
-                intent.setClass(getActivity(), ReceiverAddressActivity.class);
+                intent=new Intent(getActivity(), ReceiverAddressActivity.class);
                 break;
             case R.id.reset_password:
-                intent.setClass(getActivity(), ResetPasswordActivity.class);
+                intent=new Intent(getActivity(), ResetPasswordActivity.class);
                 break;
             case R.id.user_agreement:
-                intent.setClass(getActivity(), UserAgreementActivity.class);
+                intent=new Intent(getActivity(), UserAgreementActivity.class);
                 break;
             case R.id.clear_cache:
                 startCleanDialog();
                 break;
             case R.id.esc:
-                intent.setClass(getActivity(), LoginActivity.class);
+                intent=new Intent(getActivity(), LoginActivity.class);
                 break;
+
+        }
+        if (intent != null) {
+            startActivity(intent);
+            intent=null;
         }
 
     }
