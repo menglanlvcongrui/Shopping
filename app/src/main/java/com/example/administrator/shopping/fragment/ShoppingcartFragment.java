@@ -14,20 +14,22 @@ import android.widget.TextView;
 
 import com.example.administrator.shopping.R;
 import com.example.administrator.shopping.adapter.ShoppingcartAdapter;
+import com.example.administrator.shopping.bean.CartBean;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class ShoppingcartFragment extends Fragment {
+public class ShoppingcartFragment extends Fragment implements View.OnClickListener {
     ShoppingcartAdapter shoppingcartAdapter;//购物车适配器
     static TextView text_price, text_piece;//价格、总价
     LinearLayout linear, linear_1;//需要隐藏的布局
-    List<String> cartlist;
+    List<String> cartlist;//购物车数组类
     TextView is_edit, payment;//编辑/完成  结算/编辑
     static CheckBox check_all;//全选按钮
     boolean isEdit = false;//编辑/完成标记
-   static boolean isAll=false;//是否全选
+    static boolean isAll = false;//是否全选
+    ListView list;//购物车列表
     public static Handler handler = new Handler() {//hander处理总额，然后刷新FragmentUI
         @Override
         public void handleMessage(Message msg) {
@@ -43,12 +45,12 @@ public class ShoppingcartFragment extends Fragment {
                         if (!msg.getData().getBooleanArray("isselect")[i]) {
                             j++;
                         }
-                    if (j==0){
+                    if (j == 0) {
                         check_all.setChecked(true);
-                        isAll=true;
-                    }else {
+                        isAll = true;
+                    } else {
                         check_all.setChecked(false);
-                        isAll=false;
+                        isAll = false;
                     }
                     text_price.setText(msg.getData().getString("total"));
                     text_piece.setText(msg.getData().getString("count"));
@@ -62,7 +64,28 @@ public class ShoppingcartFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_shoppingcart, container, false);
-        ListView list = (ListView) view.findViewById(R.id.shoppingcart_list);
+        initview(view);
+        cartlist = new ArrayList<String>();
+        CartBean cartBean = new CartBean();
+        for (int i = 0; i < 6; i++) {
+            cartBean.setEdit_isVisible(View.VISIBLE);
+            cartBean.setFinish_isVisible(View.GONE);
+            cartBean.setIsselect(false);
+            cartBean.setNumberlist(i);
+            cartBean.setFinish_isVisible(i);
+            cartlist.add(i + "");
+        }
+        shoppingcartAdapter = new ShoppingcartAdapter(getActivity(), cartlist);
+        list.setAdapter(shoppingcartAdapter);
+        check_all.setOnClickListener(this);
+        is_edit.setOnClickListener(this);
+        payment.setOnClickListener(this);
+
+        return view;
+    }
+
+    void initview(View view) {
+        list = (ListView) view.findViewById(R.id.shoppingcart_list);
         text_price = (TextView) view.findViewById(R.id.textView);
         check_all = (CheckBox) view.findViewById(R.id.check_all);
         text_piece = (TextView) view.findViewById(R.id.piece_text);
@@ -70,32 +93,26 @@ public class ShoppingcartFragment extends Fragment {
         payment = (TextView) view.findViewById(R.id.payment);
         linear = (LinearLayout) view.findViewById(R.id.linear);
         linear_1 = (LinearLayout) view.findViewById(R.id.liear_1);
-        cartlist = new ArrayList<String>();
-        for (int i = 0; i < 6; i++) {
-            cartlist.add("saaa" + i);
-        }
-        shoppingcartAdapter = new ShoppingcartAdapter(getActivity(), cartlist);
-        list.setAdapter(shoppingcartAdapter);
+    }
 
-        check_all.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.check_all:
                 if (isAll) {
 
-                    isAll=false; Message message = new Message();
+                    isAll = false;
+                    Message message = new Message();
                     message.what = 0x02;
                     shoppingcartAdapter.handler.sendMessage(message);
                 } else {
                     Message message = new Message();
                     message.what = 0x01;
                     shoppingcartAdapter.handler.sendMessage(message);
-                    isAll=true;
+                    isAll = true;
                 }
-        }
-        });
-        is_edit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                break;
+            case R.id.is_edit:
                 if (!isEdit) {
                     is_edit.setText("完成");
                     payment.setText("删除");
@@ -115,8 +132,15 @@ public class ShoppingcartFragment extends Fragment {
                     shoppingcartAdapter.handler.sendMessage(message);
                     isEdit = false;
                 }
-            }
-        });
-        return view;
+                break;
+            case R.id.payment:
+                if (payment.getText().equals("删除")) {
+                    Message message = new Message();
+                    message.what = 0x05;
+                    shoppingcartAdapter.handler.sendMessage(message);
+                    isEdit = false;
+                }
+                break;
+        }
     }
 }
