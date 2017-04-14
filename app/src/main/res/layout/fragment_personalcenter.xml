@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     tools:context="com.example.administrator.shopping.fragment.PersonalcenterFragment">
     <LinearLayout
+        android:background="@color/grayFive"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -59,6 +60,7 @@
             android:layout_marginBottom="30dp"
             android:src="@mipmap/head" />
         <RelativeLayout
+            android:background="@color/white"
             android:id="@+id/my_order"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -91,6 +93,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"/>
         <RelativeLayout
+            android:background="@color/white"
             android:id="@+id/goods_address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -123,6 +126,7 @@
             android:layout_height="10dp"/>
 
         <RelativeLayout
+            android:background="@color/white"
             android:id="@+id/reset_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -150,7 +154,12 @@
                 android:layout_centerVertical="true"
                 android:src="@mipmap/personal_center_expandand" />
         </RelativeLayout>
+        <View
+            android:background="@color/grayTwelve"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
         <RelativeLayout
+            android:background="@color/white"
             android:id="@+id/user_agreement"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -184,6 +193,7 @@
             android:layout_height="10dp"/>
 
         <RelativeLayout
+            android:background="@color/white"
             android:id="@+id/clear_cache"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -219,6 +229,7 @@
             android:layout_height="1dp"/>
         <RelativeLayout
             android:id="@+id/esc"
+            android:background="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp">
@@ -247,10 +258,7 @@
                 android:layout_centerVertical="true"
                 android:src="@mipmap/personal_center_expandand" />
         </RelativeLayout>
-        <View
-            android:background="@color/grayTwelve"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"/>
+
     </LinearLayout>
 
 </FrameLayout>

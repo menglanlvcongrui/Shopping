@@ -14,6 +14,10 @@
         android:layout_weight="1"
         android:background="#FFFFFF"/>
     <!--选项卡-->
+    <View
+        android:background="@color/grayTwelve"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
     <RadioGroup
         android:id="@+id/rg_tabs"
         android:gravity="center"

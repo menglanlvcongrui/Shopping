@@ -51,4 +51,63 @@
                 android:layout_height="wrap_content" />
         </RelativeLayout>
     </RelativeLayout>
+    <LinearLayout
+        android:padding="10dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:text="用户协议"
+            android:textColor="@color/Treeblack"
+            android:textSize="@dimen/text_size_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginTop="15dp"
+            android:text=" 服装，指的是衣服鞋包玩具饰品等的总称，多指衣服。服装在人类社会发展的早期就已出现，古代人把身边能找到的各种材料做成粗陋的“衣服”用以护身。人类最初的衣服是用兽皮制成的，包裹身体的最早“织物”用麻类纤维和草制等成。在国家标准... "
+            android:textColor="@color/Treeblack"
+            android:textSize="@dimen/text_size_four"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <View
+            android:layout_marginTop="25dp"
+            android:background="@color/grayTwelve"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+        <TextView
+            android:layout_marginTop="25dp"
+            android:text="第一条本客户端服务条款的确认和接纳"
+            android:textColor="@color/Treeblack"
+            android:textSize="@dimen/text_size_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginTop="15dp"
+            android:text=" 服装，指的是衣服鞋包玩具饰品等的总称，多指衣服。服装在人类社会发展的早期就已出现，古代人把身边能找到的各种材料做成粗陋的“衣服”用以护身。人类最初的衣服是用兽皮制成的，包裹身体的最早“织物”用麻类纤维和草制等成。在国家标准... "
+            android:textColor="@color/Treeblack"
+            android:textSize="@dimen/text_size_four"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <View
+            android:layout_marginTop="25dp"
+            android:background="@color/grayTwelve"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+        <TextView
+            android:layout_marginTop="25dp"
+            android:text="第二条本客户端服务条款的确认和接纳"
+            android:textColor="@color/Treeblack"
+            android:textSize="@dimen/text_size_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginTop="15dp"
+            android:text=" 服装，指的是衣服鞋包玩具饰品等的总称，多指衣服。服装在人类社会发展的早期就已出现，古代人把身边能找到的各种材料做成粗陋的“衣服”用以护身。人类最初的衣服是用兽皮制成的，包裹身体的最早“织物”用麻类纤维和草制等成。在国家标准... "
+            android:textColor="@color/Treeblack"
+            android:textSize="@dimen/text_size_four"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 </LinearLayout>

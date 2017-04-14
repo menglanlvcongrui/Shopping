@@ -61,7 +61,9 @@
         android:layout_height="wrap_content">
 
         <LinearLayout
+            android:layout_centerVertical="false"
             android:orientation="horizontal"
+            android:padding="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
             <TextView
@@ -83,24 +85,44 @@
                 android:layout_height="wrap_content"
                 android:text="件" />
         </LinearLayout>
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:layout_toLeftOf="@+id/high"
-            android:src="@mipmap/low" />
-        <ImageView
-            android:id="@+id/high"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <RadioGroup
             android:layout_alignParentRight="true"
-            android:layout_marginRight="10dp"
-            android:src="@mipmap/high" />
+            android:id="@+id/rg"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton
+                android:layout_marginRight="10dp"
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:gravity="center"
+                android:background="@null"
+                android:checked="true"
+                android:drawableTop="@drawable/recommend_high"
+                />
+            <RadioButton
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:background="@null"
+                android:drawableTop="@drawable/recommend_low"
+                />
+        </RadioGroup>
     </RelativeLayout>
 
-    <android.support.v7.widget.RecyclerView
+   <!-- <android.support.v7.widget.RecyclerView
         android:id="@+id/rcv01"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    </android.support.v7.widget.RecyclerView>
+    </android.support.v7.widget.RecyclerView>-->
+    <LinearLayout
+    android:orientation="horizontal"
+    android:id="@+id/content"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+</LinearLayout>
 </LinearLayout>
