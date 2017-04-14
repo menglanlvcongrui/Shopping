@@ -1,5 +1,6 @@
 package com.example.administrator.shopping.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -13,6 +14,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.administrator.shopping.R;
+import com.example.administrator.shopping.activity.ShoppingcartPaymentActivity;
 import com.example.administrator.shopping.adapter.ShoppingcartAdapter;
 import com.example.administrator.shopping.bean.CartBean;
 
@@ -24,6 +26,7 @@ public class ShoppingcartFragment extends Fragment implements View.OnClickListen
     ShoppingcartAdapter shoppingcartAdapter;//购物车适配器
     static TextView text_price, text_piece;//价格、总价
     LinearLayout linear, linear_1;//需要隐藏的布局
+//    List<CartBean> cartlist;//购物车数组类
     List<String> cartlist;//购物车数组类
     TextView is_edit, payment;//编辑/完成  结算/编辑
     static CheckBox check_all;//全选按钮
@@ -65,23 +68,73 @@ public class ShoppingcartFragment extends Fragment implements View.OnClickListen
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_shoppingcart, container, false);
         initview(view);
-        cartlist = new ArrayList<String>();
-        CartBean cartBean = new CartBean();
-        for (int i = 0; i < 6; i++) {
-            cartBean.setEdit_isVisible(View.VISIBLE);
-            cartBean.setFinish_isVisible(View.GONE);
-            cartBean.setIsselect(false);
-            cartBean.setNumberlist(i);
-            cartBean.setFinish_isVisible(i);
-            cartlist.add(i + "");
-        }
+        initdata();
         shoppingcartAdapter = new ShoppingcartAdapter(getActivity(), cartlist);
         list.setAdapter(shoppingcartAdapter);
         check_all.setOnClickListener(this);
         is_edit.setOnClickListener(this);
         payment.setOnClickListener(this);
-
         return view;
+    }
+
+    void initdata() {
+        cartlist = new ArrayList<>();
+        CartBean cartBean1 = new CartBean();
+        CartBean cartBean2 = new CartBean();
+        CartBean cartBean3 = new CartBean();
+        CartBean cartBean4 = new CartBean();
+        CartBean cartBean5 = new CartBean();
+        CartBean cartBean6 = new CartBean();
+            cartBean1.setEdit_isVisible(View.VISIBLE);
+            cartBean1.setMoneylist(30);
+            cartBean1.setIsselect(false);
+            cartBean1.setNumberlist(0);
+            cartBean1.setFinishlist(0);
+            cartBean1.setFinish_isVisible(View.GONE);
+
+        cartBean2.setEdit_isVisible(View.VISIBLE);
+        cartBean2.setMoneylist(30);
+        cartBean2.setIsselect(false);
+        cartBean2.setNumberlist(1);
+        cartBean2.setFinishlist(1);
+        cartBean2.setFinish_isVisible(View.GONE);
+
+        cartBean3.setEdit_isVisible(View.VISIBLE);
+        cartBean3.setMoneylist(30);
+        cartBean3.setIsselect(false);
+        cartBean3.setNumberlist(2);
+        cartBean3.setFinishlist(2);
+        cartBean3.setFinish_isVisible(View.GONE);
+
+        cartBean4.setEdit_isVisible(View.VISIBLE);
+        cartBean4.setMoneylist(30);
+        cartBean4.setIsselect(false);
+        cartBean4.setNumberlist(3);
+        cartBean4.setFinishlist(3);
+        cartBean4.setFinish_isVisible(View.GONE);
+
+        cartBean5.setEdit_isVisible(View.VISIBLE);
+        cartBean5.setMoneylist(30);
+        cartBean5.setIsselect(false);
+        cartBean5.setNumberlist(4);
+        cartBean5.setFinishlist(4);
+        cartBean5.setFinish_isVisible(View.GONE);
+
+        cartBean6.setEdit_isVisible(View.VISIBLE);
+        cartBean6.setMoneylist(30);
+        cartBean6.setIsselect(false);
+        cartBean6.setNumberlist(5);
+        cartBean6.setFinishlist(5);
+        cartBean6.setFinish_isVisible(View.GONE);
+        for (int i=0;i<6;i++){
+            cartlist.add(i+"");
+        }
+//        cartlist.add(cartBean1);
+//        cartlist.add(cartBean2);
+//        cartlist.add(cartBean3);
+//        cartlist.add(cartBean4);
+//        cartlist.add(cartBean5);
+//        cartlist.add(cartBean6);
     }
 
     void initview(View view) {
@@ -139,6 +192,10 @@ public class ShoppingcartFragment extends Fragment implements View.OnClickListen
                     message.what = 0x05;
                     shoppingcartAdapter.handler.sendMessage(message);
                     isEdit = false;
+                }
+                if (payment.getText().equals("去结算")){
+                    Intent intent =new Intent(getActivity(), ShoppingcartPaymentActivity.class);
+                    startActivity(intent);
                 }
                 break;
         }

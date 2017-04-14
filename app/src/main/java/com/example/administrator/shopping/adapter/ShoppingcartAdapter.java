@@ -4,7 +4,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,6 +28,7 @@ public class ShoppingcartAdapter extends BaseAdapter implements View.OnClickList
     LayoutInflater infater = null;
     Context context;
     List<String> cartlist;
+    //    List<CartBean> cartlist;
     boolean[] isselect;//表示是否选中数组
     int[] moneylist;//表示价格数组
     int[] numberlist;//表示数量数组
@@ -69,41 +69,46 @@ public class ShoppingcartAdapter extends BaseAdapter implements View.OnClickList
                     notifyDataSetInvalidated();
                     break;
                 case 0x05://删除item（购物车）
-//                    for ()
+                    for (int i = 0; i < cartlist.size(); i++) {
+                        if (isselect[i]) {
+                            deleteItem(i);
+                        }
+                    }
                     break;
             }
         }
     };
 
-    public void deleteItem() {
-        String[] a = new String[]{"1","5","3","7","7"};
-        String[] b = new String[]{"2","3","4"};
-        a = deleteArr(a, b);
-        for (int i=0;i<a.length;i++){
+    public void deleteItem(int position) {
+//        boolean[] isselect;//表示是否选中数组
+//        int[] moneylist;//表示价格数组
+//        int[] numberlist;//表示数量数组
+//        int total = 0, count = 0;//总价,件数
+//        int[] finish_isVisible;//是否显示完成页面
+//        int[] edit_isVisible;//是否显示编辑页面
+//        int[] finishlist;//数据更新，计数数组（是否更新数据）
 
-            Log.i("xinxi", a[i]+" "+i);
-        }
+//        moneylist = deleteArr(moneylist, b);
 
     }
 
-    private static String[] deleteArr(String[] arr1, String[] arr2) {
-        List<String> list = new ArrayList<>();
-        for (String str : arr1) {          //处理第一个数组,list里面的值为
+    private static Integer[] deleteArr(int[] arr1, int[] arr2) {//原数组//需要删除数组
+        List<Integer> list = new ArrayList<>();
+        for (int str : arr1) {          //处理第一个数组,list里面的值为
 //            if (!list.contains(str)) {
-                list.add(str);
+            list.add(str);
 //            }
         }
-        for (String str : arr2) {   //如果第二个数组存在和第一个数组相同的值，就删除
+        for (int str : arr2) {   //如果第二个数组存在和第一个数组相同的值，就删除
             if (list.contains(str)) {
                 list.remove(str);
             }
         }
-        String[] result = {};   //创建空数组
+        Integer[] result = {};   //创建空数组
         return list.toArray(result);    //List to Array
     }
 
     public ShoppingcartAdapter(Context context, List<String> cartlist) {
-        deleteItem();
         this.context = context;
         isselect = new boolean[cartlist.size()];
         moneylist = new int[cartlist.size()];
@@ -158,6 +163,13 @@ public class ShoppingcartAdapter extends BaseAdapter implements View.OnClickList
         holder.check_cart.setChecked(isselect[position]);
         holder.liner_edit.setVisibility(edit_isVisible[position]);
         holder.liner_finish.setVisibility(finish_isVisible[position]);
+        holder.itempayment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Intent intent =new Intent(context, ShoppingcartPaymentActivity.class);
+//                context.startActivity(intent);
+            }
+        });
         holder.finish_reduce.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -276,6 +288,7 @@ public class ShoppingcartAdapter extends BaseAdapter implements View.OnClickList
         CheckBox check_cart;//选择
         TextView numbers, number;//数量
         ImageView reduce, add, finish_reduce, finish_add;//1.编辑界面增加/减少按钮  2.完成界面增加/减少按钮
+        LinearLayout itempayment;
 
         public ViewHolder(View view) {
             this.check_cart = (CheckBox) view.findViewById(R.id.check_cart);
@@ -287,6 +300,7 @@ public class ShoppingcartAdapter extends BaseAdapter implements View.OnClickList
             this.liner_edit = (LinearLayout) view.findViewById(R.id.liner_edit);
             this.finish_reduce = (ImageView) view.findViewById(R.id.finish_reduce);
             this.finish_add = (ImageView) view.findViewById(R.id.finish_add);
+            this.itempayment = (LinearLayout) view.findViewById(R.id.itempayment);
         }
     }
 

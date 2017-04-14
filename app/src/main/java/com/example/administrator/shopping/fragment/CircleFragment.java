@@ -1,13 +1,8 @@
 package com.example.administrator.shopping.fragment;
 
-import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,11 +10,6 @@ import android.widget.LinearLayout;
 
 import com.example.administrator.shopping.R;
 import com.example.administrator.shopping.activity.CostumeCircleActivity;
-import com.example.administrator.shopping.adapter.CircleAdapter;
-import com.example.administrator.shopping.bean.CircleBean;
-import com.example.administrator.shopping.utils.OkHttpUtils;
-
-import java.util.ArrayList;
 
 
 public class CircleFragment extends Fragment {
@@ -44,7 +34,7 @@ public class CircleFragment extends Fragment {
         adapter = new CircleAdapter(getContext(),list);
         rcv.setAdapter(adapter);*/
   //  }
-  /*  private void initDatas() {
+  /* = private void initDatas() {
 //使用异步获取字符串
         OkHttpUtils.getInstance().getStringAsync(getActivity(),"http://a.wowozhe.com/home/m?target=android&v=291&act=discovery_menu&json=",CircleBean.class,new OkHttpUtils.DataCallback<CircleBean>() {
 //当数据下载完成后自动回到此方法

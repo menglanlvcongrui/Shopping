@@ -68,7 +68,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:divider="@null"></ListView>
+        android:dividerHeight="10dp"
+        android:divider="@color/grayFive"></ListView>
 
     <RelativeLayout
         android:padding="10dp"

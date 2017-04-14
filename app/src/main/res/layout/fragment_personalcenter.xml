@@ -93,6 +93,8 @@
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:src="@mipmap/personal_center_expandand" />
+
+
         </RelativeLayout>
         <View
             android:layout_marginLeft="44dp"

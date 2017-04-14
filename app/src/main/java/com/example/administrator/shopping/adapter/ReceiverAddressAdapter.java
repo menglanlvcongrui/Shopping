@@ -1,6 +1,7 @@
 package com.example.administrator.shopping.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.administrator.shopping.R;
+import com.example.administrator.shopping.activity.EditAddressActivity;
 import com.example.administrator.shopping.bean.CircleBean;
 
 import java.util.ArrayList;
@@ -55,6 +57,13 @@ public   class ReceiverAddressAdapter extends RecyclerView.Adapter<ReceiverAddre
                 .load(list.get(position).getImg())
                 .placeholder(R.mipmap.ic_launcher)
                 .into(holder.iv);*/
+        holder.edit_address.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(mcontext, EditAddressActivity.class);
+                mcontext.startActivity(intent);
+            }
+        });
 
     }
 
@@ -68,12 +77,13 @@ public   class ReceiverAddressAdapter extends RecyclerView.Adapter<ReceiverAddre
         TextView tv1;
         TextView tv2;
         ImageView iv;
-
+        TextView edit_address;
         public MyHolder(View itemView) {
             super(itemView);
             tv1 = (TextView) itemView.findViewById(R.id.tv1);
             tv2 = (TextView) itemView.findViewById(R.id.tv2);
             iv = (ImageView) itemView.findViewById(R.id.iv);
+            edit_address=(TextView)itemView.findViewById(R.id.edit_address);
         }
     }
 }

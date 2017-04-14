@@ -59,6 +59,7 @@
        </LinearLayout>
 
        <TextView
+           android:id="@+id/edit_address"
            android:drawableLeft="@mipmap/edit"
            android:text="  编辑"
            android:textColor="@color/Treeblack"
