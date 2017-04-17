@@ -37,7 +37,7 @@
 -->
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="64dp"
+        android:layout_height="65dp"
         android:background="@color/redFive"
         android:padding="10dp">
 
@@ -77,9 +77,9 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:background="@color/white"
-        android:padding="12dp">
+        android:padding="10dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -91,17 +91,16 @@
                 android:id="@+id/check_all"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
                 android:background="@null"
-                android:paddingLeft="12dp"
                 android:button="@drawable/shoppingcart_finish_selector"
-                />
+                android:padding="5dp" />
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="12dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="5dp"
+                android:gravity="center_vertical"
                 android:text="全选"
                 android:textColor="@color/Treeblack"
                 android:textSize="@dimen/text_size_two" />
@@ -151,7 +150,6 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
                 android:text="￥"
                 android:textColor="@color/redFive"
                 android:textSize="@dimen/text_size_two" />
@@ -160,7 +158,6 @@
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
                 android:text="0"
                 android:textColor="@color/redFive"
                 android:textSize="@dimen/text_size_two" />
@@ -171,7 +168,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
             android:background="@mipmap/payment_button"
             android:gravity="center"

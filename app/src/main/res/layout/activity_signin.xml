@@ -1,32 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.example.administrator.shopping.view.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.administrator.shopping.activity.SigninActivity">
-<!--<RelativeLayout
-    android:padding="10dp"
-    android:background="@color/redFive"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <ImageView
-        android:id="@+id/iv_sinnin"
-        android:padding="5dp"
-        android:layout_margin="10dp"
-        android:layout_width="wrap_content"
-        android:src="@mipmap/cancel"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:id="@+id/tv_signin_cancle"
-        android:layout_width="wrap_content"
-        android:text="注册"
-        android:layout_centerInParent="true"
-        android:textSize="@dimen/text_size_one"
-        android:textColor="@color/white"
-        android:layout_height="wrap_content" />
-</RelativeLayout>-->
     <RelativeLayout
         android:padding="10dp"
         android:background="@color/redFive"
@@ -54,8 +33,9 @@
         </RelativeLayout>
     </RelativeLayout>
     <LinearLayout
-        android:layout_marginTop="20dp"
-        android:padding="10dp"
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="35dp"
+        app:layout_widthPercent="0.9"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -136,12 +116,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <LinearLayout
-      android:layout_marginTop="30dp"
-        android:layout_width="wrap_content"
+        android:layout_marginBottom="45dp"
+        android:layout_width="match_parent"
         android:orientation="horizontal"
         android:layout_gravity="center"
-        android:gravity="center"
-        android:layout_height="wrap_content">
+        android:gravity="center|bottom"
+        android:layout_height="match_parent">
         <TextView
             android:text="已有帐号，直接"
             android:textColor="@color/Treeblack"
@@ -155,4 +135,4 @@
             android:layout_height="wrap_content" />
     </LinearLayout>
 
-</LinearLayout>
+</com.example.administrator.shopping.view.PercentRelativeLayout>

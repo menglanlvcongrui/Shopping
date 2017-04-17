@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -31,6 +32,7 @@ import kankan.wheel.widget.WheelView;
 public class EditAddressActivity extends AppCompatActivity implements View.OnClickListener {
     RelativeLayout choose_address;
     Dialog dialog;//地址选择弹窗
+    ImageView back;
     private WheelView mProvince;//省
     private WheelView mCity;//市
     private WheelView mArea;//区/县
@@ -75,12 +77,9 @@ public class EditAddressActivity extends AppCompatActivity implements View.OnCli
         setContentView(R.layout.activity_edit_address);
         choose_address = (RelativeLayout) findViewById(R.id.choose_address);
         text_address = (TextView) findViewById(R.id.text_address);
-        choose_address.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                show();
-            }
-        });
+        back=(ImageView)findViewById(R.id.iv_receiver_address_back);
+        back.setOnClickListener(this);
+        choose_address.setOnClickListener(this);
     }
 
     public void show() {
@@ -114,6 +113,7 @@ public class EditAddressActivity extends AppCompatActivity implements View.OnCli
         mArea = (WheelView) inflate.findViewById(R.id.area);
         enable = (TextView) inflate.findViewById(R.id.enable);
         cancel = (TextView) inflate.findViewById(R.id.cancel);
+
 
     }
 
@@ -205,7 +205,6 @@ public class EditAddressActivity extends AppCompatActivity implements View.OnCli
         initAreaChangeListener();
         enable.setOnClickListener(this);
         cancel.setOnClickListener(this);
-
     }
 
 
@@ -390,6 +389,12 @@ public class EditAddressActivity extends AppCompatActivity implements View.OnCli
                 break;
             case R.id.cancel:
                 dialog.dismiss();
+                break;
+            case R.id.iv_receiver_address_back:
+                finish();
+                break;
+            case R.id.choose_address:
+                show();
                 break;
         }
     }
