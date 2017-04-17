@@ -22,6 +22,7 @@ public class GoodsDetailActivity extends AppCompatActivity {
             //透明导航栏
             //getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
         }
+
         setContentView(R.layout.activity_goods_detail);
     }
 }
