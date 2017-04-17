@@ -27,36 +27,41 @@
             android:layout_height="wrap_content" />
     </RelativeLayout>-->
     <RelativeLayout
-        android:padding="10dp"
-        android:background="@color/redFive"
         android:layout_width="match_parent"
-        android:layout_height="60dp">
+        android:layout_height="60dp"
+        android:background="@color/redFive"
+        android:padding="10dp">
+
         <RelativeLayout
-            android:layout_alignParentBottom="true"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+
             <ImageView
-                android:layout_centerVertical="true"
-                android:padding="10dp"
                 android:id="@+id/iv_loginss"
                 android:layout_width="wrap_content"
-                android:src="@mipmap/cancel"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:src="@mipmap/cancel" />
+
             <TextView
-                android:gravity="center_vertical"
                 android:layout_width="wrap_content"
-                android:text="登录"
+                android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:textSize="@dimen/text_size_one"
+                android:gravity="center_vertical"
+                android:text="登录"
                 android:textColor="@color/white"
-                android:layout_height="wrap_content" />
+                android:textSize="@dimen/text_size_one" />
         </RelativeLayout>
     </RelativeLayout>
+
     <LinearLayout
-        android:padding="10dp"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_height="wrap_content">
+        android:padding="10dp">
+
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
@@ -71,78 +76,109 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <EditText
-                android:hint="13218105401"
-                android:textSize="@dimen/text_size_two"
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:hint="13218105401"
+                    android:textSize="@dimen/text_size_two" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="5dp"
+                    android:background="#b4b4b4" />
+            </LinearLayout>
+
             <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:src="@mipmap/clear"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:src="@mipmap/clear" />
         </RelativeLayout>
+
         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="wrap_content">
+            android:orientation="vertical">
+
             <TextView
-                android:padding="5dp"
                 android:layout_width="wrap_content"
-                android:text="密码"
-                android:textSize="@dimen/text_size_two"
-                android:textColor="@color/Treeblack"
-                android:layout_height="wrap_content" />
-            <EditText
+                android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:hint="***************"
+                android:text="密码"
+                android:textColor="@color/Treeblack"
+                android:textSize="@dimen/text_size_two" />
+
+            <EditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:hint="***************"
+                android:padding="5dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="5dp"
+                android:background="#b4b4b4" />
         </LinearLayout>
+
         <RelativeLayout
-            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
             <TextView
                 android:id="@+id/tv_forget_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:text="忘记密码"
-                android:textSize="@dimen/text_size_three"
                 android:layout_marginRight="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:text="忘记密码"
+                android:textSize="@dimen/text_size_three" />
         </RelativeLayout>
+
         <TextView
-            android:text="登录"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginTop="60dp"
-            android:gravity="center"
-            android:textSize="@dimen/text_size_two"
-            android:textColor="@color/white"
-            android:layout_gravity="center"
             android:background="@mipmap/login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <LinearLayout
-            android:layout_marginTop="80dp"
-            android:layout_width="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center"
             android:gravity="center"
-            android:layout_height="wrap_content">
+            android:text="登录"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_two" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="80dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
             <TextView
-                android:text="还没有帐号，马上"
-                android:textSize="@dimen/text_size_two"
-                android:textColor="@color/Treeblack"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="还没有帐号，马上"
+                android:textColor="@color/Treeblack"
+                android:textSize="@dimen/text_size_two" />
+
             <TextView
                 android:id="@+id/tv_signin"
-                android:text="注册"
-                android:textSize="@dimen/text_size_two"
-                android:textColor="@color/yellowOne"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="注册"
+                android:textColor="@color/yellowOne"
+                android:textSize="@dimen/text_size_two" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
