@@ -73,6 +73,7 @@
                     android:layout_height="wrap_content">
                     <TextView
                         android:text="推荐"
+                        android:layout_centerVertical="true"
                         android:textSize="@dimen/text_size_two"
                         android:layout_width="wrap_content"
                         android:textColor="@color/Treeblack"
@@ -80,6 +81,7 @@
                     <TextView
                         android:id="@+id/tv_recommend_more"
                         android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
                         android:layout_width="wrap_content"
                         android:textColor="@color/Treeblack"
                         android:text="更多>>"
@@ -93,6 +95,7 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
+                        android:id="@+id/ll_goods_detail_one"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:orientation="vertical"
@@ -121,6 +124,7 @@
                             android:layout_height="wrap_content" />
                     </LinearLayout>
                     <LinearLayout
+                        android:id="@+id/ll_goods_detail_tow"
                         android:layout_marginLeft="3dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
@@ -150,6 +154,7 @@
                             android:layout_height="wrap_content" />
                     </LinearLayout>
                     <LinearLayout
+                        android:id="@+id/ll_goods_detail_three"
                         android:layout_marginLeft="3dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
@@ -179,6 +184,7 @@
                             android:layout_height="wrap_content" />
                     </LinearLayout>
                     <LinearLayout
+                        android:id="@+id/ll_goods_detail_four"
                         android:layout_marginLeft="3dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
@@ -228,11 +234,13 @@
                     android:layout_height="wrap_content">
                     <TextView
                         android:text="最新商品"
+                        android:layout_centerVertical="true"
                         android:textSize="@dimen/text_size_two"
                         android:layout_width="wrap_content"
                         android:textColor="@color/Treeblack"
                         android:layout_height="wrap_content" />
                     <TextView
+                        android:layout_centerVertical="true"
                         android:id="@+id/tv_the_latest_goods_more"
                         android:layout_alignParentRight="true"
                         android:layout_width="wrap_content"
@@ -381,6 +389,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <TextView
+                        android:layout_centerVertical="true"
                         android:text="最近浏览"
                         android:textSize="@dimen/text_size_two"
                         android:layout_width="wrap_content"
@@ -388,6 +397,7 @@
                         android:layout_height="wrap_content" />
                     <TextView
                         android:id="@+id/tv_the_latest_look_more"
+                        android:layout_centerVertical="true"
                         android:layout_alignParentRight="true"
                         android:layout_width="wrap_content"
                         android:textColor="@color/Treeblack"

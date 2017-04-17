@@ -26,15 +26,6 @@ public class ForgetPasswordActivity extends AppCompatActivity {
             //getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
         }
         setContentView(R.layout.activity_forget_password);
-        ImageView iv_forget_password_backss= (ImageView) findViewById(R.id.iv_forget_password_backss);
-        iv_forget_password_backss.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent();
-                intent.setClass(ForgetPasswordActivity.this,LoginsActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 
 }

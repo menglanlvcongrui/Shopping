@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.administrator.shopping.R;
+import com.example.administrator.shopping.activity.GoodsDetailActivity;
 import com.example.administrator.shopping.activity.HomeTheLatestGoodsActivity;
 import com.example.administrator.shopping.activity.HomeTheLatestLookActivity;
 import com.example.administrator.shopping.activity.RecommendActivity;
@@ -53,9 +54,17 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         TextView tv_recommend_more= (TextView) view.findViewById(R.id.tv_recommend_more);
         TextView tv_the_latest_goods_more= (TextView) view.findViewById(R.id.tv_the_latest_goods_more);
         TextView  tv_the_latest_look_more= (TextView) view.findViewById(R.id.tv_the_latest_look_more);
+        LinearLayout ll_goods_detail_one= (LinearLayout) view.findViewById(R.id.ll_goods_detail_one);
+        LinearLayout ll_goods_detail_tow= (LinearLayout) view.findViewById(R.id.ll_goods_detail_tow);
+        LinearLayout ll_goods_detail_three= (LinearLayout) view.findViewById(R.id.ll_goods_detail_three);
+        LinearLayout ll_goods_detail_four= (LinearLayout) view.findViewById(R.id.ll_goods_detail_four);
         tv_recommend_more.setOnClickListener(this);
         tv_the_latest_goods_more.setOnClickListener(this);
         tv_the_latest_look_more.setOnClickListener(this);
+        ll_goods_detail_one.setOnClickListener(this);
+        ll_goods_detail_tow.setOnClickListener(this);
+        ll_goods_detail_three.setOnClickListener(this);
+        ll_goods_detail_four.setOnClickListener(this);
 
 // initView();
         initData();
@@ -156,6 +165,18 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
             case R.id.tv_the_latest_look_more:
                // intent.setClass(getActivity(), HomeTheLatestLookActivity.class);
                 intent.setClass(getActivity(), RecommendActivity.class);
+                break;
+            case R.id.ll_goods_detail_one:
+                intent.setClass(getActivity(), GoodsDetailActivity.class);
+                break;
+            case R.id.ll_goods_detail_tow:
+                intent.setClass(getActivity(), GoodsDetailActivity.class);
+                break;
+            case R.id.ll_goods_detail_three:
+                intent.setClass(getActivity(), GoodsDetailActivity.class);
+                break;
+            case R.id.ll_goods_detail_four:
+                intent.setClass(getActivity(), GoodsDetailActivity.class);
                 break;
         }
         startActivity(intent);
