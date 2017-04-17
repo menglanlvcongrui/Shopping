@@ -9,29 +9,30 @@
         android:id="@+id/itempayment"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:orientation="horizontal"
-        android:padding="10dp">
+        android:orientation="horizontal">
 
         <LinearLayout
             android:id="@+id/dot_selector"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginRight="5dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="12dp">
 
             <CheckBox
                 android:id="@+id/check_cart"
-                android:layout_width="40px"
-                android:layout_height="40px"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:background="@drawable/shoppingcart_finish_selector"
-                android:button="@null"
-                android:padding="5dp" />
+                android:background="@null"
+                android:button="@drawable/shoppingcart_finish_selector" />
         </LinearLayout>
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:paddingBottom="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp"
             android:src="@mipmap/photograph" />
 
         <LinearLayout
@@ -70,38 +71,49 @@
         </LinearLayout>
 
         <LinearLayout
+            android:paddingBottom="10dp"
             android:id="@+id/liner_edit"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginRight="5dp"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="精选进口优质原生木浆维达抽纸盒装"
-                android:textColor="@color/Treeblack"
-                android:textSize="@dimen/text_size_three" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:paddingRight="12dp"
+                android:paddingTop="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="精选进口优质原生木浆维达抽纸盒装"
+                    android:textColor="@color/Treeblack"
+                    android:textSize="@dimen/text_size_three" />
+            </LinearLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="21dp"
+                android:layout_marginRight="15dp"
                 android:gravity="bottom">
+
                 <TextView
                     android:id="@+id/money"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="￥"
-                    android:textSize="@dimen/text_size_three"
-                    android:textColor="@color/redFive" />
+                    android:textColor="@color/redFive"
+                    android:textSize="@dimen/text_size_three" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/money"
                     android:text="30"
-                    android:textSize="@dimen/text_size_three"
-                    android:textColor="@color/redFive" />
+                    android:textColor="@color/redFive"
+                    android:textSize="@dimen/text_size_three" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -128,8 +140,8 @@
                         android:layout_toLeftOf="@+id/plus"
                         android:gravity="center"
                         android:text="1"
-                        android:textSize="@dimen/text_size_three"
-                        android:textColor="@color/Treeblack" />
+                        android:textColor="@color/Treeblack"
+                        android:textSize="@dimen/text_size_three" />
 
                     <ImageView
                         android:id="@+id/plus"

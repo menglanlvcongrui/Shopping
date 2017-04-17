@@ -12,26 +12,29 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
 import com.alibaba.fastjson.JSON;
 import com.example.administrator.shopping.R;
 import com.example.administrator.shopping.adapter.AddressTextAdapter;
 import com.example.administrator.shopping.bean.RegionJson;
 import com.example.administrator.shopping.utils.FileUtils;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import kankan.wheel.widget.OnWheelChangedListener;
 import kankan.wheel.widget.OnWheelScrollListener;
 import kankan.wheel.widget.WheelView;
 
-public class EditAddressActivity extends AppCompatActivity  implements View.OnClickListener{
+public class EditAddressActivity extends AppCompatActivity implements View.OnClickListener {
     RelativeLayout choose_address;
     Dialog dialog;//地址选择弹窗
     private WheelView mProvince;//省
     private WheelView mCity;//市
     private WheelView mArea;//区/县
-    private TextView enable,text_address,cancel;//确定/地区显示/取消按钮
+    private TextView enable, text_address, cancel;//确定/地区显示/取消按钮
     /**
      * key - 省 value - 市s
      */
@@ -39,23 +42,24 @@ public class EditAddressActivity extends AppCompatActivity  implements View.OnCl
     /**
      * key - 市 values - 区s
      */
-    private Map<String, List<String>> mAreaDatasMap  = new HashMap<String, List<String>>();
+    private Map<String, List<String>> mAreaDatasMap = new HashMap<String, List<String>>();
     // Scrolling flag
     private boolean proviceScrolling = false;
-    private boolean cityScrolling    = false;
+    private boolean cityScrolling = false;
     private AddressTextAdapter mProviceAdapter;
     private AddressTextAdapter mCityAdapter;
     private AddressTextAdapter mAreaAdapter;
     /**
      * 最大字体
      */
-    private static int maxsize = 24;
+    private static int maxsize = 15;
     /**
      * 最小字体
      */
-    private static int minsize = 14;
+    private static int minsize = 15;
 
     private int currentIndex;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,7 +74,7 @@ public class EditAddressActivity extends AppCompatActivity  implements View.OnCl
         }
         setContentView(R.layout.activity_edit_address);
         choose_address = (RelativeLayout) findViewById(R.id.choose_address);
-        text_address=(TextView)findViewById(R.id.text_address);
+        text_address = (TextView) findViewById(R.id.text_address);
         choose_address.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -95,20 +99,21 @@ public class EditAddressActivity extends AppCompatActivity  implements View.OnCl
         dialogWindow.setGravity(Gravity.BOTTOM);
         //获得窗体的属性
         WindowManager.LayoutParams lp = dialogWindow.getAttributes();
-        lp.y = 20;//设置Dialog距离底部的距离
+//        lp.y = 20;//设置Dialog距离底部的距离
         lp.width = getResources().getDisplayMetrics().widthPixels;
-        lp.height = getResources().getDisplayMetrics().heightPixels/2;
+        lp.height = getResources().getDisplayMetrics().heightPixels /3+80;
 //       将属性设置给窗体
         dialogWindow.setAttributes(lp);
         dialog.show();//显示对话框
     }
+
     private void initView(View inflate) {
 
-        mProvince = (WheelView)inflate. findViewById(R.id.province);
-        mCity = (WheelView)inflate. findViewById(R.id.city);
-        mArea = (WheelView)inflate. findViewById(R.id.area);
+        mProvince = (WheelView) inflate.findViewById(R.id.province);
+        mCity = (WheelView) inflate.findViewById(R.id.city);
+        mArea = (WheelView) inflate.findViewById(R.id.area);
         enable = (TextView) inflate.findViewById(R.id.enable);
-        cancel=(TextView)inflate.findViewById(R.id.cancel);
+        cancel = (TextView) inflate.findViewById(R.id.cancel);
 
     }
 
@@ -130,7 +135,7 @@ public class EditAddressActivity extends AppCompatActivity  implements View.OnCl
     private void initAddress(List<RegionJson> datas) {
 
         List<String> mProvinceList = new ArrayList<>();
-        for(RegionJson data : datas) {
+        for (RegionJson data : datas) {
 
 
             //省
@@ -138,13 +143,13 @@ public class EditAddressActivity extends AppCompatActivity  implements View.OnCl
 
             List<String> mCitysList = new ArrayList<>();
 
-            for(RegionJson.ChildEntity city : data.child) {
+            for (RegionJson.ChildEntity city : data.child) {
 
                 //市
 
                 mCitysList.add(city.name);
                 List<String> mAreaList = new ArrayList<>();
-                for(RegionJson.ChildEntity.ChildEntity2 area : city.child) {
+                for (RegionJson.ChildEntity.ChildEntity2 area : city.child) {
                     //区
 
                     mAreaList.add(area.name);
@@ -204,7 +209,6 @@ public class EditAddressActivity extends AppCompatActivity  implements View.OnCl
     }
 
 
-
     /**
      * 滚动完成时切换
      */
@@ -233,7 +237,7 @@ public class EditAddressActivity extends AppCompatActivity  implements View.OnCl
 
                 String proviceItemText = mProviceAdapter.getName(wheel.getCurrentItem());
 
-                setItemTextSize(proviceItemText,mProviceAdapter);
+                setItemTextSize(proviceItemText, mProviceAdapter);
 
 
             }
@@ -259,10 +263,9 @@ public class EditAddressActivity extends AppCompatActivity  implements View.OnCl
                 //更新省的字体
                 String cityItemText = mCityAdapter.getName(wheel.getCurrentItem());
 
-                setItemTextSize(cityItemText,mCityAdapter);
+                setItemTextSize(cityItemText, mCityAdapter);
             }
         });
-
 
 
         mArea.addScrollingListener(new OnWheelScrollListener() {
@@ -276,7 +279,7 @@ public class EditAddressActivity extends AppCompatActivity  implements View.OnCl
 
                 String areItemText = mAreaAdapter.getName(wheel.getCurrentItem());
 
-                setItemTextSize(areItemText,mAreaAdapter);
+                setItemTextSize(areItemText, mAreaAdapter);
 
             }
         });
@@ -297,14 +300,14 @@ public class EditAddressActivity extends AppCompatActivity  implements View.OnCl
             public void onChanged(WheelView wheel, int oldValue, int newValue) {
 
                 //省在滚动
-                if(proviceScrolling) {
+                if (proviceScrolling) {
                     //更新城市
                     updateCities(mCity, mCitisDatasMap.get(mProviceAdapter.getName(newValue)));
 
                     //更新省的字体
                     String proviceItemText = mProviceAdapter.getName(wheel.getCurrentItem());
 
-                    setItemTextSize(proviceItemText,mProviceAdapter);
+                    setItemTextSize(proviceItemText, mProviceAdapter);
 
 
                     //更新地区
@@ -341,12 +344,12 @@ public class EditAddressActivity extends AppCompatActivity  implements View.OnCl
             @Override
             public void onChanged(WheelView wheel, int oldValue, int newValue) {
 
-                if(cityScrolling) {
+                if (cityScrolling) {
                     updateArea(mArea, mAreaDatasMap.get(mCityAdapter.getName(newValue)));
                     //更新省的字体
                     String cityItemText = mCityAdapter.getName(wheel.getCurrentItem());
 
-                    setItemTextSize(cityItemText,mCityAdapter);
+                    setItemTextSize(cityItemText, mCityAdapter);
 
                 }
             }
@@ -363,7 +366,6 @@ public class EditAddressActivity extends AppCompatActivity  implements View.OnCl
     }
 
 
-
     private void initAreaChangeListener() {
 
         mArea.addChangingListener(new OnWheelChangedListener() {
@@ -372,18 +374,16 @@ public class EditAddressActivity extends AppCompatActivity  implements View.OnCl
 
                 String areaItemText = mAreaAdapter.getName(wheel.getCurrentItem());
 
-                setItemTextSize(areaItemText,mAreaAdapter);
+                setItemTextSize(areaItemText, mAreaAdapter);
             }
         });
 
     }
 
 
-
-
     @Override
     public void onClick(View v) {
-        switch(v.getId()) {
+        switch (v.getId()) {
             case R.id.enable:
                 getAddress();
                 dialog.dismiss();
@@ -400,8 +400,8 @@ public class EditAddressActivity extends AppCompatActivity  implements View.OnCl
     private void getAddress() {
 
         String provice = mProviceAdapter.getName(mProvince.getCurrentItem());
-        String city    = mCityAdapter.getName(mCity.getCurrentItem());
-        String area    = mAreaAdapter.getName(mArea.getCurrentItem());
+        String city = mCityAdapter.getName(mCity.getCurrentItem());
+        String area = mAreaAdapter.getName(mArea.getCurrentItem());
         text_address.setText(provice + city + area);
 //        Toast.makeText(this, " 地址 ：" + , Toast.LENGTH_SHORT).show();
 
@@ -410,17 +410,18 @@ public class EditAddressActivity extends AppCompatActivity  implements View.OnCl
 
     /**
      * 设置字体大小
+     *
      * @param currentItemText
      * @param addressTextAdapter
      */
-    private  void setItemTextSize(String currentItemText,AddressTextAdapter addressTextAdapter){
+    private void setItemTextSize(String currentItemText, AddressTextAdapter addressTextAdapter) {
         //获取所有的View
-        ArrayList<View>  arrayLists = addressTextAdapter.getTextViews();
+        ArrayList<View> arrayLists = addressTextAdapter.getTextViews();
 
         int size = arrayLists.size();
         //当前条目的内容
         String currentText;
-        for(int i = 0; i < size; i++) {
+        for (int i = 0; i < size; i++) {
             TextView textview = (TextView) arrayLists.get(i);
             currentText = textview.getText().toString().trim();
 

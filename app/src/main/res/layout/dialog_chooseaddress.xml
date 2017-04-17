@@ -37,20 +37,22 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingTop="40dp"
+        android:paddingBottom="40dp"
         android:orientation="horizontal">
-
         <kankan.wheel.widget.WheelView
             android:id="@+id/province"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:gravity="center_vertical"
             android:layout_weight="1"
             />
-
         <kankan.wheel.widget.WheelView
             android:id="@+id/city"
             android:layout_width="0dp"
+            android:gravity="center_vertical"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             />
@@ -58,6 +60,7 @@
         <kankan.wheel.widget.WheelView
             android:id="@+id/area"
             android:layout_width="0dp"
+            android:gravity="center_vertical"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             />

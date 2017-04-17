@@ -23,6 +23,7 @@ public class AddressTextAdapter extends AbstractWheelTextAdapter {
         mContext = context;
         mDatas=datas;
         setItemTextResource(R.id.tempValue);
+        this.setTextColor(0x323232);
     }
 
     @Override
