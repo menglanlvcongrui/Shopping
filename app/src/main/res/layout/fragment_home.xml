@@ -21,7 +21,7 @@
         android:padding="10dp"
         android:background="@color/redFive"
         android:layout_width="match_parent"
-        android:layout_height="60dp">
+        android:layout_height="64dp">
         <RelativeLayout
             android:layout_alignParentBottom="true"
             android:layout_width="match_parent"
@@ -30,8 +30,6 @@
                 android:layout_width="wrap_content"
                 android:layout_centerInParent="true"
                 android:src="@mipmap/together_circle_buy"
-                android:textSize="@dimen/text_size_one"
-                android:textColor="@color/white"
                 android:layout_height="wrap_content" />
         </RelativeLayout>
     </RelativeLayout>
@@ -62,21 +60,20 @@
                     <!-- 内部的小圆点动态代码添加,根据实际的图片源 -->
                 </LinearLayout>
             </FrameLayout>
-            <View
-                android:background="@color/grayFive"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:orientation="vertical"
+                android:background="@color/white"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginLeft="12dp"
                 android:layout_height="wrap_content">
                 <RelativeLayout
-                    android:layout_margin="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <TextView
                         android:text="推荐"
-                        android:textSize="@dimen/text_size_three"
+                        android:textSize="@dimen/text_size_two"
                         android:layout_width="wrap_content"
                         android:textColor="@color/Treeblack"
                         android:layout_height="wrap_content" />
@@ -90,6 +87,7 @@
                         android:layout_height="wrap_content" />
                 </RelativeLayout>
                 <LinearLayout
+                    android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
@@ -123,6 +121,7 @@
                             android:layout_height="wrap_content" />
                     </LinearLayout>
                     <LinearLayout
+                        android:layout_marginLeft="3dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:orientation="vertical"
@@ -151,6 +150,7 @@
                             android:layout_height="wrap_content" />
                     </LinearLayout>
                     <LinearLayout
+                        android:layout_marginLeft="3dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:orientation="vertical"
@@ -179,6 +179,7 @@
                             android:layout_height="wrap_content" />
                     </LinearLayout>
                     <LinearLayout
+                        android:layout_marginLeft="3dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:orientation="vertical"
@@ -207,23 +208,27 @@
                             android:layout_height="wrap_content" />
                     </LinearLayout>
                 </LinearLayout>
-                <View
-                    android:layout_width="match_parent"
-                    android:background="@color/grayFive"
-                    android:layout_height="5dp"/>
             </LinearLayout>
+            <View
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:background="@color/grayFive"
+                android:layout_height="5dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:orientation="vertical"
+                android:background="@color/white"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginLeft="12dp"
                 android:layout_height="wrap_content">
                 <RelativeLayout
-                    android:layout_margin="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <TextView
                         android:text="最新商品"
-                        android:textSize="@dimen/text_size_three"
+                        android:textSize="@dimen/text_size_two"
                         android:layout_width="wrap_content"
                         android:textColor="@color/Treeblack"
                         android:layout_height="wrap_content" />
@@ -237,6 +242,7 @@
                         android:layout_height="wrap_content" />
                 </RelativeLayout>
                 <LinearLayout
+                    android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
@@ -253,7 +259,7 @@
                             android:layout_height="wrap_content" />
                         <TextView
                             android:layout_marginTop="5dp"
-                            android:text="达人精选"
+                            android:text="奢品大牌"
                             android:textStyle="bold"
                             android:textSize="@dimen/text_size_four"
                             android:textColor="@color/Treeblack"
@@ -270,6 +276,7 @@
                             android:layout_height="wrap_content" />
                     </LinearLayout>
                     <LinearLayout
+                        android:layout_marginLeft="3dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:orientation="vertical"
@@ -281,7 +288,7 @@
                             android:layout_height="wrap_content" />
                         <TextView
                             android:layout_marginTop="5dp"
-                            android:text="达人精选"
+                            android:text="奢品大牌"
                             android:textStyle="bold"
                             android:textSize="@dimen/text_size_four"
                             android:textColor="@color/Treeblack"
@@ -298,6 +305,7 @@
                             android:layout_height="wrap_content" />
                     </LinearLayout>
                     <LinearLayout
+                        android:layout_marginLeft="3dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:orientation="vertical"
@@ -309,7 +317,7 @@
                             android:layout_height="wrap_content" />
                         <TextView
                             android:layout_marginTop="5dp"
-                            android:text="达人精选"
+                            android:text="奢品大牌"
                             android:textStyle="bold"
                             android:textSize="@dimen/text_size_four"
                             android:textColor="@color/Treeblack"
@@ -326,6 +334,7 @@
                             android:layout_height="wrap_content" />
                     </LinearLayout>
                     <LinearLayout
+                        android:layout_marginLeft="3dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:orientation="vertical"
@@ -337,7 +346,7 @@
                             android:layout_height="wrap_content" />
                         <TextView
                             android:layout_marginTop="5dp"
-                            android:text="达人精选"
+                            android:text="奢品大牌"
                             android:textStyle="bold"
                             android:textSize="@dimen/text_size_four"
                             android:textColor="@color/Treeblack"
@@ -354,22 +363,26 @@
                             android:layout_height="wrap_content" />
                     </LinearLayout>
                 </LinearLayout>
-                <View
-                    android:layout_width="match_parent"
-                    android:background="@color/grayFive"
-                    android:layout_height="5dp"/>
             </LinearLayout>
+            <View
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:background="@color/grayFive"
+                android:layout_height="5dp"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:orientation="vertical"
+                android:background="@color/white"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginLeft="12dp"
                 android:layout_height="wrap_content">
                 <RelativeLayout
-                    android:layout_margin="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <TextView
                         android:text="最近浏览"
-                        android:textSize="@dimen/text_size_three"
+                        android:textSize="@dimen/text_size_two"
                         android:layout_width="wrap_content"
                         android:textColor="@color/Treeblack"
                         android:layout_height="wrap_content" />
@@ -383,6 +396,7 @@
                         android:layout_height="wrap_content" />
                 </RelativeLayout>
                 <LinearLayout
+                    android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
@@ -408,7 +422,7 @@
                             android:layout_height="wrap_content" />
                         <TextView
                             android:layout_marginTop="3dp"
-                            android:text="满1000减100"
+                            android:text="潮流设计精选"
                             android:textSize="@dimen/text_size_four"
                             android:textColor="@color/grayten"
                             android:layout_gravity="center"
@@ -416,6 +430,7 @@
                             android:layout_height="wrap_content" />
                     </LinearLayout>
                     <LinearLayout
+                        android:layout_marginLeft="3dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:orientation="vertical"
@@ -444,6 +459,7 @@
                             android:layout_height="wrap_content" />
                     </LinearLayout>
                     <LinearLayout
+                        android:layout_marginLeft="3dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:orientation="vertical"
@@ -464,7 +480,7 @@
                             android:layout_height="wrap_content" />
                         <TextView
                             android:layout_marginTop="3dp"
-                            android:text="满1000减100"
+                            android:text="潮流设计精选"
                             android:textSize="@dimen/text_size_four"
                             android:textColor="@color/grayten"
                             android:layout_gravity="center"
@@ -472,6 +488,7 @@
                             android:layout_height="wrap_content" />
                     </LinearLayout>
                     <LinearLayout
+                        android:layout_marginLeft="3dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:orientation="vertical"
@@ -492,7 +509,7 @@
                             android:layout_height="wrap_content" />
                         <TextView
                             android:layout_marginTop="3dp"
-                            android:text="满1000减100"
+                            android:text="潮流设计精选"
                             android:textSize="@dimen/text_size_four"
                             android:textColor="@color/grayten"
                             android:layout_gravity="center"
@@ -500,13 +517,13 @@
                             android:layout_height="wrap_content" />
                     </LinearLayout>
                 </LinearLayout>
-                <View
-                    android:layout_width="match_parent"
-                    android:background="@color/grayFive"
-                    android:layout_height="5dp"/>
             </LinearLayout>
+            <View
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:background="@color/grayFive"
+                android:layout_height="5dp"/>
 
         </LinearLayout>
-
     </ScrollView>
 </LinearLayout>

@@ -21,11 +21,11 @@
     <RadioGroup
         android:id="@+id/rg_tabs"
         android:gravity="center"
+        android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="15dp"
-        android:paddingBottom="15dp"
         android:background="#ffffff"
+        android:padding="5dp"
         android:orientation="horizontal">
         <RadioButton
             android:layout_width="0dp"
