@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:padding="10dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <View
@@ -9,6 +8,8 @@
         android:layout_width="match_parent"
         android:layout_height="10dp"/>
     <LinearLayout
+        android:background="@color/white"
+        android:padding="12dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -29,14 +30,6 @@
                 android:textColor="@color/Treeblack"
                 android:padding="10dp"
                 android:text="精选进口优质原生木浆维达抽纸盒装"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <TextView
-                android:id="@+id/tv2"
-                android:textSize="@dimen/text_size_three"
-                android:padding="10dp"
-                android:text="超韧细密湿氺不破130抽不破"
-                android:textColor="@color/Treeblack"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <RelativeLayout
@@ -79,14 +72,18 @@
     <View
         android:background="@color/grayTwelve"
         android:layout_width="match_parent"
+        android:layout_marginRight="12dp"
+        android:layout_marginLeft="12dp"
         android:layout_height="1dp"/>
 <RelativeLayout
-    android:layout_marginTop="5dp"
+    android:background="@color/white"
+   android:padding="12dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <LinearLayout
+        android:layout_centerVertical="true"
         android:layout_toLeftOf="@+id/tv_ti_xing_goods"
-        android:layout_marginRight="10dp"
+        android:layout_marginRight="5dp"
         android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
@@ -97,7 +94,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <TextView
-            android:layout_marginLeft="10dp"
             android:text="1"
             android:textColor="@color/Treeblack"
             android:textSize="@dimen/text_size_four"
@@ -111,12 +107,12 @@
             android:layout_height="wrap_content" />
         <TextView
             android:text="合计:"
-            android:layout_marginLeft="15dp"
+            android:layout_marginLeft="10dp"
             android:textSize="@dimen/text_size_four"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <TextView
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="5dp"
             android:text="￥"
             android:textColor="@color/redFive"
             android:textSize="@dimen/text_size_four"
@@ -130,15 +126,16 @@
             android:layout_height="wrap_content" />
     </LinearLayout>
     <TextView
+        android:padding="5dp"
         android:id="@+id/tv_ti_xing_goods"
+        android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="5dp"
         android:background="@mipmap/affirm"
         android:text="提醒发货"
         android:gravity="center"
-        android:layout_centerVertical="true"
         android:textColor="@color/yellowOne"
-        android:textSize="@dimen/text_size_four"
+        android:textSize="@dimen/text_size_five"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 </RelativeLayout>

@@ -50,7 +50,7 @@ public class MyOrderActivity extends AppCompatActivity implements View.OnClickLi
         // 使用ViewPager的适配器
         tabs.setTabsFromPagerAdapter(adapter);
         //tabs.setSelectedTabIndicatorColor(Color.BLUE);//下划线的颜色
-        tabs.setSelectedTabIndicatorHeight(2);//下划线的高度
+        tabs.setSelectedTabIndicatorHeight(4);//下划线的高度
         //tabs.setTabTextColors(Color.BLACK, Color.BLUE);//不选时是红色，选中时是蓝色
     }
     // 初始化V
