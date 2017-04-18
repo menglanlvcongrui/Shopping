@@ -3,10 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.administrator.shopping.fragment.PersonalcenterFragment">
+
     <LinearLayout
-        android:background="@null"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@null"
         android:orientation="vertical">
         <!--<TextView
         android:padding="10dp"
@@ -18,266 +19,308 @@
         android:background="@color/redFive"
         android:textColor="@color/white"
         android:text="个人中心" />-->
-       <!-- <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:background="@color/redFive">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_gravity="bottom"
-                android:layout_marginBottom="10dp"
-                android:gravity="center_horizontal"
-                android:text="个人中心"
+        <!-- <RelativeLayout
+             android:layout_width="match_parent"
+             android:layout_height="80dp"
+             android:background="@color/redFive">
+             <TextView
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_alignParentBottom="true"
+                 android:layout_gravity="bottom"
+                 android:layout_marginBottom="10dp"
+                 android:gravity="center_horizontal"
+                 android:text="个人中心"
 
-                android:textColor="@color/white"
-                android:textSize="@dimen/text_size_one" />
-        </RelativeLayout>-->
+                 android:textColor="@color/white"
+                 android:textSize="@dimen/text_size_one" />
+         </RelativeLayout>-->
         <RelativeLayout
-            android:padding="10dp"
-            android:background="@color/redFive"
             android:layout_width="match_parent"
-            android:layout_height="64dp">
+            android:layout_height="64dp"
+            android:background="@color/redFive"
+            android:padding="10dp">
 
             <RelativeLayout
-                android:layout_alignParentBottom="true"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true">
+
                 <TextView
-                    android:gravity="center_vertical"
                     android:layout_width="wrap_content"
-                    android:text="个人中心"
+                    android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:textSize="@dimen/text_size_one"
+                    android:gravity="center_vertical"
+                    android:text="个人中心"
                     android:textColor="@color/white"
 
-                    android:layout_height="wrap_content" />
+                    android:textSize="@dimen/text_size_one" />
             </RelativeLayout>
         </RelativeLayout>
-        <RelativeLayout
+
+        <com.example.administrator.shopping.view.MyScrollView
+            android:layout_width="match_parent"
             android:background="@color/grayFive"
-            android:layout_width="match_parent"
-            android:layout_height="135dp">
-            <ImageView
-                android:id="@+id/head_change"
-               android:layout_centerInParent="true"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:src="@mipmap/head" />
-        </RelativeLayout>
-        <RelativeLayout
-            android:id="@+id/my_order"
-            android:background="@color/white"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="12dp">
-            <ImageView
-                android:id="@+id/tv_my_order"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/my_order" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="8dp"
-                android:layout_toRightOf="@+id/tv_my_order"
-                android:gravity="center"
-                android:text="我的订单"
-                android:textSize="@dimen/text_size_three"
-                android:textColor="@color/Treeblack"
-                />
-            <ImageView
-                android:padding="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:src="@mipmap/personal_center_expandand" />
-
-
-        </RelativeLayout>
-        <View
-            android:layout_marginLeft="44dp"
-            android:layout_marginRight="16dp"
-            android:background="@color/grayTwelve"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"/>
-        <RelativeLayout
-            android:id="@+id/goods_address"
-            android:background="@color/white"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="12dp">
-            <ImageView
-                android:id="@+id/tv_goods_address"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/goods_address" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="8dp"
-                android:layout_toRightOf="@+id/tv_goods_address"
-                android:gravity="center"
-                android:text="收货地址"
-                android:textSize="@dimen/text_size_three"
-                android:textColor="@color/Treeblack" />
-            <ImageView
-                android:padding="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:src="@mipmap/personal_center_expandand" />
-        </RelativeLayout>
-        <View
-            android:background="@color/grayTwelve"
-            android:layout_width="match_parent"
-            android:layout_height="10dp"/>
-        <RelativeLayout
-            android:id="@+id/reset_password"
-            android:background="@color/white"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="12dp">
-            <ImageView
-                android:id="@+id/tv_reset_password"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/reset_password" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="8dp"
-                android:layout_toRightOf="@+id/tv_reset_password"
-                android:gravity="center"
-                android:text="重置密码"
-                android:textSize="@dimen/text_size_three"
-                android:textColor="@color/Treeblack"
-                 />
-            <ImageView
-                android:padding="5dp"
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:src="@mipmap/personal_center_expandand" />
-        </RelativeLayout>
-        <View
-            android:layout_marginLeft="44dp"
-            android:layout_marginRight="16dp"
-            android:background="@color/grayTwelve"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"/>
-        <RelativeLayout
-            android:id="@+id/user_agreement"
-            android:background="@color/white"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="12dp">
-            <ImageView
-                android:id="@+id/tv_user_agreement"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/user_agreement" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="8dp"
-                android:layout_toRightOf="@+id/tv_user_agreement"
-                android:gravity="center"
-                android:text="用户协议"
-                android:textSize="@dimen/text_size_three"
-                android:textColor="@color/Treeblack" />
-            <ImageView
-                android:padding="5dp"
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:src="@mipmap/personal_center_expandand" />
-        </RelativeLayout>
-        <View
-            android:background="@color/grayTwelve"
-            android:layout_width="match_parent"
-            android:layout_height="10dp"/>
-        <RelativeLayout
-            android:id="@+id/clear_cache"
-            android:background="@color/white"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="12dp">
-            <ImageView
-                android:id="@+id/tv_clear_cache"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/clear_cache" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="8dp"
-                android:layout_toRightOf="@+id/tv_clear_cache"
-                android:gravity="center"
-                android:text="清理缓存"
-                android:textSize="@dimen/text_size_three"
-                android:textColor="@color/Treeblack" />
-            <ImageView
-                android:padding="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:src="@mipmap/personal_center_expandand" />
-        </RelativeLayout>
-        <View
-            android:layout_marginLeft="44dp"
-            android:layout_marginRight="16dp"
-            android:background="@color/grayTwelve"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"/>
-        <RelativeLayout
-            android:id="@+id/esc"
-            android:background="@color/white"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="12dp">
-
-            <ImageView
-                android:id="@+id/tv_esc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/esc" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="8dp"
-                android:layout_toRightOf="@+id/tv_esc"
-                android:gravity="center"
-                android:text="退出账户"
-                android:textSize="@dimen/text_size_three"
-                android:textColor="@color/Treeblack" />
-            <ImageView
-                android:padding="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:src="@mipmap/personal_center_expandand" />
-        </RelativeLayout>
-        <View
-            android:background="@color/grayFive"
-            android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1">
-        </View>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="135dp"
+                    android:background="@color/grayFive">
+
+                    <ImageView
+                        android:id="@+id/head_change"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_centerInParent="true"
+                        android:src="@mipmap/head" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/my_order"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:id="@+id/tv_my_order"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/my_order" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="8dp"
+                        android:layout_toRightOf="@+id/tv_my_order"
+                        android:gravity="center"
+                        android:text="我的订单"
+                        android:textColor="@color/Treeblack"
+                        android:textSize="@dimen/text_size_three" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:padding="5dp"
+                        android:src="@mipmap/personal_center_expandand" />
+
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="44dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@color/grayTwelve" />
+
+                <RelativeLayout
+                    android:id="@+id/goods_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:id="@+id/tv_goods_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/goods_address" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="8dp"
+                        android:layout_toRightOf="@+id/tv_goods_address"
+                        android:gravity="center"
+                        android:text="收货地址"
+                        android:textColor="@color/Treeblack"
+                        android:textSize="@dimen/text_size_three" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:padding="5dp"
+                        android:src="@mipmap/personal_center_expandand" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/grayTwelve" />
+
+                <RelativeLayout
+                    android:id="@+id/reset_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:id="@+id/tv_reset_password"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/reset_password" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="8dp"
+                        android:layout_toRightOf="@+id/tv_reset_password"
+                        android:gravity="center"
+                        android:text="重置密码"
+                        android:textColor="@color/Treeblack"
+                        android:textSize="@dimen/text_size_three" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:padding="5dp"
+                        android:src="@mipmap/personal_center_expandand" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="44dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@color/grayTwelve" />
+
+                <RelativeLayout
+                    android:id="@+id/user_agreement"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:id="@+id/tv_user_agreement"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/user_agreement" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="8dp"
+                        android:layout_toRightOf="@+id/tv_user_agreement"
+                        android:gravity="center"
+                        android:text="用户协议"
+                        android:textColor="@color/Treeblack"
+                        android:textSize="@dimen/text_size_three" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:padding="5dp"
+                        android:src="@mipmap/personal_center_expandand" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/grayTwelve" />
+
+                <RelativeLayout
+                    android:id="@+id/clear_cache"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:id="@+id/tv_clear_cache"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/clear_cache" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="8dp"
+                        android:layout_toRightOf="@+id/tv_clear_cache"
+                        android:gravity="center"
+                        android:text="清理缓存"
+                        android:textColor="@color/Treeblack"
+                        android:textSize="@dimen/text_size_three" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:padding="5dp"
+                        android:src="@mipmap/personal_center_expandand" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="44dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@color/grayTwelve" />
+
+                <RelativeLayout
+                    android:id="@+id/esc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:id="@+id/tv_esc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/esc" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="8dp"
+                        android:layout_toRightOf="@+id/tv_esc"
+                        android:gravity="center"
+                        android:text="退出账户"
+                        android:textColor="@color/Treeblack"
+                        android:textSize="@dimen/text_size_three" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:padding="5dp"
+                        android:src="@mipmap/personal_center_expandand" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/grayFive"></View>
+            </LinearLayout>
+        </com.example.administrator.shopping.view.MyScrollView>
     </LinearLayout>
 </FrameLayout>
