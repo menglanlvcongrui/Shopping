@@ -38,7 +38,6 @@
         <activity android:name=".activity.MyOrderActivity" />
         <activity android:name=".activity.ResetPasswordActivity" />
         <activity android:name=".activity.ClearCacheActivity" />
-        <activity android:name=".activity.EscActivity" />
         <activity android:name=".activity.HomeTheLatestGoodsActivity" />
         <activity android:name=".activity.HomeTheLatestLookActivity"></activity><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
