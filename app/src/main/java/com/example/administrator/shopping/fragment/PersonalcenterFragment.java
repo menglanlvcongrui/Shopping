@@ -52,7 +52,12 @@ public class PersonalcenterFragment extends Fragment implements View.OnClickList
     private RelativeLayout esc;
     TextView photo, picture, cancel;
     ImageView head_change;
-
+    CleanDialog cleanDialog;
+    ExitDialog exitDialog;
+    Dialog headDialog;
+    Intent intent = null;
+    private Bitmap head;// 头像Bitmap
+    private static String path = "/sdcard/TongGou/";// sd路径
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -63,13 +68,8 @@ public class PersonalcenterFragment extends Fragment implements View.OnClickList
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        my_order = (RelativeLayout) view.findViewById(R.id.my_order);
-        goods_address = (RelativeLayout) view.findViewById(R.id.goods_address);
-        reset_password = (RelativeLayout) view.findViewById(R.id.reset_password);
-        user_agreement = (RelativeLayout) view.findViewById(R.id.user_agreement);
-        clear_cache = (RelativeLayout) view.findViewById(R.id.clear_cache);
-        esc = (RelativeLayout) view.findViewById(R.id.esc);
-        head_change = (ImageView) view.findViewById(R.id.head_change);
+        initView(view);
+        initListener();
         Bitmap bt = BitmapFactory.decodeFile(path + "head.jpg");// 从Sd中找头像，转换成Bitmap
         if (bt != null) {
             Drawable drawable = new BitmapDrawable(toRoundBitmap(bt));// 转换成drawable
@@ -81,6 +81,8 @@ public class PersonalcenterFragment extends Fragment implements View.OnClickList
              */
         }
 
+    }
+    private void initListener() {
         head_change.setOnClickListener(this);
         my_order.setOnClickListener(this);
         goods_address.setOnClickListener(this);
@@ -90,13 +92,15 @@ public class PersonalcenterFragment extends Fragment implements View.OnClickList
         esc.setOnClickListener(this);
     }
 
-    CleanDialog cleanDialog;
-    ExitDialog exitDialog;
-    Dialog headDialog;
-    Intent intent = null;
-    private Bitmap head;// 头像Bitmap
-    private static String path = "/sdcard/TongGou/";// sd路径
-
+    private void initView(View view) {
+        my_order = (RelativeLayout) view.findViewById(R.id.my_order);
+        goods_address = (RelativeLayout) view.findViewById(R.id.goods_address);
+        reset_password = (RelativeLayout) view.findViewById(R.id.reset_password);
+        user_agreement = (RelativeLayout) view.findViewById(R.id.user_agreement);
+        clear_cache = (RelativeLayout) view.findViewById(R.id.clear_cache);
+        esc = (RelativeLayout) view.findViewById(R.id.esc);
+        head_change = (ImageView) view.findViewById(R.id.head_change);
+    }
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -151,14 +155,12 @@ public class PersonalcenterFragment extends Fragment implements View.OnClickList
                 if (resultCode == RESULT_OK) {
                     cropPhoto(data.getData());// 裁剪图片
                 }
-
                 break;
             case 2:
                 if (resultCode == RESULT_OK) {
                     File temp = new File(Environment.getExternalStorageDirectory() + "/head.jpg");
                     cropPhoto(Uri.fromFile(temp));// 裁剪图片
                 }
-
                 break;
             case 3:
                 if (data != null) {
