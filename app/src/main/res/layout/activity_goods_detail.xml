@@ -4,19 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/white"
+    android:orientation="vertical"
     tools:context="com.example.administrator.shopping.activity.GoodsDetailActivity">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:background="@color/redFive"
         android:padding="12dp">
+
         <ImageView
-            android:layout_centerVertical="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:src="@mipmap/back" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -24,41 +27,54 @@
             android:text="商品详情"
             android:textColor="@color/white"
             android:textSize="@dimen/text_size_one" />
+
         <FrameLayout
-            android:layout_centerVertical="true"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true">
-            <TextView
-                android:layout_marginLeft="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@mipmap/shopping_cart_count"
-                android:text="3"
-                android:textSize="@dimen/text_size_five"
-                android:textColor="@color/redFive" />
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true">
+
             <ImageView
-                android:layout_centerVertical="true"
                 android:id="@+id/shopping_trolley"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
                 android:src="@mipmap/shopping_trolley" />
+
+            <TextView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="8dp"
+                android:background="@mipmap/shopping_cart_count"
+                android:gravity="center"
+                android:text="3"
+                android:textColor="@color/redFive"
+                android:textSize="@dimen/text_size_five" />
+
         </FrameLayout>
     </RelativeLayout>
-   <ScrollView
-       android:overScrollMode="never"
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-       android:layout_weight="1">
+        android:layout_weight="1"
+        android:overScrollMode="never">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-             <ImageView
-                android:layout_marginTop="10dp"
-                android:src="@mipmap/details_picture"
+
+            <ImageView
+                android:layout_marginRight="12dp"
+                android:layout_marginLeft="12dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:src="@mipmap/details_picture" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -68,262 +84,286 @@
                 android:text="韩国直邮KOLCA1992ALVERTVILLE男女共用休闲鞋（预定款）"
                 android:textColor="@color/Treeblack"
                 android:textSize="@dimen/text_size_four" />
+
             <LinearLayout
-                android:paddingTop="6dp"
-                android:paddingLeft="12dp"
-                android:paddingBottom="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/grayFive"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingLeft="12dp"
+                android:paddingTop="6dp">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="￥"
                     android:textColor="@color/redFive" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="499"
                     android:textColor="@color/redFive" />
             </LinearLayout>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="12dp"
                 android:paddingTop="15dp"
                 android:text="颜色分类"
-               android:textColor="@color/Treeblack"
+                android:textColor="@color/Treeblack"
                 android:textSize="@dimen/text_size_four" />
+
             <RadioGroup
-                android:paddingRight="12dp"
-                android:paddingLeft="12dp"
                 android:id="@+id/rg_tabs"
-                android:paddingTop="10dp"
-                android:gravity="center"
-                android:layout_gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:background="#ffffff"
-                android:orientation="horizontal">
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:paddingTop="10dp">
+
                 <RadioButton
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:button="@null"
-                    android:textSize="@dimen/text_size_five"
                     android:background="@drawable/goods_detail_selector"
-                    android:textColor="@color/goods_detail_letter_color_selector"
+                    android:button="@null"
                     android:gravity="center"
-                    android:text="黑色"/>
+                    android:text="黑色"
+                    android:textColor="@color/goods_detail_letter_color_selector"
+                    android:textSize="@dimen/text_size_five" />
+
                 <RadioButton
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:button="@null"
-                    android:textSize="@dimen/text_size_five"
                     android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/goods_detail_selector"
-                    android:textColor="@color/goods_detail_letter_color_selector"
+                    android:button="@null"
                     android:gravity="center"
-                    android:text="白色"/>
+                    android:text="白色"
+                    android:textColor="@color/goods_detail_letter_color_selector"
+                    android:textSize="@dimen/text_size_five" />
+
                 <RadioButton
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:button="@null"
-                    android:textSize="@dimen/text_size_five"
                     android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/goods_detail_selector"
-                    android:textColor="@color/goods_detail_letter_color_selector"
+                    android:button="@null"
                     android:gravity="center"
-                    android:text="黄色"/>
+                    android:text="黄色"
+                    android:textColor="@color/goods_detail_letter_color_selector"
+                    android:textSize="@dimen/text_size_five" />
+
                 <RadioButton
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:button="@null"
-                    android:textSize="@dimen/text_size_five"
                     android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/goods_detail_selector"
-                    android:textColor="@color/goods_detail_letter_color_selector"
+                    android:button="@null"
                     android:gravity="center"
-                    android:text="蓝色"/>
+                    android:text="蓝色"
+                    android:textColor="@color/goods_detail_letter_color_selector"
+                    android:textSize="@dimen/text_size_five" />
+
+                <RadioButton
+                    android:id="@+id/radioButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/goods_detail_selector"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="红色"
+                    android:textColor="@color/goods_detail_letter_color_selector"
+                    android:textSize="@dimen/text_size_five" />
+
                 <RadioButton
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:button="@null"
-                    android:textSize="@dimen/text_size_five"
                     android:layout_marginLeft="10dp"
-                    android:background="@drawable/goods_detail_selector"
-                    android:textColor="@color/goods_detail_letter_color_selector"
-                    android:gravity="center"
-                    android:text="红色"/>
-                <RadioButton
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:button="@null"
-                    android:textSize="@dimen/text_size_five"
-                    android:layout_marginLeft="10dp"
                     android:background="@drawable/goods_detail_selector"
-                    android:textColor="@color/goods_detail_letter_color_selector"
+                    android:button="@null"
                     android:gravity="center"
-                    android:text="粉色"/>
+                    android:text="粉色"
+                    android:textColor="@color/goods_detail_letter_color_selector"
+                    android:textSize="@dimen/text_size_five" />
             </RadioGroup>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingTop="15dp"
                 android:paddingLeft="12dp"
+                android:paddingTop="15dp"
                 android:text="大小尺码"
                 android:textColor="@color/Treeblack"
-                android:textSize="@dimen/text_size_four"  />
+                android:textSize="@dimen/text_size_four" />
 
             <RadioGroup
-                android:paddingTop="10dp"
-                android:gravity="center"
-                android:layout_gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:background="#ffffff"
+                android:gravity="center"
+                android:orientation="horizontal"
                 android:paddingLeft="12dp"
-                android:orientation="horizontal">
+                android:paddingTop="10dp">
+
                 <RadioButton
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:button="@null"
-                    android:textSize="@dimen/text_size_five"
                     android:background="@drawable/goods_detail_selector"
-                    android:textColor="@color/goods_detail_letter_color_selector"
+                    android:button="@null"
                     android:gravity="center"
-                    android:text="35码"/>
+                    android:text="35码"
+                    android:textColor="@color/goods_detail_letter_color_selector"
+                    android:textSize="@dimen/text_size_five" />
+
                 <RadioButton
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:button="@null"
-                    android:textSize="@dimen/text_size_five"
                     android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/goods_detail_selector"
-                    android:textColor="@color/goods_detail_letter_color_selector"
+                    android:button="@null"
                     android:gravity="center"
-                    android:text="36码"/>
+                    android:text="36码"
+                    android:textColor="@color/goods_detail_letter_color_selector"
+                    android:textSize="@dimen/text_size_five" />
+
                 <RadioButton
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:button="@null"
-                    android:textSize="@dimen/text_size_five"
                     android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/goods_detail_selector"
-                    android:textColor="@color/goods_detail_letter_color_selector"
+                    android:button="@null"
                     android:gravity="center"
-                    android:text="37码"/>
+                    android:text="37码"
+                    android:textColor="@color/goods_detail_letter_color_selector"
+                    android:textSize="@dimen/text_size_five" />
+
                 <RadioButton
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:button="@null"
-                    android:textSize="@dimen/text_size_five"
                     android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/goods_detail_selector"
-                    android:textColor="@color/goods_detail_letter_color_selector"
+                    android:button="@null"
                     android:gravity="center"
-                    android:text="38码"/>
+                    android:text="38码"
+                    android:textColor="@color/goods_detail_letter_color_selector"
+                    android:textSize="@dimen/text_size_five" />
+
                 <RadioButton
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:button="@null"
                     android:layout_marginLeft="10dp"
-                    android:textSize="@dimen/text_size_five"
+                    android:layout_weight="1"
                     android:background="@drawable/goods_detail_selector"
-                    android:textColor="@color/goods_detail_letter_color_selector"
+                    android:button="@null"
                     android:gravity="center"
-                    android:text="39码"/>
+                    android:text="39码"
+                    android:textColor="@color/goods_detail_letter_color_selector"
+                    android:textSize="@dimen/text_size_five" />
+
                 <RadioButton
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
                     android:layout_weight="1"
                     android:button="@null"
-                    android:layout_marginLeft="10dp"
-                    android:textSize="@dimen/text_size_five"
-                    android:gravity="center" />
+                    android:gravity="center"
+                    android:textSize="@dimen/text_size_five" />
             </RadioGroup>
+
             <View
-                android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="10dp"
+                android:layout_marginTop="15dp"
                 android:background="@color/grayFive" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:paddingLeft="12dp"
                 android:paddingRight="12dp">
+
                 <TextView
-                    android:layout_marginTop="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:text="商品产地：浙江杭州"
                     android:textColor="@color/Treeblack"
                     android:textSize="@dimen/text_size_four" />
+
                 <TextView
-                    android:layout_marginTop="12dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
                     android:text="商品品牌：齐腾"
                     android:textColor="@color/Treeblack"
                     android:textSize="@dimen/text_size_four" />
+
                 <TextView
-                    android:layout_marginTop="12dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
                     android:text="款式定位：经济型"
                     android:textColor="@color/Treeblack"
-                    android:textSize="@dimen/text_size_four"
-                     />
+                    android:textSize="@dimen/text_size_four" />
+
                 <TextView
-                    android:layout_marginTop="12dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
                     android:text="材质面料：涤纶/纯棉"
                     android:textColor="@color/Treeblack"
-                    android:textSize="@dimen/text_size_four"
-                     />
+                    android:textSize="@dimen/text_size_four" />
+
                 <TextView
-                    android:layout_marginTop="12dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
                     android:text="使用对象：青少年"
                     android:textColor="@color/Treeblack"
-                    android:textSize="@dimen/text_size_four"
-                    />
+                    android:textSize="@dimen/text_size_four" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+
     <RelativeLayout
-        android:layout_gravity="bottom"
-        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="100dp"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="10dp"
         android:background="@color/grayFive">
+
         <TextView
-            android:layout_marginLeft="12dp"
-            android:layout_marginRight="12dp"
-            android:layout_centerVertical="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_gravity="center"
             android:layout_marginBottom="15dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
             android:background="@mipmap/add_shopping_cart_button"
             android:gravity="center"
             android:text="加入购物车"
-            android:textSize="@dimen/text_size_two"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_two" />
     </RelativeLayout>
 </LinearLayout>
