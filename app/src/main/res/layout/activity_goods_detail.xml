@@ -24,7 +24,7 @@
             android:text="商品详情"
             android:textColor="@color/white"
             android:textSize="@dimen/text_size_one" />
-        <RelativeLayout
+        <FrameLayout
             android:layout_centerVertical="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -35,13 +35,15 @@
                 android:layout_height="wrap_content"
                 android:background="@mipmap/shopping_cart_count"
                 android:text="3"
+                android:textSize="@dimen/text_size_five"
                 android:textColor="@color/redFive" />
             <ImageView
+                android:layout_centerVertical="true"
                 android:id="@+id/shopping_trolley"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@mipmap/shopping_trolley" />
-        </RelativeLayout>
+        </FrameLayout>
     </RelativeLayout>
     <ScrollView
         android:layout_width="match_parent"
@@ -102,7 +104,8 @@
                     android:layout_weight="1"
                     android:button="@null"
                     android:textSize="@dimen/text_size_five"
-                    android:textColor="@color/color_selector"
+                    android:background="@drawable/goods_detail_selector"
+                    android:textColor="@color/goods_detail_letter_color_selector"
                     android:gravity="center"
                     android:text="黑色"/>
                 <RadioButton
@@ -111,7 +114,9 @@
                     android:layout_weight="1"
                     android:button="@null"
                     android:textSize="@dimen/text_size_five"
-                    android:textColor="@color/color_selector"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/goods_detail_selector"
+                    android:textColor="@color/goods_detail_letter_color_selector"
                     android:gravity="center"
                     android:text="白色"/>
                 <RadioButton
@@ -120,7 +125,9 @@
                     android:layout_weight="1"
                     android:button="@null"
                     android:textSize="@dimen/text_size_five"
-                    android:textColor="@color/color_selector"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/goods_detail_selector"
+                    android:textColor="@color/goods_detail_letter_color_selector"
                     android:gravity="center"
                     android:text="黄色"/>
                 <RadioButton
@@ -129,7 +136,9 @@
                     android:layout_weight="1"
                     android:button="@null"
                     android:textSize="@dimen/text_size_five"
-                    android:textColor="@color/color_selector"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/goods_detail_selector"
+                    android:textColor="@color/goods_detail_letter_color_selector"
                     android:gravity="center"
                     android:text="蓝色"/>
                 <RadioButton
@@ -138,7 +147,9 @@
                     android:layout_weight="1"
                     android:button="@null"
                     android:textSize="@dimen/text_size_five"
-                    android:textColor="@color/color_selector"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/goods_detail_selector"
+                    android:textColor="@color/goods_detail_letter_color_selector"
                     android:gravity="center"
                     android:text="红色"/>
                 <RadioButton
@@ -147,7 +158,9 @@
                     android:layout_weight="1"
                     android:button="@null"
                     android:textSize="@dimen/text_size_five"
-                    android:textColor="@color/color_selector"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/goods_detail_selector"
+                    android:textColor="@color/goods_detail_letter_color_selector"
                     android:gravity="center"
                     android:text="粉色"/>
             </RadioGroup>
@@ -174,7 +187,8 @@
                     android:layout_weight="1"
                     android:button="@null"
                     android:textSize="@dimen/text_size_five"
-                    android:textColor="@color/color_selector"
+                    android:background="@drawable/goods_detail_selector"
+                    android:textColor="@color/goods_detail_letter_color_selector"
                     android:gravity="center"
                     android:text="35码"/>
                 <RadioButton
@@ -183,7 +197,9 @@
                     android:layout_weight="1"
                     android:button="@null"
                     android:textSize="@dimen/text_size_five"
-                    android:textColor="@color/color_selector"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/goods_detail_selector"
+                    android:textColor="@color/goods_detail_letter_color_selector"
                     android:gravity="center"
                     android:text="36码"/>
                 <RadioButton
@@ -192,7 +208,9 @@
                     android:layout_weight="1"
                     android:button="@null"
                     android:textSize="@dimen/text_size_five"
-                    android:textColor="@color/color_selector"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/goods_detail_selector"
+                    android:textColor="@color/goods_detail_letter_color_selector"
                     android:gravity="center"
                     android:text="37码"/>
                 <RadioButton
@@ -201,7 +219,9 @@
                     android:layout_weight="1"
                     android:button="@null"
                     android:textSize="@dimen/text_size_five"
-                    android:textColor="@color/color_selector"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/goods_detail_selector"
+                    android:textColor="@color/goods_detail_letter_color_selector"
                     android:gravity="center"
                     android:text="38码"/>
                 <RadioButton
@@ -209,12 +229,15 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:button="@null"
+                    android:layout_marginLeft="10dp"
                     android:textSize="@dimen/text_size_five"
-                    android:textColor="@color/color_selector"
+                    android:background="@drawable/goods_detail_selector"
+                    android:textColor="@color/goods_detail_letter_color_selector"
                     android:gravity="center"
                     android:text="39码"/>
             </RadioGroup>
             <View
+                android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="10dp"
                 android:background="@color/grayFive" />
@@ -269,10 +292,12 @@
                 android:layout_weight="1"
                 android:background="@color/grayFive">
                 <TextView
+                    android:layout_marginTop="30dp"
                     android:layout_centerInParent="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:layout_marginBottom="15dp"
                     android:background="@mipmap/add_shopping_cart_button"
                     android:gravity="center"
                     android:text="加入购物车"

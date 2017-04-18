@@ -110,8 +110,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
-                    android:background="@drawable/recommend_high"
-                    android:button="@null"
+                    android:button="@drawable/recommend_high"
+                    android:background="@null"
                     android:checked="true"
                     android:gravity="center" />
 
@@ -119,8 +119,8 @@
                     android:id="@+id/button2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/recommend_low"
-                    android:button="@null" />
+                    android:background="@null"
+                    android:button="@drawable/recommend_low" />
             </RadioGroup>
         </LinearLayout>
     </RelativeLayout>
