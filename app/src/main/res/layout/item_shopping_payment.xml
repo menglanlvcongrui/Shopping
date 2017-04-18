@@ -4,76 +4,94 @@
     android:layout_height="100dp"
     android:background="@color/white"
     android:minHeight="100dp"
-    android:orientation="horizontal">
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:orientation="horizontal">
-        <ImageView
-            android:layout_marginLeft="12dp"
-            android:layout_marginRight="10dp"
-            android:layout_width="120dp"
-            android:layout_height="80dp"
-            android:layout_gravity="center_vertical"
-            android:src="@mipmap/circle_display_picture" />
+
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:paddingTop="10dp">
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="10dp"
+                android:src="@mipmap/circle_display_picture" />
+
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1">
-                <TextView
-                    android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingTop="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="12dp"
+                        android:text="精选进口优质原生木浆维达抽纸"
+                        android:textColor="@color/Treeblack"
+                        android:textSize="@dimen/text_size_two" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="12dp"
-                    android:text="精选进口优质原生木浆维达抽纸"
-                    android:textColor="@color/Treeblack"
-                    android:textSize="@dimen/text_size_two" />
+                    android:layout_marginBottom="10dp">
+
+                    <TextView
+                        android:id="@+id/money"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="￥"
+                        android:textColor="@color/redFive"
+                        android:textSize="@dimen/text_size_two" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/money"
+                        android:text="300"
+                        android:textColor="@color/redFive"
+                        android:textSize="@dimen/text_size_two" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/jian"
+                        android:text="3"
+                        android:textSize="@dimen/text_size_two" />
+
+                    <TextView
+                        android:id="@+id/jian"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="12dp"
+                        android:text="件"
+                        android:textColor="@color/Treeblack"
+                        android:textSize="@dimen/text_size_two" />
+                </RelativeLayout>
             </LinearLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp">
-
-                <TextView
-                    android:id="@+id/money"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="￥"
-                    android:textColor="@color/redFive"
-                    android:textSize="@dimen/text_size_two" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/money"
-                    android:text="300"
-                    android:textColor="@color/redFive"
-                    android:textSize="@dimen/text_size_two" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toLeftOf="@+id/jian"
-                    android:text="3"
-                    android:textSize="@dimen/text_size_two" />
-
-                <TextView
-                    android:id="@+id/jian"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="12dp"
-                    android:text="件"
-                    android:textColor="@color/Treeblack"
-                    android:textSize="@dimen/text_size_two" />
-            </RelativeLayout>
         </LinearLayout>
     </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:background="@color/grayTwelve"></View>
 </LinearLayout>
