@@ -72,6 +72,7 @@ public class PersonalcenterFragment extends Fragment implements View.OnClickList
                 startCleanDialog();
                 break;
             case R.id.esc:
+
                 startExitDialog();
                 break;
 
