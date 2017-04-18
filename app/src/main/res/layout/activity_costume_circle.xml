@@ -36,6 +36,7 @@
 
 <ScrollView
     android:overScrollMode="never"
+    android:scrollbars="none"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <LinearLayout
@@ -43,6 +44,7 @@
         android:orientation="vertical"
         android:layout_height="wrap_content">
         <LinearLayout
+            android:padding="10dp"
             android:layout_margin="12dp"
             android:background="@drawable/edittext_costume_circle"
             android:orientation="vertical"
@@ -53,13 +55,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <ImageView
-                    android:layout_marginLeft="10dp"
                     android:layout_gravity="center_vertical"
                     android:src="@mipmap/circle_details_picture"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <TextView
-                    android:layout_marginTop="13dp"
+                    android:layout_marginTop="3dp"
                     android:layout_marginLeft="10dp"
                     android:textSize="@dimen/text_size_four"
                     android:lineSpacingExtra="7dp"
@@ -68,7 +69,7 @@
                     android:layout_height="wrap_content" />
             </LinearLayout>
             <LinearLayout
-                android:layout_marginLeft="10dp"
+                android:layout_marginTop="12dp"
                 android:layout_width="match_parent"
                 android:orientation="horizontal"
                 android:layout_height="wrap_content">
@@ -95,8 +96,10 @@
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
-           android:layout_marginRight="12dp"
+            android:padding="10dp"
+            android:layout_marginBottom="12dp"
             android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
             android:background="@drawable/edittext_costume_circle"
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -106,13 +109,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <ImageView
-                    android:layout_marginLeft="10dp"
                     android:layout_gravity="center_vertical"
                     android:src="@mipmap/circle_details_picture"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <TextView
-                    android:layout_marginTop="13dp"
+                    android:layout_marginTop="3dp"
                     android:layout_marginLeft="10dp"
                     android:textSize="@dimen/text_size_four"
                     android:lineSpacingExtra="7dp"
@@ -121,7 +123,7 @@
                     android:layout_height="wrap_content" />
             </LinearLayout>
             <LinearLayout
-                android:layout_marginLeft="10dp"
+                android:layout_marginTop="12dp"
                 android:layout_width="match_parent"
                 android:orientation="horizontal"
                 android:layout_height="wrap_content">

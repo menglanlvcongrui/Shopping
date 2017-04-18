@@ -136,7 +136,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
     private void initXiaoYuanDian() {
         for (int i = 0; i < imgs.length; i++) {
             ImageView iv2 = new ImageView(getActivity());
-            ViewGroup.LayoutParams lp = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             iv2.setLayoutParams(lp);
 //设置图片源 (默认没有选中的图片,初始化时候第一张图片对应的小圆点是details_like_click_icon)
             if(i == 0){
@@ -144,6 +144,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
                 iv2.setImageResource(R.mipmap.dot_selected);
             }else {
 //构建后续ImageView使用details_like_icon的图片
+                lp.setMargins(15,0,0,0);
                 iv2.setImageResource(R.mipmap.dot);
             }
 //添加到容器中

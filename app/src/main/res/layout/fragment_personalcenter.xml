@@ -59,13 +59,15 @@
             </RelativeLayout>
         </RelativeLayout>
 
-        <com.example.administrator.shopping.view.MyScrollView
-            android:layout_width="match_parent"
+        <ScrollView
             android:background="@color/grayFive"
+            android:layout_width="match_parent"
+            android:overScrollMode="never"
             android:layout_height="0dp"
             android:layout_weight="1">
 
             <LinearLayout
+                android:background="@color/white"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
@@ -301,13 +303,16 @@
                         android:padding="5dp"
                         android:src="@mipmap/personal_center_expandand" />
                 </RelativeLayout>
-
+                <View
+                    android:background="@color/grayTwelve"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
+                    android:layout_height="100dp"
                     android:layout_weight="1"
                     android:background="@color/grayFive"></View>
             </LinearLayout>
-        </com.example.administrator.shopping.view.MyScrollView>
+        </ScrollView>
     </LinearLayout>
 </LinearLayout>
