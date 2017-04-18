@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
 import com.example.administrator.shopping.Dialog.CleanDialog;
+import com.example.administrator.shopping.Dialog.ExitDialog;
 import com.example.administrator.shopping.R;
 import com.example.administrator.shopping.activity.LoginActivity;
 import com.example.administrator.shopping.activity.MyOrderActivity;
@@ -50,6 +51,7 @@ public class PersonalcenterFragment extends Fragment implements View.OnClickList
     }
 
     CleanDialog cleanDialog;
+    ExitDialog exitDialog;
     Intent intent=null;
     @Override
     public void onClick(View v) {
@@ -70,7 +72,8 @@ public class PersonalcenterFragment extends Fragment implements View.OnClickList
                 startCleanDialog();
                 break;
             case R.id.esc:
-                intent=new Intent(getActivity(), LoginActivity.class);
+
+                startExitDialog();
                 break;
 
         }
@@ -80,11 +83,10 @@ public class PersonalcenterFragment extends Fragment implements View.OnClickList
         }
 
     }
-
+    //清除缓存弹出的dialog
     public void startCleanDialog() {
 
-        cleanDialog = new CleanDialog(getActivity());
-//        cleanDialog.setTitle("选择分享应用");
+        cleanDialog = new CleanDialog(getActivity());//cleanDialog.setTitle("选择分享应用");
         cleanDialog.setYesOnclickListener("清除", new CleanDialog.onYesOnclickListener() {
             @Override
             public void onYesClick() {
@@ -99,5 +101,27 @@ public class PersonalcenterFragment extends Fragment implements View.OnClickList
             }
         });
         cleanDialog.show();
+    }
+    //退出账户弹出的dialog
+    public void startExitDialog(){
+        exitDialog = new ExitDialog(getActivity());
+
+        exitDialog.setYesOnclickListener("确定", new ExitDialog.onYesOnclickListener() {
+            @Override
+            public void onYesClick() {
+                exitDialog.dismiss();
+                Intent intentexit=new Intent();
+                intentexit.setClass(getContext(), LoginActivity.class);
+                startActivity(intentexit);
+            }
+        });
+
+        exitDialog.setNoOnclickListener("取消", new ExitDialog.onNoOnclickListener() {
+            @Override
+            public void onNoClick() {
+                exitDialog.dismiss();
+            }
+        });
+        exitDialog.show();
     }
 }
