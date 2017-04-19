@@ -37,20 +37,21 @@
 -->
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_height="64dp"
         android:background="@color/redFive"
         android:padding="10dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true">
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:gravity="bottom">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:gravity="center_vertical"
+                android:layout_alignParentBottom="true"
                 android:text="购物车"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_size_one" />
@@ -60,7 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
+                android:layout_alignParentBottom="true"
                 android:text="编辑"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_size_three" />
@@ -69,18 +70,17 @@
 
     <ListView
         android:id="@+id/shoppingcart_list"
-        android:overScrollMode="never"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:divider="@color/grayFive"
-        android:dividerHeight="10dp"></ListView>
+        android:dividerHeight="10dp"
+        android:overScrollMode="never"></ListView>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/white"
-        android:padding="10dp">
+        android:background="@color/white">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -91,15 +91,18 @@
             <CheckBox
                 android:id="@+id/check_all"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:background="@null"
-                android:button="@drawable/shoppingcart_finish_selector"
-                android:padding="5dp" />
+                android:button="@null"
+                android:drawableLeft="@drawable/shoppingcart_finish_selector"
+                android:paddingBottom="12dp"
+                android:paddingLeft="12dp"
+                android:paddingRight="6dp"
+                android:paddingTop="12dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="6dp"
                 android:layout_marginRight="5dp"
                 android:gravity="center_vertical"
                 android:text="全选"
@@ -145,7 +148,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
-            android:layout_toLeftOf="@+id/payment"
+            android:layout_toLeftOf="@+id/liear"
             android:orientation="horizontal">
 
             <TextView
@@ -164,16 +167,23 @@
                 android:textSize="@dimen/text_size_two" />
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/payment"
+        <LinearLayout
+            android:id="@+id/liear"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="10dp"
-            android:background="@mipmap/payment_button"
-            android:gravity="center"
-            android:text="去结算"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_size_two" />
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true">
+
+            <TextView
+                android:id="@+id/payment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp"
+                android:background="@mipmap/payment_button"
+                android:gravity="center"
+                android:text="去结算"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_two" />
+        </LinearLayout>
     </RelativeLayout>
 </LinearLayout>

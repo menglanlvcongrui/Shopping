@@ -29,8 +29,6 @@
         <activity android:name=".activity.ReceiverAddressActivity" />
         <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.ShoppingcartPaymentActivity" />
-        <activity android:name=".activity.ShoppingcartFinishActivity" />
-        <activity android:name=".activity.ShoppingcartEditActivity" />
         <activity android:name=".activity.LoginsActivity" />
         <activity android:name=".activity.RecommendActivity" />
         <activity android:name=".activity.GoodsDetailActivity" />

@@ -33,7 +33,6 @@
                  android:layout_marginBottom="10dp"
                  android:gravity="center_horizontal"
                  android:text="个人中心"
-
                  android:textColor="@color/white"
                  android:textSize="@dimen/text_size_one" />
          </RelativeLayout>-->
@@ -59,7 +58,7 @@
             </RelativeLayout>
         </RelativeLayout>
 
-        <ScrollView
+        <com.example.administrator.shopping.view.MyScrollView
             android:background="@color/grayFive"
             android:layout_width="match_parent"
             android:overScrollMode="never"
@@ -313,6 +312,6 @@
                     android:layout_weight="1"
                     android:background="@color/grayFive"></View>
             </LinearLayout>
-        </ScrollView>
+        </com.example.administrator.shopping.view.MyScrollView>
     </LinearLayout>
 </LinearLayout>

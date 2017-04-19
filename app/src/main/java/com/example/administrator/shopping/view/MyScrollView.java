@@ -34,30 +34,6 @@ public class MyScrollView extends ScrollView {
 	}
 
 	@Override
-	public boolean onInterceptTouchEvent(MotionEvent ev) {
-		switch (ev.getAction()) {
-		case MotionEvent.ACTION_DOWN:
-			dow_y = ev.getY();
-			return false;
-		case MotionEvent.ACTION_MOVE:
-			if (ev.getY() != dow_y) {
-				mo_y = ev.getY();
-				if (Math.abs((dow_y - mo_y)) > 5) {
-					return true;
-				} else {
-					return false;
-				}
-			}else {
-				return false;
-			}
-      
-		default:
-			break;
-		}
-		return super.onInterceptTouchEvent(ev);
-	}
-
-	@Override
 	public boolean onTouchEvent(MotionEvent ev) {
 		if (inner == null) {
 			return super.onTouchEvent(ev);

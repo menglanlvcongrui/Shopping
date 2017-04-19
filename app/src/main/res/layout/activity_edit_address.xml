@@ -10,7 +10,7 @@
         android:padding="10dp"
         android:background="@color/redFive"
         android:layout_width="match_parent"
-        android:layout_height="80dp">
+        android:layout_height="64dp">
         <RelativeLayout
             android:layout_alignParentBottom="true"
             android:layout_width="match_parent"
