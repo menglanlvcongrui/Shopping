@@ -23,7 +23,7 @@
         android:gravity="center"
         android:layout_gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="49dp"
         android:background="#ffffff"
         android:padding="5dp"
         android:orientation="horizontal">
@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:button="@null"
-            android:textSize="@dimen/text_size_three"
+            android:textSize="@dimen/text_size_four"
             android:textColor="@color/color_selector"
             android:drawableTop="@drawable/bottom_home_selector"
             android:gravity="center"
@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:button="@null"
-            android:textSize="@dimen/text_size_three"
+            android:textSize="@dimen/text_size_four"
             android:textColor="@color/color_selector"
             android:drawableTop="@drawable/bottom_circle_selector"
             android:gravity="center"
@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:button="@null"
-            android:textSize="@dimen/text_size_three"
+            android:textSize="@dimen/text_size_four"
             android:textColor="@color/color_selector"
            android:drawableTop="@drawable/bottom_shoppingcart_selector"
             android:gravity="center"
@@ -62,11 +62,10 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:button="@null"
-            android:textSize="@dimen/text_size_three"
+            android:textSize="@dimen/text_size_four"
             android:textColor="@color/color_selector"
             android:drawableTop="@drawable/bottom_personalcenter_selector"
             android:gravity="center"
             android:text="个人中心"/>
     </RadioGroup>
-
 </LinearLayout>

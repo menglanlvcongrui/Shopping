@@ -4,18 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.administrator.shopping.fragment.HomeFragment">
-    <!-- <RelativeLayout
-         android:layout_width="match_parent"
-         android:background="@color/redFive"
-         android:layout_height="80dp">
-            <ImageView
-             android:layout_alignParentBottom="true"
-             android:gravity="center_horizontal"
-             android:layout_marginBottom="10dp"
-             android:src="@mipmap/together_circle_buy"
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content" />
-     </RelativeLayout>-->
+
     <RelativeLayout
         android:padding="10dp"
         android:background="@color/redFive"
@@ -32,6 +21,9 @@
                 android:layout_height="wrap_content" />
         </RelativeLayout>
     </RelativeLayout>
+
+
+
     <ScrollView
         android:overScrollMode="never"
         android:layout_width="match_parent"
@@ -256,6 +248,7 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
+                        android:id="@+id/ll_goods_detail_five"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:orientation="vertical"
@@ -284,6 +277,7 @@
                             android:layout_height="wrap_content" />
                     </LinearLayout>
                     <LinearLayout
+                        android:id="@+id/ll_goods_detail_six"
                         android:layout_marginLeft="3dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
@@ -313,6 +307,7 @@
                             android:layout_height="wrap_content" />
                     </LinearLayout>
                     <LinearLayout
+                        android:id="@+id/ll_goods_detail_seven"
                         android:layout_marginLeft="3dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
@@ -342,6 +337,7 @@
                             android:layout_height="wrap_content" />
                     </LinearLayout>
                     <LinearLayout
+                        android:id="@+id/ll_goods_detail_eight"
                         android:layout_marginLeft="3dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
@@ -412,6 +408,7 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
+                        android:id="@+id/ll_goods_detail_nine"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:orientation="vertical"
@@ -440,6 +437,7 @@
                             android:layout_height="wrap_content" />
                     </LinearLayout>
                     <LinearLayout
+                        android:id="@+id/ll_goods_detail_ten"
                         android:layout_marginLeft="3dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
@@ -469,6 +467,7 @@
                             android:layout_height="wrap_content" />
                     </LinearLayout>
                     <LinearLayout
+                        android:id="@+id/ll_goods_detail_eleven"
                         android:layout_marginLeft="3dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
@@ -498,6 +497,7 @@
                             android:layout_height="wrap_content" />
                     </LinearLayout>
                     <LinearLayout
+                        android:id="@+id/ll_goods_detail_twenve"
                         android:layout_marginLeft="3dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"

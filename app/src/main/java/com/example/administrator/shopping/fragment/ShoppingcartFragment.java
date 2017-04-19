@@ -60,6 +60,7 @@ public class ShoppingcartFragment extends Fragment implements View.OnClickListen
             }
         }
     };
+    private LinearLayout check_linear;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -73,6 +74,7 @@ public class ShoppingcartFragment extends Fragment implements View.OnClickListen
         check_all.setOnClickListener(this);
         is_edit.setOnClickListener(this);
         payment.setOnClickListener(this);
+        check_linear.setOnClickListener(this);
         return view;
     }
 
@@ -145,6 +147,7 @@ public class ShoppingcartFragment extends Fragment implements View.OnClickListen
         payment = (TextView) view.findViewById(R.id.payment);
         linear = (LinearLayout) view.findViewById(R.id.linear);
         linear_1 = (LinearLayout) view.findViewById(R.id.liear_1);
+        check_linear=(LinearLayout)view.findViewById(R.id.check_linear);
     }
 
     @Override
@@ -201,6 +204,21 @@ public class ShoppingcartFragment extends Fragment implements View.OnClickListen
                 if (payment.getText().equals("去结算")){
                     Intent intent =new Intent(getActivity(), ShoppingcartPaymentActivity.class);
                     startActivity(intent);
+                }
+                break;
+            case R.id.check_linear:
+                if (isAll) {
+                    isAll = false;
+                    check_all.setChecked(false);
+                    Message message = new Message();
+                    message.what = 0x02;
+                    shoppingcartAdapter.handler.sendMessage(message);
+                } else {
+                    Message message = new Message();
+                    message.what = 0x01;
+                    shoppingcartAdapter.handler.sendMessage(message);
+                    isAll = true;
+                    check_all.setChecked(true);
                 }
                 break;
         }

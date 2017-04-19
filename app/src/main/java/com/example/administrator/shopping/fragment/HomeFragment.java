@@ -58,6 +58,14 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         LinearLayout ll_goods_detail_tow= (LinearLayout) view.findViewById(R.id.ll_goods_detail_tow);
         LinearLayout ll_goods_detail_three= (LinearLayout) view.findViewById(R.id.ll_goods_detail_three);
         LinearLayout ll_goods_detail_four= (LinearLayout) view.findViewById(R.id.ll_goods_detail_four);
+        LinearLayout ll_goods_detail_five= (LinearLayout) view.findViewById(R.id.ll_goods_detail_five);
+        LinearLayout ll_goods_detail_six= (LinearLayout) view.findViewById(R.id.ll_goods_detail_six);
+        LinearLayout ll_goods_detail_seven= (LinearLayout) view.findViewById(R.id.ll_goods_detail_seven);
+        LinearLayout ll_goods_detail_eight= (LinearLayout) view.findViewById(R.id.ll_goods_detail_eight);
+        LinearLayout ll_goods_detail_nine= (LinearLayout) view.findViewById(R.id.ll_goods_detail_nine);
+        LinearLayout ll_goods_detail_ten= (LinearLayout) view.findViewById(R.id.ll_goods_detail_ten);
+        LinearLayout ll_goods_detail_eleven= (LinearLayout) view.findViewById(R.id.ll_goods_detail_eleven);
+        LinearLayout ll_goods_detail_twenve= (LinearLayout) view.findViewById(R.id.ll_goods_detail_twenve);
         tv_recommend_more.setOnClickListener(this);
         tv_the_latest_goods_more.setOnClickListener(this);
         tv_the_latest_look_more.setOnClickListener(this);
@@ -65,6 +73,14 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         ll_goods_detail_tow.setOnClickListener(this);
         ll_goods_detail_three.setOnClickListener(this);
         ll_goods_detail_four.setOnClickListener(this);
+        ll_goods_detail_five.setOnClickListener(this);
+        ll_goods_detail_six.setOnClickListener(this);
+        ll_goods_detail_seven.setOnClickListener(this);
+        ll_goods_detail_eight.setOnClickListener(this);
+        ll_goods_detail_nine.setOnClickListener(this);
+        ll_goods_detail_ten.setOnClickListener(this);
+        ll_goods_detail_eleven.setOnClickListener(this);
+        ll_goods_detail_twenve.setOnClickListener(this);
 
 // initView();
         initData();
@@ -177,6 +193,30 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
                 intent.setClass(getActivity(), GoodsDetailActivity.class);
                 break;
             case R.id.ll_goods_detail_four:
+                intent.setClass(getActivity(), GoodsDetailActivity.class);
+                break;
+            case R.id.ll_goods_detail_five:
+                intent.setClass(getActivity(), GoodsDetailActivity.class);
+                break;
+            case R.id.ll_goods_detail_six:
+                intent.setClass(getActivity(), GoodsDetailActivity.class);
+                break;
+            case R.id.ll_goods_detail_seven:
+                intent.setClass(getActivity(), GoodsDetailActivity.class);
+                break;
+            case R.id.ll_goods_detail_eight:
+                intent.setClass(getActivity(), GoodsDetailActivity.class);
+                break;
+            case R.id.ll_goods_detail_nine:
+                intent.setClass(getActivity(), GoodsDetailActivity.class);
+                break;
+            case R.id.ll_goods_detail_ten:
+                intent.setClass(getActivity(), GoodsDetailActivity.class);
+                break;
+            case R.id.ll_goods_detail_eleven:
+                intent.setClass(getActivity(), GoodsDetailActivity.class);
+                break;
+            case R.id.ll_goods_detail_twenve:
                 intent.setClass(getActivity(), GoodsDetailActivity.class);
                 break;
         }

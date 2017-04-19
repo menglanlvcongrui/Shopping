@@ -14,18 +14,21 @@
         android:orientation="vertical">
 
         <RelativeLayout
+
             android:layout_width="match_parent"
             android:layout_height="64dp"
             android:background="@color/redFive"
             android:padding="12dp">
 
             <ImageView
+                android:layout_alignParentBottom="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:src="@mipmap/back" />
 
             <TextView
+                android:layout_alignParentBottom="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
@@ -34,8 +37,9 @@
                 android:textSize="@dimen/text_size_one" />
 
             <FrameLayout
+                android:layout_alignParentBottom="true"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true">
 
@@ -51,7 +55,6 @@
                     android:layout_width="12dp"
                     android:layout_height="12dp"
                     android:layout_marginLeft="15dp"
-                    android:layout_marginTop="8dp"
                     android:background="@mipmap/shopping_cart_count"
                     android:gravity="center"
                     android:text="3"

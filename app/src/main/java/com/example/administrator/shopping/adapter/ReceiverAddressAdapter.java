@@ -3,6 +3,7 @@ package com.example.administrator.shopping.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,7 +23,7 @@ import java.util.ArrayList;
 /*public class ReceiverAddressAdapter {
 }*/
 
-public   class ReceiverAddressAdapter extends RecyclerView.Adapter<ReceiverAddressAdapter.MyHolder> {
+public class ReceiverAddressAdapter extends RecyclerView.Adapter<ReceiverAddressAdapter.MyHolder> {
     private Context mcontext;
     private ArrayList<CircleBean.DataBean> list;
     private LayoutInflater inflater;
@@ -41,7 +42,7 @@ public   class ReceiverAddressAdapter extends RecyclerView.Adapter<ReceiverAddre
     }
 
     @Override
-    public void onBindViewHolder(MyHolder holder, int position) {
+    public void onBindViewHolder(MyHolder holder, final int position) {
 
        /* holder.tv1.setText(list.get(position).getTitle());
         holder.tv2.setText(list.get(position).getContent());*/
@@ -60,8 +61,14 @@ public   class ReceiverAddressAdapter extends RecyclerView.Adapter<ReceiverAddre
         holder.edit_address.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(mcontext, EditAddressActivity.class);
+                Intent intent = new Intent(mcontext, EditAddressActivity.class);
                 mcontext.startActivity(intent);
+            }
+        });
+        holder.delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                remove(position);
             }
         });
 
@@ -78,12 +85,22 @@ public   class ReceiverAddressAdapter extends RecyclerView.Adapter<ReceiverAddre
         TextView tv2;
         ImageView iv;
         TextView edit_address;
+        TextView delete;
+
         public MyHolder(View itemView) {
             super(itemView);
             tv1 = (TextView) itemView.findViewById(R.id.tv1);
             tv2 = (TextView) itemView.findViewById(R.id.tv2);
             iv = (ImageView) itemView.findViewById(R.id.iv);
-            edit_address=(TextView)itemView.findViewById(R.id.edit_address);
+            edit_address = (TextView) itemView.findViewById(R.id.edit_address);
+            delete = (TextView) itemView.findViewById(R.id.delete);
         }
+    }
+
+    public void remove(int position) {
+        Log.i("xinxi", list.size() + "  " + position);
+        list.remove(position);
+        notifyItemRemoved(position);
+        notifyItemRangeChanged(position,list.size());
     }
 }

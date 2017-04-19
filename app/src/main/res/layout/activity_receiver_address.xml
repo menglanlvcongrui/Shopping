@@ -6,37 +6,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.administrator.shopping.activity.ReceiverAddressActivity">
-
-   <!-- <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/redFive"
-        android:padding="10dp">
-
-        <ImageView
-            android:id="@+id/iv_receiver_address_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:padding="5dp"
-            android:src="@mipmap/back" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="收货地址"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_size_one" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:text="添加"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_size_three" />
-    </RelativeLayout>-->
     <RelativeLayout
         android:padding="12dp"
         android:background="@color/redFive"
