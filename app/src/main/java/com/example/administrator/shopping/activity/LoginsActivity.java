@@ -31,6 +31,16 @@ public class LoginsActivity extends AppCompatActivity {
         TextView tv_forget_pasword= (TextView) findViewById(R.id.tv_forget_password);
         TextView tv_signin= (TextView) findViewById(R.id.tv_signin);
         ImageView iv_logins= (ImageView) findViewById(R.id.iv_loginss);
+      TextView tv_logins=(TextView)findViewById(R.id.tv_logins);
+        tv_logins.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent4=new Intent();
+                intent4.setClass(LoginsActivity.this,MainActivity.class);
+                startActivity(intent4);
+            }
+        });
+
         iv_logins.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -7,6 +7,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -42,7 +44,7 @@ public class ReceiverAddressAdapter extends RecyclerView.Adapter<ReceiverAddress
     }
 
     @Override
-    public void onBindViewHolder(MyHolder holder, final int position) {
+    public void onBindViewHolder(final MyHolder holder, final int position) {
 
        /* holder.tv1.setText(list.get(position).getTitle());
         holder.tv2.setText(list.get(position).getContent());*/
@@ -71,6 +73,29 @@ public class ReceiverAddressAdapter extends RecyclerView.Adapter<ReceiverAddress
                 remove(position);
             }
         });
+        holder.check_box.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                   holder.text.setTextColor(0xffe66f2e);
+                } else {
+                    holder.text.setTextColor(0xff323232);
+                }
+            }
+        });
+        holder.text.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (holder.check_box.isChecked()) {
+                    holder.check_box.setChecked(false);
+                    holder.text.setTextColor(0xff323232);
+                } else {
+                    holder.check_box.setChecked(true);
+                    holder.text.setTextColor(0xffe66f2e);
+
+                }
+            }
+        });
 
     }
 
@@ -81,16 +106,20 @@ public class ReceiverAddressAdapter extends RecyclerView.Adapter<ReceiverAddress
 
     class MyHolder extends RecyclerView.ViewHolder {
 
+        TextView text;
         TextView tv1;
         TextView tv2;
         ImageView iv;
         TextView edit_address;
         TextView delete;
+        CheckBox check_box;
 
         public MyHolder(View itemView) {
             super(itemView);
+            text = (TextView) itemView.findViewById(R.id.tv_mo_ren);
             tv1 = (TextView) itemView.findViewById(R.id.tv1);
             tv2 = (TextView) itemView.findViewById(R.id.tv2);
+            check_box = (CheckBox) itemView.findViewById(R.id.check_box);
             iv = (ImageView) itemView.findViewById(R.id.iv);
             edit_address = (TextView) itemView.findViewById(R.id.edit_address);
             delete = (TextView) itemView.findViewById(R.id.delete);
@@ -101,6 +130,6 @@ public class ReceiverAddressAdapter extends RecyclerView.Adapter<ReceiverAddress
         Log.i("xinxi", list.size() + "  " + position);
         list.remove(position);
         notifyItemRemoved(position);
-        notifyItemRangeChanged(position,list.size());
+        notifyItemRangeChanged(position, list.size());
     }
 }

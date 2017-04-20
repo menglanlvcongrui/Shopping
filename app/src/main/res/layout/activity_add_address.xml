@@ -64,7 +64,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="44dp"
         android:background="@color/white"
         android:padding="12dp">
 
@@ -93,7 +93,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="44dp"
         android:background="@color/white"
         android:padding="12dp">
 
@@ -123,7 +123,7 @@
     <RelativeLayout
         android:id="@+id/choose_address"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="44dp"
         android:background="@color/white"
         android:padding="12dp">
 
@@ -153,7 +153,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="44dp"
         android:background="@color/white"
         android:padding="12dp">
 
@@ -176,7 +176,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignRight="@+id/text"
                 android:gravity="right"
-                android:text="东平街299号欧瑞大厦信息科技有限公司"
+                android:text="东平街299号欧瑞大厦信息科公司"
                 android:textColor="@color/Treeblack"
                 android:textSize="@dimen/text_size_two" />
         </LinearLayout>
@@ -191,22 +191,26 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:background="@color/white"
-        android:padding="10dp">
+        android:padding="12dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="设置为默认"
+            android:layout_centerVertical="true"
             android:textColor="@color/Treeblack"
             android:textSize="@dimen/text_size_two" />
 
         <CheckBox
+            android:padding="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:button="@drawable/mo_ren_address" />
+            android:background="@null"
+            android:drawableLeft="@drawable/mo_ren_address"
+            android:button="@null" />
     </RelativeLayout>
 
     <LinearLayout

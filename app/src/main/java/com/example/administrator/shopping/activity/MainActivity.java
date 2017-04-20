@@ -106,7 +106,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setTranslucentStatus() {
-
         // 5.0以上系统状态栏透明
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = getWindow();

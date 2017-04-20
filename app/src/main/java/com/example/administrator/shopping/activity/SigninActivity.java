@@ -43,7 +43,7 @@ public class SigninActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent();
-                intent.setClass(SigninActivity.this,LoginsActivity.class);
+                intent.setClass(SigninActivity.this,MainActivity.class);
                 startActivity(intent);
             }
         });
