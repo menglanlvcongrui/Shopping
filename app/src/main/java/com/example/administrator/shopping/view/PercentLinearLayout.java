@@ -6,28 +6,28 @@ import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
+import android.widget.LinearLayout;
 
 import com.example.administrator.shopping.R;
 
-public class PercentRelativeLayout extends RelativeLayout{
+public class PercentLinearLayout extends LinearLayout{
 
-	public PercentRelativeLayout(Context context, AttributeSet attrs, int defStyle) {
+	public PercentLinearLayout(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
 	}
 
-	public PercentRelativeLayout(Context context, AttributeSet attrs) {
+	public PercentLinearLayout(Context context, AttributeSet attrs) {
 		super(context, attrs);
 	}
 
-	public PercentRelativeLayout(Context context) {
+	public PercentLinearLayout(Context context) {
 		super(context);
 	}
 	//测量容器宽高
 	@Override
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-		int width= MeasureSpec.getSize(widthMeasureSpec);
-		int height= MeasureSpec.getSize(heightMeasureSpec);
+		int width=View.MeasureSpec.getSize(widthMeasureSpec);
+		int height=View.MeasureSpec.getSize(heightMeasureSpec);
 		int ChildCount=this.getChildCount();
 		//测量出子控件进行改变
 		for(int i=0;i<ChildCount;i++){
@@ -36,9 +36,9 @@ public class PercentRelativeLayout extends RelativeLayout{
 			//解析自定义的宽高，进行替换
 			float widthPercent=0;
 			float heightPercent=0;
-			if (layoutParams instanceof PercentRelativeLayout.LayoutParams) {
-				widthPercent=((PercentRelativeLayout.LayoutParams) layoutParams).getWidthPercent();
-				heightPercent=((PercentRelativeLayout.LayoutParams) layoutParams).getHeightPercent();
+			if (layoutParams instanceof PercentLinearLayout.LayoutParams) {
+				widthPercent=((PercentLinearLayout.LayoutParams) layoutParams).getWidthPercent();
+				heightPercent=((PercentLinearLayout.LayoutParams) layoutParams).getHeightPercent();
 			}
 			if (widthPercent!=0) {
 				layoutParams.width=(int)(width*widthPercent);
@@ -61,7 +61,7 @@ public class PercentRelativeLayout extends RelativeLayout{
 		// TODO Auto-generated method stub
 		return new LayoutParams(getContext(),attrs);
 	}
-	public static class LayoutParams extends RelativeLayout.LayoutParams{
+	public static class LayoutParams extends LinearLayout.LayoutParams{
 		float widthPercent;
 		float heightPercent;
 
@@ -94,7 +94,7 @@ public class PercentRelativeLayout extends RelativeLayout{
 			// TODO Auto-generated constructor stub
 		}
 
-		public LayoutParams(ViewGroup.LayoutParams source) {
+		public LayoutParams(android.view.ViewGroup.LayoutParams source) {
 			super(source);
 			// TODO Auto-generated constructor stub
 		}

@@ -18,7 +18,6 @@ import com.example.administrator.shopping.R;
 import com.example.administrator.shopping.activity.ShoppingcartPaymentActivity;
 import com.example.administrator.shopping.adapter.ShoppingcartAdapter;
 import com.example.administrator.shopping.bean.CartBean;
-import com.example.administrator.shopping.utils.GetstatusBarHeight;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -141,7 +140,6 @@ public class ShoppingcartFragment extends Fragment implements View.OnClickListen
     }
 
     void initview(View view) {
-        GetstatusBarHeight barHeight = new GetstatusBarHeight(getActivity(), view);
         list = (ListView) view.findViewById(R.id.shoppingcart_list);
         text_price = (TextView) view.findViewById(R.id.textView);
         check_all = (CheckBox) view.findViewById(R.id.check_all);
