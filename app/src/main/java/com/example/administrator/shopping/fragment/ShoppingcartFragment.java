@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -22,7 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ShoppingcartFragment extends Fragment implements View.OnClickListener {
+public class ShoppingcartFragment extends Fragment implements View.OnClickListener ,AdapterView.OnItemClickListener{
     ShoppingcartAdapter shoppingcartAdapter;//购物车适配器
     static TextView text_price, text_piece;//价格、总价
     LinearLayout linear, linear_1;//需要隐藏的布局
@@ -148,6 +149,15 @@ public class ShoppingcartFragment extends Fragment implements View.OnClickListen
         linear = (LinearLayout) view.findViewById(R.id.linear);
         linear_1 = (LinearLayout) view.findViewById(R.id.liear_1);
         check_linear=(LinearLayout)view.findViewById(R.id.check_linear);
+        list.setOnItemClickListener(this);
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        Message message = new Message();
+        message.obj=i;
+        message.what = 0x06;
+        shoppingcartAdapter.handler.sendMessage(message);
     }
 
     @Override

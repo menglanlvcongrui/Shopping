@@ -11,19 +11,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.administrator.shopping.R;
 import com.example.administrator.shopping.activity.GoodsDetailActivity;
-import com.example.administrator.shopping.activity.HomeTheLatestGoodsActivity;
-import com.example.administrator.shopping.activity.HomeTheLatestLookActivity;
 import com.example.administrator.shopping.activity.RecommendActivity;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 
 
-public class HomeFragment extends Fragment implements View.OnClickListener{
+public class HomeFragment extends Fragment implements View.OnClickListener {
 
     int[] imgs = {
             R.mipmap.view_pager,
@@ -37,35 +37,59 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
     ViewPager pager;
     ArrayList<ImageView> arraylist = new ArrayList<ImageView>();
     android.os.Handler handler = new android.os.Handler();
+    private RelativeLayout relative;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         return inflater.inflate(R.layout.fragment_home, container, false);
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
+    private int getStatusBarHeight() {
+        Class<?> c = null;
+        Object obj = null;
+        Field field = null;
+        int x = 0, sbar = 0;
+        try {
+            c = Class.forName("com.android.internal.R$dimen");
+            obj = c.newInstance();
+            field = c.getField("status_bar_height");
+            x = Integer.parseInt(field.get(obj).toString());
+            sbar = getContext().getResources().getDimensionPixelOffset(x);
+        } catch (Exception e1) {
+            e1.printStackTrace();
+        }
+        return sbar;
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        pager = (ViewPager)view.findViewById(R.id.pager);
-        containBottom=(LinearLayout)view.findViewById(R.id.bottom_container);
-        TextView tv_recommend_more= (TextView) view.findViewById(R.id.tv_recommend_more);
-        TextView tv_the_latest_goods_more= (TextView) view.findViewById(R.id.tv_the_latest_goods_more);
-        TextView  tv_the_latest_look_more= (TextView) view.findViewById(R.id.tv_the_latest_look_more);
-        LinearLayout ll_goods_detail_one= (LinearLayout) view.findViewById(R.id.ll_goods_detail_one);
-        LinearLayout ll_goods_detail_tow= (LinearLayout) view.findViewById(R.id.ll_goods_detail_tow);
-        LinearLayout ll_goods_detail_three= (LinearLayout) view.findViewById(R.id.ll_goods_detail_three);
-        LinearLayout ll_goods_detail_four= (LinearLayout) view.findViewById(R.id.ll_goods_detail_four);
-        LinearLayout ll_goods_detail_five= (LinearLayout) view.findViewById(R.id.ll_goods_detail_five);
-        LinearLayout ll_goods_detail_six= (LinearLayout) view.findViewById(R.id.ll_goods_detail_six);
-        LinearLayout ll_goods_detail_seven= (LinearLayout) view.findViewById(R.id.ll_goods_detail_seven);
-        LinearLayout ll_goods_detail_eight= (LinearLayout) view.findViewById(R.id.ll_goods_detail_eight);
-        LinearLayout ll_goods_detail_nine= (LinearLayout) view.findViewById(R.id.ll_goods_detail_nine);
-        LinearLayout ll_goods_detail_ten= (LinearLayout) view.findViewById(R.id.ll_goods_detail_ten);
-        LinearLayout ll_goods_detail_eleven= (LinearLayout) view.findViewById(R.id.ll_goods_detail_eleven);
-        LinearLayout ll_goods_detail_twenve= (LinearLayout) view.findViewById(R.id.ll_goods_detail_twenve);
+        pager = (ViewPager) view.findViewById(R.id.pager);
+        containBottom = (LinearLayout) view.findViewById(R.id.bottom_container);
+        TextView tv_recommend_more = (TextView) view.findViewById(R.id.tv_recommend_more);
+        TextView tv_the_latest_goods_more = (TextView) view.findViewById(R.id.tv_the_latest_goods_more);
+        TextView tv_the_latest_look_more = (TextView) view.findViewById(R.id.tv_the_latest_look_more);
+        LinearLayout ll_goods_detail_one = (LinearLayout) view.findViewById(R.id.ll_goods_detail_one);
+        LinearLayout ll_goods_detail_tow = (LinearLayout) view.findViewById(R.id.ll_goods_detail_tow);
+        LinearLayout ll_goods_detail_three = (LinearLayout) view.findViewById(R.id.ll_goods_detail_three);
+        LinearLayout ll_goods_detail_four = (LinearLayout) view.findViewById(R.id.ll_goods_detail_four);
+        LinearLayout ll_goods_detail_five = (LinearLayout) view.findViewById(R.id.ll_goods_detail_five);
+        LinearLayout ll_goods_detail_six = (LinearLayout) view.findViewById(R.id.ll_goods_detail_six);
+        LinearLayout ll_goods_detail_seven = (LinearLayout) view.findViewById(R.id.ll_goods_detail_seven);
+        LinearLayout ll_goods_detail_eight = (LinearLayout) view.findViewById(R.id.ll_goods_detail_eight);
+        LinearLayout ll_goods_detail_nine = (LinearLayout) view.findViewById(R.id.ll_goods_detail_nine);
+        LinearLayout ll_goods_detail_ten = (LinearLayout) view.findViewById(R.id.ll_goods_detail_ten);
+        LinearLayout ll_goods_detail_eleven = (LinearLayout) view.findViewById(R.id.ll_goods_detail_eleven);
+        LinearLayout ll_goods_detail_twenve = (LinearLayout) view.findViewById(R.id.ll_goods_detail_twenve);
+        relative=(RelativeLayout)view.findViewById(R.id.relative);
+        relative.setMinimumHeight(getStatusBarHeight());
         tv_recommend_more.setOnClickListener(this);
         tv_the_latest_goods_more.setOnClickListener(this);
         tv_the_latest_look_more.setOnClickListener(this);
@@ -109,18 +133,20 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
 // 可以实现小圆点的切换
                     // 通过container容器和下标position,找到指定的ImageView,修改他的图片就可以了
                     ImageView iv = (ImageView) containBottom.getChildAt(i);
-                    if(i == arg0%arraylist.size()){
+                    if (i == arg0 % arraylist.size()) {
                         iv.setImageResource(R.mipmap.dot_selected); //选中的图片
-                    }else {
+                    } else {
 //其他ImageView都是默认的小圆点
                         iv.setImageResource(R.mipmap.dot);
                     }
                 }
             }
+
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
             }
+
             //强制停止图片的自动切换，也就是停止handler的调用
             @Override
             public void onPageScrollStateChanged(int arg0) {
@@ -149,29 +175,31 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
             arraylist.add(iv1);
         }
     }
+
     private void initXiaoYuanDian() {
         for (int i = 0; i < imgs.length; i++) {
             ImageView iv2 = new ImageView(getActivity());
             LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             iv2.setLayoutParams(lp);
 //设置图片源 (默认没有选中的图片,初始化时候第一张图片对应的小圆点是details_like_click_icon)
-            if(i == 0){
+            if (i == 0) {
 //构建第一个ImageView的时候选用dot_0的图片
                 iv2.setImageResource(R.mipmap.dot_selected);
-            }else {
+            } else {
 //构建后续ImageView使用details_like_icon的图片
-                lp.setMargins(15,0,0,0);
+                lp.setMargins(15, 0, 0, 0);
                 iv2.setImageResource(R.mipmap.dot);
             }
 //添加到容器中
             containBottom.addView(iv2);
         }
     }
-//推荐，最新商品，最近浏览的展开
+
+    //推荐，最新商品，最近浏览的展开
     @Override
     public void onClick(View v) {
-        Intent intent=new Intent();
-        switch(v.getId()){
+        Intent intent = new Intent();
+        switch (v.getId()) {
             case R.id.tv_recommend_more:
                 intent.setClass(getActivity(), RecommendActivity.class);
                 break;
@@ -180,7 +208,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
                 intent.setClass(getActivity(), RecommendActivity.class);
                 break;
             case R.id.tv_the_latest_look_more:
-               // intent.setClass(getActivity(), HomeTheLatestLookActivity.class);
+                // intent.setClass(getActivity(), HomeTheLatestLookActivity.class);
                 intent.setClass(getActivity(), RecommendActivity.class);
                 break;
             case R.id.ll_goods_detail_one:
@@ -222,7 +250,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         }
         startActivity(intent);
     }
-//viewpager的适配器
+
+    //viewpager的适配器
     class MyPagerAdapter extends PagerAdapter {
 
         @Override
@@ -241,7 +270,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         @Override
         public Object instantiateItem(ViewGroup container, final int position) {
 
-            View v = arraylist.get(position %arraylist.size());
+            View v = arraylist.get(position % arraylist.size());
             v.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

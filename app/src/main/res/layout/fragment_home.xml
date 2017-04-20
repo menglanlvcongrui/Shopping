@@ -4,23 +4,45 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.administrator.shopping.fragment.HomeFragment">
-
-    <RelativeLayout
-        android:padding="10dp"
-        android:background="@color/redFive"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="64dp">
-        <RelativeLayout
-            android:layout_alignParentBottom="true"
+        android:layout_height="64dp"
+        android:background="@color/redFive"
+        android:theme="@style/AppTheme.AppBarOverlay"
+       >
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:id="@+id/relative"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></RelativeLayout>
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_centerInParent="true"
+                android:layout_gravity="center"
                 android:src="@mipmap/together_circle_buy"
-                android:layout_height="wrap_content" />
-        </RelativeLayout>
-    </RelativeLayout>
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+    <!--<RelativeLayout-->
+        <!--android:padding="10dp"-->
+        <!--android:background="@color/redFive"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="64dp">-->
+        <!--<RelativeLayout-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+            <!--<ImageView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:src="@mipmap/together_circle_buy"-->
+                <!--android:layout_height="wrap_content" />-->
+        <!--</RelativeLayout>-->
+    <!--</RelativeLayout>-->
 
 
 

@@ -58,43 +58,54 @@ public class ShoppingcartAdapter extends BaseAdapter implements View.OnClickList
                     }
                     for (int i = 0; i < cartlist.size(); i++) {
 //                        finishlist = numberlist;
-                        cartlist.get(i).setFinishlist( cartlist.get(i).getNumberlist());
+                        cartlist.get(i).setFinishlist(cartlist.get(i).getNumberlist());
                     }
 
                     notifyDataSetInvalidated();
                     break;
                 case 0x04://编辑界面，进入完成界面（操作完成）
                     for (int i = 0; i < cartlist.size(); i++) {
-                        cartlist.get(i).setFinish_isVisible( View.GONE);
+                        cartlist.get(i).setFinish_isVisible(View.GONE);
                         cartlist.get(i).setEdit_isVisible(View.VISIBLE);
                     }
                     for (int i = 0; i < cartlist.size(); i++) {
 //                         numberlist= finishlist;
-                        cartlist.get(i).setNumberlist( cartlist.get(i).getFinishlist());
+                        cartlist.get(i).setNumberlist(cartlist.get(i).getFinishlist());
                     }
                     notifyDataSetInvalidated();
                     break;
                 case 0x05://删除item（购物车）
                     for (int i = 0; i < cartlist.size(); i++) {
-                        cartlist.get(i).setFinish_isVisible( View.GONE);
+                        cartlist.get(i).setFinish_isVisible(View.GONE);
                         cartlist.get(i).setEdit_isVisible(View.VISIBLE);
                     }
                     for (int i = 0; i < cartlist.size(); i++) {
 //                         numberlist= finishlist;
-                        cartlist.get(i).setNumberlist( cartlist.get(i).getFinishlist());
+                        cartlist.get(i).setNumberlist(cartlist.get(i).getFinishlist());
                     }
                     notifyDataSetInvalidated();
+                    break;
+                case 0x06:
+                    if (cartlist.get(Integer.valueOf(msg.obj.toString())).isselect()) {
+                        cartlist.get(Integer.valueOf(msg.obj.toString())).setIsselect(false);
+                    } else {
+                        cartlist.get(Integer.valueOf(msg.obj.toString())).setIsselect(true);
+                    }
+                    notifyDataSetChanged();
                     break;
             }
         }
     };
-public List<CartBean> getCartlist(){
-    return cartlist;
-}
-public void setList( List<CartBean> cartlist){
-    isselect = new boolean[cartlist.size()];
-    this.cartlist=cartlist;
-}
+
+    public List<CartBean> getCartlist() {
+        return cartlist;
+    }
+
+    public void setList(List<CartBean> cartlist) {
+        isselect = new boolean[cartlist.size()];
+        this.cartlist = cartlist;
+    }
+
     public ShoppingcartAdapter(Context context, List<CartBean> cartlist) {
         this.context = context;
         this.cartlist = cartlist;
@@ -146,13 +157,6 @@ public void setList( List<CartBean> cartlist){
         holder.numbers.setText(cartBean.getNumberlist() + "");
         holder.number.setText(cartBean.getFinishlist() + "");
         holder.check_cart.setChecked(cartBean.isselect());
-        holder.itempayment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                Intent intent =new Intent(context, ShoppingcartPaymentActivity.class);
-//                context.startActivity(intent);
-            }
-        });
         holder.finish_reduce.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -188,7 +192,7 @@ public void setList( List<CartBean> cartlist){
                 total = 0;
                 count = 0;
                 for (int i = 0; i < cartlist.size(); i++) {
-                    if (cartlist.get(i).getNumberlist()> 0) {
+                    if (cartlist.get(i).getNumberlist() > 0) {
                         if (position == i) {
 //                            numberlist[position]--;
                             cartlist.get(i).setNumberlist(cartlist.get(i).getNumberlist() - 1);
