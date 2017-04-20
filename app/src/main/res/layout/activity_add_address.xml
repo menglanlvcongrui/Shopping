@@ -8,7 +8,6 @@
     android:background="@color/white"
     tools:context="com.example.administrator.shopping.activity.AddAddressActivity">
     <RelativeLayout
-
         android:padding="12dp"
         android:background="@color/redFive"
         android:layout_width="match_parent"
