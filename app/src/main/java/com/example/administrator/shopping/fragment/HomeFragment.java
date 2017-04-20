@@ -11,20 +11,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.administrator.shopping.R;
 import com.example.administrator.shopping.activity.GoodsDetailActivity;
 import com.example.administrator.shopping.activity.RecommendActivity;
+import com.example.administrator.shopping.utils.GetstatusBarHeight;
 
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
-
+GetstatusBarHeight barHeight;
     int[] imgs = {
             R.mipmap.view_pager,
             R.mipmap.view_pager,
@@ -37,7 +36,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     ViewPager pager;
     ArrayList<ImageView> arraylist = new ArrayList<ImageView>();
     android.os.Handler handler = new android.os.Handler();
-    private RelativeLayout relative;
 
 
     @Override
@@ -49,23 +47,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-    }
-
-    private int getStatusBarHeight() {
-        Class<?> c = null;
-        Object obj = null;
-        Field field = null;
-        int x = 0, sbar = 0;
-        try {
-            c = Class.forName("com.android.internal.R$dimen");
-            obj = c.newInstance();
-            field = c.getField("status_bar_height");
-            x = Integer.parseInt(field.get(obj).toString());
-            sbar = getContext().getResources().getDimensionPixelOffset(x);
-        } catch (Exception e1) {
-            e1.printStackTrace();
-        }
-        return sbar;
     }
 
     @Override
@@ -88,8 +69,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         LinearLayout ll_goods_detail_ten = (LinearLayout) view.findViewById(R.id.ll_goods_detail_ten);
         LinearLayout ll_goods_detail_eleven = (LinearLayout) view.findViewById(R.id.ll_goods_detail_eleven);
         LinearLayout ll_goods_detail_twenve = (LinearLayout) view.findViewById(R.id.ll_goods_detail_twenve);
-        relative=(RelativeLayout)view.findViewById(R.id.relative);
-        relative.setMinimumHeight(getStatusBarHeight());
+        barHeight=new GetstatusBarHeight(getActivity(),view);
         tv_recommend_more.setOnClickListener(this);
         tv_the_latest_goods_more.setOnClickListener(this);
         tv_the_latest_look_more.setOnClickListener(this);

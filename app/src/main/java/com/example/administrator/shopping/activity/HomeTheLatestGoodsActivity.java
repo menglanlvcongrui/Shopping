@@ -1,9 +1,8 @@
 package com.example.administrator.shopping.activity;
 
-import android.app.Activity;
 import android.os.Build;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -12,9 +11,9 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 
 import com.example.administrator.shopping.R;
-import com.example.administrator.shopping.adapter.RecommendMoreAdapter;
 import com.example.administrator.shopping.adapter.TheLatestGoodsMoreAdapter;
 import com.example.administrator.shopping.bean.CircleBean;
+import com.example.administrator.shopping.utils.GetstatusBarHeight;
 import com.example.administrator.shopping.utils.OkHttpUtils;
 
 import java.util.ArrayList;
@@ -45,6 +44,7 @@ public class HomeTheLatestGoodsActivity extends  AppCompatActivity{
 //            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
         }
         setContentView(R.layout.activity_home_the_latest_goods);
+        GetstatusBarHeight  barHeight=new GetstatusBarHeight(this,HomeTheLatestGoodsActivity.this);
         ImageView iv_the_latest_goods_more_back= (ImageView) findViewById(R.id.iv_the_latest_goods_more_back);
         iv_the_latest_goods_more_back.setOnClickListener(new View.OnClickListener() {
             @Override

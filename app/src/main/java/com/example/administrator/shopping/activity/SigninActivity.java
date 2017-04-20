@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.administrator.shopping.R;
+import com.example.administrator.shopping.utils.GetstatusBarHeight;
 
 public class SigninActivity extends AppCompatActivity {
 
@@ -27,6 +28,7 @@ public class SigninActivity extends AppCompatActivity {
             //getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
         }
         setContentView(R.layout.activity_signin);
+        GetstatusBarHeight barHeight = new GetstatusBarHeight(this, SigninActivity.this);
         TextView tv_logins= (TextView) findViewById(R.id.tv_logins);
         ImageView iv_sinnin=(ImageView) findViewById(R.id.iv_sinnin);
          iv_sinnin.setOnClickListener(new View.OnClickListener() {

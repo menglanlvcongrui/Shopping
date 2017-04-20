@@ -1,29 +1,21 @@
 package com.example.administrator.shopping.activity;
 
-import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 
 import com.example.administrator.shopping.R;
-import com.example.administrator.shopping.adapter.RecommendMoreAdapter;
-import com.example.administrator.shopping.bean.CircleBean;
 import com.example.administrator.shopping.fragment.RecommendHighFragment;
 import com.example.administrator.shopping.fragment.RecommendLowFragment;
-import com.example.administrator.shopping.utils.OkHttpUtils;
-
-import java.util.ArrayList;
+import com.example.administrator.shopping.utils.GetstatusBarHeight;
 
 public class RecommendActivity extends AppCompatActivity {
 
@@ -31,6 +23,7 @@ public class RecommendActivity extends AppCompatActivity {
     private RadioGroup radioGroup;
     private FragmentManager fm;
     private FragmentTransaction ft;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +37,7 @@ public class RecommendActivity extends AppCompatActivity {
 //            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
         }
         setContentView(R.layout.activity_recommend);
+        GetstatusBarHeight barHeight=new GetstatusBarHeight(this,RecommendActivity.this);
         linearLayout=(LinearLayout)findViewById(R.id.content);
         radioGroup= (RadioGroup)findViewById(R.id.rg);
         fm = getSupportFragmentManager();

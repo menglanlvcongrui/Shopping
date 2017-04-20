@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.example.administrator.shopping.R;
 import com.example.administrator.shopping.adapter.ReceiverAddressAdapter;
 import com.example.administrator.shopping.bean.CircleBean;
+import com.example.administrator.shopping.utils.GetstatusBarHeight;
 import com.example.administrator.shopping.utils.OkHttpUtils;
 
 import java.util.ArrayList;
@@ -39,6 +40,7 @@ public class ReceiverAddressActivity extends AppCompatActivity implements View.O
 //            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
         }
         setContentView(R.layout.activity_receiver_address);
+        GetstatusBarHeight     barHeight=new GetstatusBarHeight(this,ReceiverAddressActivity.this);
         iv_receiver_address_back = (ImageView) findViewById(R.id.iv_receiver_address_back);
         iv_receiver_address_back.setOnClickListener(this);
         rcv = (RecyclerView) findViewById(R.id.rcv);

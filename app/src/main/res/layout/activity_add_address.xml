@@ -4,176 +4,214 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/white"
+    android:orientation="vertical"
     tools:context="com.example.administrator.shopping.activity.AddAddressActivity">
-    <RelativeLayout
-        android:padding="12dp"
-        android:background="@color/redFive"
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="64dp">
-        <RelativeLayout
-            android:layout_alignParentBottom="true"
+        android:layout_height="64dp"
+        android:background="@color/redFive"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:id="@+id/relative"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></RelativeLayout>
+            <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:layout_gravity="center_vertical"
+            android:layout_alignParentBottom="true">
+
             <ImageView
                 android:id="@+id/iv_receiver_address_back"
-                android:padding="5dp"
                 android:layout_width="wrap_content"
-                android:src="@mipmap/back"
-                android:layout_height="wrap_content" />
-            <TextView
-                android:gravity="center_vertical"
-                android:layout_width="wrap_content"
-                android:text="添加地址"
-                android:layout_centerInParent="true"
-                android:textSize="@dimen/text_size_one"
-                android:textColor="@color/white"
-                android:layout_height="wrap_content" />
-            <TextView
+                android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
+                android:layout_marginLeft="12dp"
+                android:src="@mipmap/back" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="添加地址"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_one" />
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
                 android:text="完成"
+                android:padding="12dp"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_size_three" />
         </RelativeLayout>
-    </RelativeLayout>
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
     <View
         android:layout_width="match_parent"
-        android:background="@color/grayFive"
-        android:layout_height="10dp"/>
+        android:layout_height="10dp"
+        android:background="@color/grayFive" />
+
     <RelativeLayout
-        android:padding="12dp"
-        android:background="@color/white"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="12dp">
+
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="联系人："
             android:textColor="@color/Treeblack"
-            android:textSize="@dimen/text_size_two"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textSize="@dimen/text_size_two" />
+
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
             android:text="李易峰"
             android:textColor="@color/Treeblack"
-            android:textSize="@dimen/text_size_two"
-            android:layout_alignParentRight="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textSize="@dimen/text_size_two" />
     </RelativeLayout>
+
     <View
-        android:layout_marginRight="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
         android:layout_marginLeft="12dp"
-        android:background="@color/grayFive"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"/>
+        android:layout_marginRight="12dp"
+        android:background="@color/grayFive" />
+
     <RelativeLayout
-        android:padding="12dp"
-        android:background="@color/white"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="12dp">
+
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="联系电话："
             android:textColor="@color/Treeblack"
-            android:textSize="@dimen/text_size_two"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textSize="@dimen/text_size_two" />
+
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
             android:text="13218105401"
             android:textColor="@color/Treeblack"
-            android:textSize="@dimen/text_size_two"
-            android:layout_alignParentRight="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textSize="@dimen/text_size_two" />
     </RelativeLayout>
+
     <View
-        android:layout_marginRight="12dp"
-        android:layout_marginLeft="12dp"
-        android:background="@color/grayFive"
         android:layout_width="match_parent"
-        android:layout_height="1dp"/>
+        android:layout_height="1dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:background="@color/grayFive" />
+
     <RelativeLayout
         android:id="@+id/choose_address"
-        android:padding="12dp"
-        android:background="@color/white"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="12dp">
+
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="所在地区："
             android:textColor="@color/Treeblack"
-            android:textSize="@dimen/text_size_two"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textSize="@dimen/text_size_two" />
+
         <TextView
             android:id="@+id/text_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
             android:text="江苏省苏州市工业园区"
             android:textColor="@color/Treeblack"
-            android:textSize="@dimen/text_size_two"
-            android:layout_alignParentRight="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textSize="@dimen/text_size_two" />
     </RelativeLayout>
+
     <View
-        android:layout_marginRight="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
         android:layout_marginLeft="12dp"
-        android:background="@color/grayFive"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"/>
+        android:layout_marginRight="12dp"
+        android:background="@color/grayFive" />
+
     <LinearLayout
-        android:padding="12dp"
-        android:background="@color/white"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="12dp">
+
         <TextView
             android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="详细地址："
             android:textColor="@color/Treeblack"
-            android:textSize="@dimen/text_size_two"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textSize="@dimen/text_size_two" />
+
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true">
+            android:layout_alignParentRight="true"
+            android:layout_weight="1">
+
             <TextView
-                android:text="东平街299号欧瑞大厦信息科技有限公司"
-                android:gravity="right"
-                android:textColor="@color/Treeblack"
-                android:textSize="@dimen/text_size_two"
-                android:layout_alignRight="@+id/text"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/text"
+                android:gravity="right"
+                android:text="东平街299号欧瑞大厦信息科技有限公司"
+                android:textColor="@color/Treeblack"
+                android:textSize="@dimen/text_size_two" />
         </LinearLayout>
     </LinearLayout>
+
     <View
-        android:layout_marginRight="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
         android:layout_marginLeft="12dp"
-        android:background="@color/grayFive"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"/>
+        android:layout_marginRight="12dp"
+        android:background="@color/grayFive" />
+
     <RelativeLayout
-        android:padding="10dp"
-        android:background="@color/white"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="10dp">
+
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="设置为默认"
             android:textColor="@color/Treeblack"
-            android:textSize="@dimen/text_size_two"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textSize="@dimen/text_size_two" />
+
         <CheckBox
-            android:button="@drawable/mo_ren_address"
-            android:layout_alignParentRight="true"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:button="@drawable/mo_ren_address" />
     </RelativeLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@color/grayFive"
-        android:layout_height="0dp"></LinearLayout>
+        android:background="@color/grayFive"></LinearLayout>
 </LinearLayout>

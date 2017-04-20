@@ -2,14 +2,15 @@ package com.example.administrator.shopping.activity;
 
 import android.content.Intent;
 import android.os.Build;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 
 import com.example.administrator.shopping.R;
+import com.example.administrator.shopping.utils.GetstatusBarHeight;
 
 public class GoodsDetailActivity extends AppCompatActivity {
 
@@ -29,6 +30,7 @@ public class GoodsDetailActivity extends AppCompatActivity {
         }
 
         setContentView(R.layout.activity_goods_detail);
+        GetstatusBarHeight barHeight=new GetstatusBarHeight(this,GoodsDetailActivity.this);
         payment=(FrameLayout)findViewById(R.id.payment);
 payment.setOnClickListener(new View.OnClickListener() {
     @Override

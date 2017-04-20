@@ -2,16 +2,16 @@ package com.example.administrator.shopping.activity;
 
 import android.content.Intent;
 import android.os.Build;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.administrator.shopping.R;
+import com.example.administrator.shopping.utils.GetstatusBarHeight;
 
 public class ResetPasswordActivity extends AppCompatActivity implements View.OnClickListener {
     private ImageView rl_reset_password_back;
@@ -29,7 +29,7 @@ public class ResetPasswordActivity extends AppCompatActivity implements View.OnC
             //getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
         }
         setContentView(R.layout.activity_reset_password);
-
+        GetstatusBarHeight  barHeight=new GetstatusBarHeight(this,ResetPasswordActivity.this);
         rl_reset_password_back= (ImageView)findViewById(R.id.iv_reset_password_back);
         rl_reset_password_back.setOnClickListener(this);
         TextView textView= (TextView) findViewById(R.id.tv_forget_passwordss);

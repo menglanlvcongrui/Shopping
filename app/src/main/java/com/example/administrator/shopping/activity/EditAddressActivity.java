@@ -19,6 +19,7 @@ import com.example.administrator.shopping.R;
 import com.example.administrator.shopping.adapter.AddressTextAdapter;
 import com.example.administrator.shopping.bean.RegionJson;
 import com.example.administrator.shopping.utils.FileUtils;
+import com.example.administrator.shopping.utils.GetstatusBarHeight;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -80,6 +81,7 @@ public class EditAddressActivity extends AppCompatActivity implements View.OnCli
         back=(ImageView)findViewById(R.id.iv_receiver_address_back);
         back.setOnClickListener(this);
         choose_address.setOnClickListener(this);
+         GetstatusBarHeight barHeight=new GetstatusBarHeight(this,EditAddressActivity.this);
     }
 
     public void show() {

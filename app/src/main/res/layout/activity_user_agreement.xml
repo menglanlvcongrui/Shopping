@@ -6,108 +6,114 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.administrator.shopping.activity.UserAgreementActivity">
-    <!--<RelativeLayout
-        android:padding="10dp"
-        android:background="@color/redFive"
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:id="@+id/iv_user_agreement_back"
-            android:layout_margin="5dp"
-            android:layout_width="wrap_content"
-            android:src="@mipmap/back"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:text="用户协议"
-            android:layout_centerInParent="true"
-            android:textSize="@dimen/text_size_two"
-            android:textColor="@color/white"
-            android:layout_height="wrap_content" />
-    </RelativeLayout>-->
-    <RelativeLayout
-        android:padding="10dp"
+        android:layout_height="64dp"
         android:background="@color/redFive"
-        android:layout_width="match_parent"
-        android:layout_height="64dp">
-        <RelativeLayout
-            android:layout_alignParentBottom="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:layout_centerVertical="true"
-                android:padding="5dp"
-                android:id="@+id/iv_user_agreement_back"
-                android:layout_width="wrap_content"
-                android:src="@mipmap/back"
-                android:layout_height="wrap_content" />
-            <TextView
-                android:gravity="center_vertical"
-                android:layout_width="wrap_content"
-                android:text="用户协议"
-                android:layout_centerInParent="true"
-                android:textSize="@dimen/text_size_one"
-                android:textColor="@color/white"
-                android:layout_height="wrap_content" />
-        </RelativeLayout>
-    </RelativeLayout>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/relative"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/iv_user_agreement_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="12dp"
+                    android:src="@mipmap/back" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center_vertical"
+                    android:text="用户协议"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_one" />
+            </RelativeLayout>
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+
     <LinearLayout
-        android:padding="10dp"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="15dp"
             android:text="用户协议"
             android:textColor="@color/Treeblack"
-            android:textSize="@dimen/text_size_three"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textSize="@dimen/text_size_three" />
+
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:text=" 服装，指的是衣服鞋包玩具饰品等的总称，多指衣服。服装在人类社会发展的早期就已出现，古代人把身边能找到的各种材料做成粗陋的“衣服”用以护身。人类最初的衣服是用兽皮制成的，包裹身体的最早“织物”用麻类纤维和草制等成。在国家标准... "
             android:textColor="@color/Treeblack"
-            android:textSize="@dimen/text_size_four"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textSize="@dimen/text_size_four" />
+
         <View
-            android:layout_marginTop="25dp"
-            android:background="@color/grayTwelve"
             android:layout_width="match_parent"
-            android:layout_height="1dp"/>
+            android:layout_height="1dp"
+            android:layout_marginTop="25dp"
+            android:background="@color/grayTwelve" />
+
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:text="第一条本客户端服务条款的确认和接纳"
             android:textColor="@color/Treeblack"
-            android:textSize="@dimen/text_size_three"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textSize="@dimen/text_size_three" />
+
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:text=" 服装，指的是衣服鞋包玩具饰品等的总称，多指衣服。服装在人类社会发展的早期就已出现，古代人把身边能找到的各种材料做成粗陋的“衣服”用以护身。人类最初的衣服是用兽皮制成的，包裹身体的最早“织物”用麻类纤维和草制等成。在国家标准... "
             android:textColor="@color/Treeblack"
-            android:textSize="@dimen/text_size_four"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textSize="@dimen/text_size_four" />
+
         <View
-            android:layout_marginTop="25dp"
-            android:background="@color/grayTwelve"
             android:layout_width="match_parent"
-            android:layout_height="1dp"/>
+            android:layout_height="1dp"
+            android:layout_marginTop="25dp"
+            android:background="@color/grayTwelve" />
+
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:text="第二条本客户端服务条款的确认和接纳"
             android:textColor="@color/Treeblack"
-            android:textSize="@dimen/text_size_three"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textSize="@dimen/text_size_three" />
+
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:text=" 服装，指的是衣服鞋包玩具饰品等的总称，多指衣服。服装在人类社会发展的早期就已出现，古代人把身边能找到的各种材料做成粗陋的“衣服”用以护身。人类最初的衣服是用兽皮制成的，包裹身体的最早“织物”用麻类纤维和草制等成。在国家标准... "
             android:textColor="@color/Treeblack"
-            android:textSize="@dimen/text_size_four"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textSize="@dimen/text_size_four" />
     </LinearLayout>
 </LinearLayout>

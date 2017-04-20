@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 
 import com.example.administrator.shopping.R;
 import com.example.administrator.shopping.activity.CostumeCircleActivity;
+import com.example.administrator.shopping.utils.GetstatusBarHeight;
 
 
 public class CircleFragment extends Fragment {
@@ -26,6 +27,7 @@ public class CircleFragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        GetstatusBarHeight barHeight = new GetstatusBarHeight(getActivity(), view);
        /* rcv = (RecyclerView)view.findViewById(R.id.rcv);
         initView();
 //初始化数据

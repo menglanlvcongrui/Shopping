@@ -1,11 +1,11 @@
 package com.example.administrator.shopping.activity;
 
 import android.os.Build;
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -17,6 +17,7 @@ import com.example.administrator.shopping.fragment.MyOrderAllFragment;
 import com.example.administrator.shopping.fragment.MyOrderObligationFragment;
 import com.example.administrator.shopping.fragment.MyOrderPendingFragment;
 import com.example.administrator.shopping.fragment.MyOrderWaitGainFragment;
+import com.example.administrator.shopping.utils.GetstatusBarHeight;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +28,7 @@ public class MyOrderActivity extends AppCompatActivity implements View.OnClickLi
     private ViewPager viewPager;
     private List<String> mTitle = new ArrayList<String>();
     private List<Fragment> mFragment = new ArrayList<Fragment>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +42,7 @@ public class MyOrderActivity extends AppCompatActivity implements View.OnClickLi
            //getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
         }
         setContentView(R.layout.activity_my_order);
+        GetstatusBarHeight  barHeight=new GetstatusBarHeight(this,MyOrderActivity.this);
         iv_my_order_back= (ImageView) findViewById(R.id.iv_my_order_back);
         iv_my_order_back.setOnClickListener(this);
         initView();

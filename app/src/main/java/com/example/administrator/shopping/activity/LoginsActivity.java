@@ -11,9 +11,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.administrator.shopping.R;
+import com.example.administrator.shopping.utils.GetstatusBarHeight;
 
 public class LoginsActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +27,7 @@ public class LoginsActivity extends AppCompatActivity {
             //getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
         }
         setContentView(R.layout.activity_logins);
+        GetstatusBarHeight barHeight=new GetstatusBarHeight(this,LoginsActivity.this);
         TextView tv_forget_pasword= (TextView) findViewById(R.id.tv_forget_password);
         TextView tv_signin= (TextView) findViewById(R.id.tv_signin);
         ImageView iv_logins= (ImageView) findViewById(R.id.iv_loginss);

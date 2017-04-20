@@ -1,15 +1,15 @@
 package com.example.administrator.shopping.activity;
 
 import android.os.Build;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 
 import com.example.administrator.shopping.R;
+import com.example.administrator.shopping.utils.GetstatusBarHeight;
 
 public class UserAgreementActivity extends AppCompatActivity implements View.OnClickListener {
      private ImageView iv_user_agreement_back;
@@ -26,6 +26,7 @@ public class UserAgreementActivity extends AppCompatActivity implements View.OnC
             //getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
         }
         setContentView(R.layout.activity_user_agreement);
+        GetstatusBarHeight barHeight = new GetstatusBarHeight(this, UserAgreementActivity.this);
         iv_user_agreement_back= (ImageView) findViewById(R.id.iv_user_agreement_back);
         iv_user_agreement_back.setOnClickListener(this);
     }

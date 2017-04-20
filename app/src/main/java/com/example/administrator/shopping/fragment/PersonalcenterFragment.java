@@ -35,6 +35,7 @@ import com.example.administrator.shopping.activity.MyOrderActivity;
 import com.example.administrator.shopping.activity.ReceiverAddressActivity;
 import com.example.administrator.shopping.activity.ResetPasswordActivity;
 import com.example.administrator.shopping.activity.UserAgreementActivity;
+import com.example.administrator.shopping.utils.GetstatusBarHeight;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -100,6 +101,7 @@ public class PersonalcenterFragment extends Fragment implements View.OnClickList
         clear_cache = (RelativeLayout) view.findViewById(R.id.clear_cache);
         esc = (RelativeLayout) view.findViewById(R.id.esc);
         head_change = (ImageView) view.findViewById(R.id.head_change);
+        GetstatusBarHeight barHeight = new GetstatusBarHeight(getActivity(), view);
     }
     @Override
     public void onClick(View v) {

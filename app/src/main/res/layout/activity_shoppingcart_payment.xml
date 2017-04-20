@@ -6,46 +6,64 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.administrator.shopping.activity.ShoppingcartPaymentActivity">
-    <RelativeLayout
-        android:background="@color/redFive"
-        android:layout_width="match_parent"
-        android:layout_height="64dp">
-        <ImageView
-            android:id="@+id/back"
-            android:layout_marginLeft="12dp"
-            android:src="@mipmap/back"
-            android:padding="5dp"
-            android:layout_marginBottom="10dp"
-            android:layout_alignParentBottom="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:text="购物车"
-            android:textSize="@dimen/text_size_one"
-            android:layout_marginBottom="10dp"
-            android:layout_alignParentBottom="true"
-            android:textColor="@color/white"
-            android:layout_width="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:text="完成"
-            android:textSize="@dimen/text_size_three"
-            android:padding="5dp"
-            android:layout_marginBottom="10dp"
-            android:layout_alignParentBottom="true"
-            android:textColor="@color/white"
-            android:layout_width="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_height="wrap_content" />
-    </RelativeLayout>
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@color/redFive"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/relative"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="12dp"
+                    android:src="@mipmap/back" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginBottom="10dp"
+                    android:text="购物车"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_one" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:padding="12dp"
+                    android:text="完成"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_three" />
+            </RelativeLayout>
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
 
     <View
-        android:padding="5dp"
         android:layout_width="match_parent"
+        android:layout_height="1dp"
         android:background="@color/grayFive"
-        android:layout_height="1dp"/>
+        android:padding="5dp" />
 
 
     <LinearLayout
@@ -53,46 +71,52 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:background="@color/grayFive">
-    <ListView
-        android:id="@+id/payment_list"
-        android:layout_width="match_parent"
-        android:background="@color/white"
-        android:divider="@null"
-        android:layout_height="wrap_content">
-    </ListView>
+
+        <ListView
+            android:id="@+id/payment_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:divider="@null"></ListView>
     </LinearLayout>
+
     <RelativeLayout
-        android:background="@color/white"
         android:layout_width="match_parent"
-        android:layout_height="50dp">
+        android:layout_height="50dp"
+        android:background="@color/white">
+
         <LinearLayout
-            android:layout_toLeftOf="@+id/ll_money"
-            android:layout_centerVertical="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/ll_money"
             android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="合计："
                 android:textSize="@dimen/text_size_two" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="6"
                 android:textSize="@dimen/text_size_two" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="件"
                 android:textSize="@dimen/text_size_two" />
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/ll_money"
-            android:layout_centerVertical="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_marginRight="15dp"
             android:layout_toLeftOf="@+id/liear"
             android:orientation="horizontal">
@@ -103,7 +127,7 @@
                 android:text="￥"
 
                 android:textColor="@color/redFive"
-                android:textSize="@dimen/text_size_two"/>
+                android:textSize="@dimen/text_size_two" />
 
             <TextView
                 android:id="@+id/textView"
@@ -113,22 +137,24 @@
                 android:textColor="@color/redFive"
                 android:textSize="@dimen/text_size_two" />
         </LinearLayout>
-<LinearLayout
-    android:id="@+id/liear"
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
-    android:layout_alignParentRight="true"
-    android:layout_marginRight="10dp"
-    android:gravity="center_vertical">
-        <TextView
-            android:id="@+id/payment"
-            android:textColor="@color/white"
+
+        <LinearLayout
+            android:id="@+id/liear"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:background="@mipmap/payment_button"
-            android:text="去付款"
-            android:textSize="@dimen/text_size_two" />
-</LinearLayout>
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/payment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/payment_button"
+                android:gravity="center"
+                android:text="去付款"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_two" />
+        </LinearLayout>
     </RelativeLayout>
 </LinearLayout>

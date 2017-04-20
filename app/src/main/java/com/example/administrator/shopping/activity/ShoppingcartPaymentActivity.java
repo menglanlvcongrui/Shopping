@@ -11,6 +11,7 @@ import android.widget.ListView;
 
 import com.example.administrator.shopping.R;
 import com.example.administrator.shopping.adapter.PaymentcartAdapter;
+import com.example.administrator.shopping.utils.GetstatusBarHeight;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,6 +35,7 @@ public class ShoppingcartPaymentActivity extends AppCompatActivity implements Vi
             //getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
         }
         setContentView(R.layout.activity_shoppingcart_payment);
+        GetstatusBarHeight barHeight=new GetstatusBarHeight(this,ShoppingcartPaymentActivity.this);
         payment_list = (ListView) findViewById(R.id.payment_list);
         back = (ImageView) findViewById(R.id.back);
         back.setOnClickListener(this);

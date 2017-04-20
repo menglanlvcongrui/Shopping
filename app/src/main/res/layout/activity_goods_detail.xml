@@ -7,63 +7,80 @@
     android:orientation="vertical"
     tools:context="com.example.administrator.shopping.activity.GoodsDetailActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@color/redFive"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/relative"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                    <ImageView
+                        android:padding="12dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/back" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="商品详情"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_one" />
+
+                    <FrameLayout
+                        android:padding="12dp"
+                        android:id="@+id/payment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true">
+
+                        <ImageView
+                            android:id="@+id/shopping_trolley"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_vertical"
+                            android:src="@mipmap/shopping_trolley" />
+
+                        <TextView
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:layout_marginLeft="15dp"
+                            android:background="@mipmap/shopping_cart_count"
+                            android:gravity="center"
+                            android:text="3"
+                            android:textColor="@color/redFive"
+                            android:textSize="@dimen/text_size_five" />
+
+                    </FrameLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+
     <LinearLayout
+     android:layout_marginTop="64dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
         android:orientation="vertical">
 
-        <RelativeLayout
-
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:background="@color/redFive"
-            android:padding="12dp">
-
-            <ImageView
-                android:layout_alignParentBottom="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:src="@mipmap/back" />
-
-            <TextView
-                android:layout_alignParentBottom="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="商品详情"
-                android:textColor="@color/white"
-                android:textSize="@dimen/text_size_one" />
-
-            <FrameLayout
-                android:id="@+id/payment"
-                android:layout_alignParentBottom="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true">
-
-                <ImageView
-                    android:id="@+id/shopping_trolley"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_gravity="center_vertical"
-                    android:src="@mipmap/shopping_trolley" />
-
-                <TextView
-                    android:layout_width="12dp"
-                    android:layout_height="12dp"
-                    android:layout_marginLeft="15dp"
-                    android:background="@mipmap/shopping_cart_count"
-                    android:gravity="center"
-                    android:text="3"
-                    android:textColor="@color/redFive"
-                    android:textSize="@dimen/text_size_five" />
-
-            </FrameLayout>
-        </RelativeLayout>
 
         <ScrollView
             android:layout_width="match_parent"

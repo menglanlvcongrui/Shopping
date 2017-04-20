@@ -9,6 +9,7 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 
 import com.example.administrator.shopping.R;
+import com.example.administrator.shopping.utils.GetstatusBarHeight;
 
 public class CostumeCircleActivity extends AppCompatActivity {
 
@@ -32,5 +33,6 @@ public class CostumeCircleActivity extends AppCompatActivity {
                 finish();
             }
         });
+        GetstatusBarHeight  barHeight=new GetstatusBarHeight(this,CostumeCircleActivity.this);
     }
 }

@@ -4,152 +4,186 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/grayFive"
+    android:orientation="vertical"
     tools:context="com.example.administrator.shopping.activity.CostumeCircleActivity">
-    <RelativeLayout
-        android:padding="12dp"
-        android:background="@color/redFive"
-        android:layout_width="match_parent"
-        android:layout_height="64dp">
-        <RelativeLayout
-            android:layout_alignParentBottom="true"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:layout_centerVertical="true"
-                android:padding="5dp"
-                android:id="@+id/iv_costume_circle"
-                android:layout_width="wrap_content"
-                android:src="@mipmap/back"
-                android:layout_height="wrap_content" />
-            <TextView
-                android:gravity="center_vertical"
-                android:layout_width="wrap_content"
-                android:text="服饰圈"
-                android:layout_centerInParent="true"
-                android:textSize="@dimen/text_size_one"
-                android:textColor="@color/white"
-                android:layout_height="wrap_content" />
-        </RelativeLayout>
-    </RelativeLayout>
 
-<ScrollView
-    android:overScrollMode="never"
-    android:scrollbars="none"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <LinearLayout
-        android:layout_gravity="center_horizontal"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="wrap_content">
+        android:layout_height="64dp"
+        android:background="@color/redFive"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
         <LinearLayout
-            android:padding="10dp"
-            android:layout_margin="12dp"
-            android:background="@drawable/edittext_costume_circle"
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <LinearLayout
-                android:orientation="horizontal"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/relative"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"></RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical">
+
                 <ImageView
-                    android:layout_gravity="center_vertical"
-                    android:src="@mipmap/circle_details_picture"
+                    android:id="@+id/iv_costume_circle"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="12dp"
+                    android:src="@mipmap/back" />
+
                 <TextView
-                    android:layout_marginTop="3dp"
-                    android:layout_marginLeft="10dp"
-                    android:textSize="@dimen/text_size_four"
-                    android:lineSpacingExtra="7dp"
-                    android:text="服装，指的是衣服鞋包玩具饰品等的总称，多指衣服。服装在人类社会发展的早期就已出现，古代人把身边能找到的各种材料做成粗陋的“衣服”用以护身。在国家标准... "
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center_vertical"
+                    android:text="服饰圈"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_one" />
+            </RelativeLayout>
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical">
+
             <LinearLayout
-                android:layout_marginTop="12dp"
                 android:layout_width="match_parent"
-                android:orientation="horizontal"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:layout_gravity="center_vertical"
-                    android:src="@mipmap/circle_display_picture"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content" />
-                <ImageView
-                    android:layout_marginLeft="10dp"
-                    android:layout_gravity="center_vertical"
-                    android:src="@mipmap/circle_display_picture"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content" />
-                <ImageView
-                    android:layout_marginLeft="10dp"
-                    android:layout_gravity="center_vertical"
-                    android:src="@mipmap/circle_display_picture"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:background="@drawable/edittext_costume_circle"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:src="@mipmap/circle_details_picture" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="3dp"
+                        android:lineSpacingExtra="7dp"
+                        android:text="服装，指的是衣服鞋包玩具饰品等的总称，多指衣服。服装在人类社会发展的早期就已出现，古代人把身边能找到的各种材料做成粗陋的“衣服”用以护身。在国家标准... "
+                        android:textSize="@dimen/text_size_four" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:src="@mipmap/circle_display_picture" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:src="@mipmap/circle_display_picture" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:src="@mipmap/circle_display_picture" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:background="@drawable/edittext_costume_circle"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:src="@mipmap/circle_details_picture" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="3dp"
+                        android:lineSpacingExtra="7dp"
+                        android:text="服装，指的是衣服鞋包玩具饰品等的总称，多指衣服。服装在人类社会发展的早期就已出现，古代人把身边能找到的各种材料做成粗陋的“衣服”用以护身。在国家标准... "
+                        android:textSize="@dimen/text_size_four" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:src="@mipmap/circle_display_picture" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:src="@mipmap/circle_display_picture" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:src="@mipmap/circle_display_picture" />
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
-        <LinearLayout
-            android:padding="10dp"
-            android:layout_marginBottom="12dp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginRight="12dp"
-            android:background="@drawable/edittext_costume_circle"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:layout_gravity="center_vertical"
-                    android:src="@mipmap/circle_details_picture"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:layout_marginTop="3dp"
-                    android:layout_marginLeft="10dp"
-                    android:textSize="@dimen/text_size_four"
-                    android:lineSpacingExtra="7dp"
-                    android:text="服装，指的是衣服鞋包玩具饰品等的总称，多指衣服。服装在人类社会发展的早期就已出现，古代人把身边能找到的各种材料做成粗陋的“衣服”用以护身。在国家标准... "
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_marginTop="12dp"
-                android:layout_width="match_parent"
-                android:orientation="horizontal"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:layout_gravity="center_vertical"
-                    android:src="@mipmap/circle_display_picture"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content" />
-                <ImageView
-                    android:layout_marginLeft="10dp"
-                    android:layout_gravity="center_vertical"
-                    android:src="@mipmap/circle_display_picture"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content" />
-                <ImageView
-                    android:layout_marginLeft="10dp"
-                    android:layout_gravity="center_vertical"
-                    android:src="@mipmap/circle_display_picture"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
-        </LinearLayout>
-    </LinearLayout>
-</ScrollView>
+    </ScrollView>
 </LinearLayout>
