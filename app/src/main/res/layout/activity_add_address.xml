@@ -34,7 +34,7 @@
             <ImageView
                 android:id="@+id/iv_receiver_address_back"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="12dp"
                 android:src="@mipmap/back" />
@@ -51,7 +51,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:text="完成"
-                android:padding="12dp"
+                android:layout_marginRight="12dp"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_size_three" />
         </RelativeLayout>

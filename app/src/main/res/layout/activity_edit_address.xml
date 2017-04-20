@@ -55,7 +55,7 @@
                     android:layout_centerVertical="true"
                     android:text="完成"
                     android:textColor="@color/white"
-                    android:padding="12dp"
+                    android:paddingRight="12dp"
                     android:textSize="@dimen/text_size_three" />
             </RelativeLayout>
         </LinearLayout>

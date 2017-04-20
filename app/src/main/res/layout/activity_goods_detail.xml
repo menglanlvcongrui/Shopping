@@ -44,7 +44,7 @@
                         android:textSize="@dimen/text_size_one" />
 
                     <FrameLayout
-                        android:padding="12dp"
+                        android:paddingRight="12dp"
                         android:id="@+id/payment"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

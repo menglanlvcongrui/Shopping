@@ -51,7 +51,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:padding="12dp"
+                    android:paddingRight="12dp"
                     android:text="完成"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_size_three" />

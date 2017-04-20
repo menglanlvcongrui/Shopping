@@ -46,7 +46,7 @@
                     android:layout_centerVertical="true"
                     android:gravity="center_vertical"
                     android:text="编辑"
-                    android:padding="12dp"
+                    android:paddingRight="12dp"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_size_three" />
             </RelativeLayout>
