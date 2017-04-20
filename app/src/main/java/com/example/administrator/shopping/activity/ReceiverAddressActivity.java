@@ -1,5 +1,6 @@
 package com.example.administrator.shopping.activity;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.administrator.shopping.R;
 import com.example.administrator.shopping.adapter.ReceiverAddressAdapter;
@@ -40,6 +42,15 @@ public class ReceiverAddressActivity extends AppCompatActivity implements View.O
         iv_receiver_address_back = (ImageView) findViewById(R.id.iv_receiver_address_back);
         iv_receiver_address_back.setOnClickListener(this);
         rcv = (RecyclerView) findViewById(R.id.rcv);
+         TextView tv_add= (TextView) findViewById(R.id.tv_add);
+        tv_add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent();
+                intent.setClass(ReceiverAddressActivity.this,AddAddressActivity.class);
+                startActivity(intent);
+            }
+        });
         initView();
         //初始化数据
         initDatas();

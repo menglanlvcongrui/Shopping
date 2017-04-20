@@ -26,10 +26,10 @@ import java.util.ArrayList;
 public class HomeFragment extends Fragment implements View.OnClickListener{
 
     int[] imgs = {
-            R.mipmap.circle_skirt,
-            R.mipmap.circle_details_picture,
-            R.mipmap.circle_display_picture,
-            R.mipmap.details_picture,
+            R.mipmap.view_pager,
+            R.mipmap.view_pager,
+            R.mipmap.view_pager,
+            R.mipmap.view_pager,
     };
     private LinearLayout containBottom;
     private Runnable r;
