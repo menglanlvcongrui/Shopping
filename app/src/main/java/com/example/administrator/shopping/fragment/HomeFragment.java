@@ -1,6 +1,8 @@
 package com.example.administrator.shopping.fragment;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,6 +11,8 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -41,6 +45,8 @@ GetstatusBarHeight barHeight;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
 
@@ -166,7 +172,7 @@ GetstatusBarHeight barHeight;
 //构建第一个ImageView的时候选用dot_0的图片
                 iv2.setImageResource(R.mipmap.dot_selected);
             } else {
-//构建后续ImageView使用details_like_icon的图片
+//构建后续ImageView使用details_like_icon的图片(15, 0, 0, 0),小圆点距离。
                 lp.setMargins(15, 0, 0, 0);
                 iv2.setImageResource(R.mipmap.dot);
             }
