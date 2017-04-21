@@ -30,16 +30,28 @@ public class ShoppingcartAdapter extends BaseAdapter implements View.OnClickList
     List<CartBean> cartlist;
     boolean[] isselect;//表示是否选中数组
     int total = 0, count = 0;//总价,件数
+     Message message;   Bundle bundle;
     public Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case 0x01://表示全选
+                    count = 0;
+                    total = 0;
                     for (int i = 0; i < cartlist.size(); i++) {
 //                        isselect[i] = true;
                         cartlist.get(i).setIsselect(true);
+                        if (cartlist.get(i).isselect()) {
+                            count += cartlist.get(i).getNumberlist();
+                            total = total + cartlist.get(i).getMoneylist() * cartlist.get(i).getNumberlist();
+                        }
                         notifyDataSetChanged();
                     }
+                    bundle.putString("total", String.valueOf(total));
+                    bundle.putString("count", String.valueOf(count));
+                    message.setData(bundle);
+                    message.what = 0x01;
+                    ShoppingcartFragment.handler.sendMessage(message);
                     break;
                 case 0x02://表示全不选
                     for (int i = 0; i < cartlist.size(); i++) {
@@ -101,8 +113,6 @@ public class ShoppingcartAdapter extends BaseAdapter implements View.OnClickList
                             total = total + cartlist.get(i).getMoneylist() * cartlist.get(i).getNumberlist();
                         }
                     }
-                    Message message = ShoppingcartFragment.handler.obtainMessage();
-                    Bundle bundle = new Bundle();
                     bundle.putString("total", String.valueOf(total));
                     bundle.putString("count", String.valueOf(count));
                     message.setData(bundle);
@@ -128,6 +138,8 @@ public class ShoppingcartAdapter extends BaseAdapter implements View.OnClickList
         this.cartlist = cartlist;
         isselect = new boolean[cartlist.size()];
         infater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        message = ShoppingcartFragment.handler.obtainMessage();
+        bundle = new Bundle();
     }
 
 
