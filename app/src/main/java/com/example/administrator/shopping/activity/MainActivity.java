@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -34,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //去除标题栏
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
-       //是通知栏的颜色和头部颜色保持一致
+        //是通知栏的颜色和头部颜色保持一致
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             //透明状态栏
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
@@ -46,36 +45,36 @@ public class MainActivity extends AppCompatActivity {
         // tv= (TextView) findViewById(R.id.tv);
         //初始化数据源
         initData();
-       // setTranslucentStatus();
-        showFragmentByPosition(currentIndex, previousIndex);
-        ((RadioButton) rgTabs.getChildAt(currentIndex)).setChecked(true);
-        //监听的时候动态切换
-        rgTabs.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                RadioButton rb = (RadioButton) group.findViewById(checkedId);
-                currentIndex = group.indexOfChild(rb);
-                showFragmentByPosition(currentIndex, previousIndex);
-                previousIndex = currentIndex;
-            }
-        });
-        //点击购物车图标，跳转到购物车碎片
-        if (getIntent().getExtras() != null) {
-            Bundle bundle = getIntent().getExtras();
-            //接收name值
-            String name = bundle.getString("name");
-            if (name == null) {
-                Log.i("xinxi", "sdddasd");
-                return;
-            }
-            if (name.equals("shopping")) {
-                currentIndex=2;
-                previousIndex=2;
-                showFragmentByPosition(currentIndex, previousIndex);
-                ((RadioButton) rgTabs.getChildAt(currentIndex)).setChecked(true);
-                name = "";
-            }
-
+        // setTranslucentStatus();
+        Bundle bundle = getIntent().getExtras();
+        if (bundle == null) {
+            showFragmentByPosition(currentIndex, previousIndex);
+            ((RadioButton) rgTabs.getChildAt(currentIndex)).setChecked(true);
+//        监听的时候动态切换
+            rgTabs.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(RadioGroup group, int checkedId) {
+                    RadioButton rb = (RadioButton) group.findViewById(checkedId);
+                    currentIndex = group.indexOfChild(rb);
+                    showFragmentByPosition(currentIndex, previousIndex);
+                    previousIndex = currentIndex;
+                }
+            });
+        } else {
+            //点击购物车图标，跳转到购物车碎片
+            currentIndex = 2;
+            previousIndex = 2;
+            showFragmentByPosition(currentIndex, previousIndex);
+            ((RadioButton) rgTabs.getChildAt(currentIndex)).setChecked(true);
+            rgTabs.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(RadioGroup group, int checkedId) {
+                    RadioButton rb = (RadioButton) group.findViewById(checkedId);
+                    currentIndex = group.indexOfChild(rb);
+                    showFragmentByPosition(currentIndex, previousIndex);
+                    previousIndex = currentIndex;
+                }
+            });
         }
     }
 

@@ -90,6 +90,24 @@ public class ShoppingcartAdapter extends BaseAdapter implements View.OnClickList
                     } else {
                         cartlist.get(Integer.valueOf(msg.obj.toString())).setIsselect(true);
                     }
+                    /**
+                     * 价格/件数增加
+                     * */
+                    total = 0;
+                    count = 0;
+                    for (int i = 0; i < cartlist.size(); i++) {
+                        if (cartlist.get(i).isselect()) {
+                            count += cartlist.get(i).getNumberlist();
+                            total = total + cartlist.get(i).getMoneylist() * cartlist.get(i).getNumberlist();
+                        }
+                    }
+                    Message message = ShoppingcartFragment.handler.obtainMessage();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("total", String.valueOf(total));
+                    bundle.putString("count", String.valueOf(count));
+                    message.setData(bundle);
+                    message.what = 0x01;
+                    ShoppingcartFragment.handler.sendMessage(message);
                     notifyDataSetChanged();
                     break;
             }
@@ -199,7 +217,7 @@ public class ShoppingcartAdapter extends BaseAdapter implements View.OnClickList
                         }
                     }
                     if (cartlist.get(i).isselect()) {
-                        total = total + 30 * cartlist.get(i).getNumberlist();
+                        total = total + cartlist.get(i).getMoneylist() * cartlist.get(i).getNumberlist();
                         count += cartlist.get(i).getNumberlist();
                     }
                 }
@@ -225,7 +243,7 @@ public class ShoppingcartAdapter extends BaseAdapter implements View.OnClickList
                     }
                     if (cartlist.get(i).isselect()) {
                         count += cartlist.get(i).getNumberlist();
-                        total = total + 30 * cartlist.get(i).getNumberlist();
+                        total = total + cartlist.get(i).getMoneylist() * cartlist.get(i).getNumberlist();
                     }
                 }
                 Message message = ShoppingcartFragment.handler.obtainMessage();
@@ -251,7 +269,7 @@ public class ShoppingcartAdapter extends BaseAdapter implements View.OnClickList
                     }
                     if (cartlist.get(i).isselect()) {
                         count += cartlist.get(i).getNumberlist();
-                        total = total + 30 * cartlist.get(i).getNumberlist();
+                        total = total + cartlist.get(i).getMoneylist() * cartlist.get(i).getNumberlist();
                     }
                     isselect[i] = cartlist.get(i).isselect();
                 }
