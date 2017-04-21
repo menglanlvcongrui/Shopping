@@ -53,14 +53,12 @@
         android:layout_gravity="center_horizontal"
         android:orientation="vertical"
         app:layout_widthPercent="0.9">
-
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="70dp"
-            android:gravity="center"
-            android:padding="6dp"
+            android:padding="5dp"
             android:text="帐号"
             android:textColor="@color/Treeblack"
             android:textSize="@dimen/text_size_two" />
@@ -78,6 +76,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@null"
+                    android:padding="5dp"
                     android:hint="13218105401"
                     android:textSize="@dimen/text_size_two" />
 
@@ -113,6 +112,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@null"
+                android:textSize="@dimen/text_size_two"
                 android:hint="***************"
                 android:padding="5dp" />
 

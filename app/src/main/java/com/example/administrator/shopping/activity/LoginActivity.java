@@ -7,6 +7,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -28,6 +29,7 @@ public class LoginActivity extends AppCompatActivity  {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             //透明导航栏
             //getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+
         }
         setContentView(R.layout.activity_login);
         TextView tv_login= (TextView) findViewById(R.id.tv_login);
@@ -49,6 +51,21 @@ public class LoginActivity extends AppCompatActivity  {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
+            //TODO something
+//            Intent startMain = new Intent(Intent.ACTION_MAIN);
+//            startMain.addCategory(Intent.CATEGORY_HOME);
+//            startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//            startActivity(startMain);
+            System.exit(0);//退出程序
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+       // return  false;
     }
 
 }

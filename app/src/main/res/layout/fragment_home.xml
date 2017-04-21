@@ -82,11 +82,11 @@
                 android:layout_marginRight="12dp"
                 android:layout_marginLeft="12dp"
                 android:layout_height="wrap_content">
-                <RelativeLayout
+              <!--  <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <TextView
-                        android:text="推荐"
+                        android:text="推荐商品"
                         android:layout_centerVertical="true"
                         android:textSize="@dimen/text_size_two"
                         android:layout_width="wrap_content"
@@ -101,7 +101,28 @@
                         android:text="更多>>"
                         android:textSize="@dimen/text_size_four"
                         android:layout_height="wrap_content" />
-                </RelativeLayout>
+                </RelativeLayout>-->
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:text="推荐"
+                            android:layout_centerVertical="true"
+                            android:textSize="@dimen/text_size_two"
+                            android:layout_width="wrap_content"
+                            android:textColor="@color/Treeblack"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:layout_centerVertical="true"
+                            android:id="@+id/tv_recommend_more"
+                            android:layout_alignParentRight="true"
+                            android:layout_width="wrap_content"
+                            android:textColor="@color/Treeblack"
+                            android:text="更多>>"
+                            android:textSize="@dimen/text_size_four"
+                            android:layout_height="wrap_content" />
+                    </RelativeLayout>
                 <LinearLayout
                     android:layout_marginTop="10dp"
                     android:layout_width="match_parent"

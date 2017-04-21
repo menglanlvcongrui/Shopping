@@ -322,8 +322,9 @@ public class PersonalcenterFragment extends Fragment implements View.OnClickList
             public void onYesClick() {
                 exitDialog.dismiss();
                 Intent intentexit = new Intent();
-                intentexit.setClass(getContext(), LoginActivity.class);
+                intentexit.setClass(getContext(), LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);  ;
                 startActivity(intentexit);
+              //  getActivity().finish();//销毁PersonalcenterFragment页面
             }
         });
 

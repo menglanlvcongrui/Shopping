@@ -3,8 +3,10 @@ package com.example.administrator.shopping.activity;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 
 import com.example.administrator.shopping.R;
 import com.example.administrator.shopping.utils.GetstatusBarHeight;
@@ -27,6 +29,13 @@ public class ForgetPasswordActivity extends AppCompatActivity {
         }
         setContentView(R.layout.activity_forget_password);
          GetstatusBarHeight barHeight=new GetstatusBarHeight(this,ForgetPasswordActivity.this);
+        ImageView iv_forget_password_backss= (ImageView) findViewById(R.id.iv_forget_password_backss);
+        iv_forget_password_backss.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
 }

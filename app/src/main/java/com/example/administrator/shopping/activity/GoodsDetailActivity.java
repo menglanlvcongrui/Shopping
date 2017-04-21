@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 
 import com.example.administrator.shopping.R;
 import com.example.administrator.shopping.utils.GetstatusBarHeight;
@@ -15,6 +16,7 @@ import com.example.administrator.shopping.utils.GetstatusBarHeight;
 public class GoodsDetailActivity extends AppCompatActivity {
 
     private FrameLayout payment;
+    private ImageView iv_goods_details;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,14 @@ public class GoodsDetailActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_goods_detail);
         GetstatusBarHeight barHeight=new GetstatusBarHeight(this,GoodsDetailActivity.this);
+        iv_goods_details= (ImageView) findViewById(R.id.iv_goods_details);
+        iv_goods_details.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         payment=(FrameLayout)findViewById(R.id.payment);
 payment.setOnClickListener(new View.OnClickListener() {
     @Override
