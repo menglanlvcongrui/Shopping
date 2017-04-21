@@ -106,6 +106,7 @@ public class ReceiverAddressAdapter extends RecyclerView.Adapter<ReceiverAddress
 
     class MyHolder extends RecyclerView.ViewHolder {
 
+
         TextView text;
         TextView tv1;
         TextView tv2;
