@@ -1,8 +1,10 @@
 package com.example.administrator.shopping.activity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -46,8 +48,6 @@ public class MainActivity extends AppCompatActivity {
         //初始化数据源
         initData();
         // setTranslucentStatus();
-        Bundle bundle = getIntent().getExtras();
-        if (bundle == null) {
             showFragmentByPosition(currentIndex, previousIndex);
             ((RadioButton) rgTabs.getChildAt(currentIndex)).setChecked(true);
 //        监听的时候动态切换
@@ -60,21 +60,28 @@ public class MainActivity extends AppCompatActivity {
                     previousIndex = currentIndex;
                 }
             });
-        } else {
+    }
+    public android.os.Handler handler = new android.os.Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            ((RadioButton) rgTabs.getChildAt(currentIndex)).setChecked(true);
+        }
+    };
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        setIntent(intent);
+        Bundle bundle = getIntent().getExtras();
+        if (bundle==null){return;}
+        if (bundle.getString("name").equals("shopping")) {
             //点击购物车图标，跳转到购物车碎片
             currentIndex = 2;
             previousIndex = 2;
             showFragmentByPosition(currentIndex, previousIndex);
-            ((RadioButton) rgTabs.getChildAt(currentIndex)).setChecked(true);
-            rgTabs.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-                @Override
-                public void onCheckedChanged(RadioGroup group, int checkedId) {
-                    RadioButton rb = (RadioButton) group.findViewById(checkedId);
-                    currentIndex = group.indexOfChild(rb);
-                    showFragmentByPosition(currentIndex, previousIndex);
-                    previousIndex = currentIndex;
-                }
-            });
+            Message message1 = handler.obtainMessage();
+            message1.what = 0x01;
+            handler.sendMessage(message1);
         }
     }
 
