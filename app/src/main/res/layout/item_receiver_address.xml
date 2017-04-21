@@ -47,6 +47,7 @@
        <LinearLayout
            android:layout_width="wrap_content"
            android:orientation="horizontal"
+           android:layout_centerVertical="true"
            android:layout_height="wrap_content">
            <CheckBox
               android:id="@+id/check_box"
@@ -61,6 +62,7 @@
                android:id="@+id/tv_mo_ren"
                android:layout_marginLeft="5dp"
                android:text="默认地址"
+               android:layout_gravity="center_vertical"
                android:textColor="@color/Treeblack"
                android:textSize="@dimen/text_size_four"
                android:layout_width="wrap_content"
@@ -68,6 +70,9 @@
        </LinearLayout>
 
        <TextView
+           android:layout_centerVertical="true"
+           android:padding="5dp"
+           android:gravity="center_vertical"
            android:id="@+id/edit_address"
            android:drawableLeft="@mipmap/edit"
            android:text="  编辑"
@@ -78,6 +83,9 @@
            android:layout_width="wrap_content"
            android:layout_height="wrap_content" />
        <TextView
+           android:gravity="center_vertical"
+           android:layout_centerVertical="true"
+           android:padding="5dp"
            android:textColor="@color/Treeblack"
            android:drawableLeft="@mipmap/deleted"
            android:id="@+id/delete"

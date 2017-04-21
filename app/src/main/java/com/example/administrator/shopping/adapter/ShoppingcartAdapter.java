@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -85,7 +84,7 @@ public class ShoppingcartAdapter extends BaseAdapter implements View.OnClickList
                     }
                     notifyDataSetInvalidated();
                     break;
-                case 0x06:
+                case 0x06://item 点击事件处理
                     if (cartlist.get(Integer.valueOf(msg.obj.toString())).isselect()) {
                         cartlist.get(Integer.valueOf(msg.obj.toString())).setIsselect(false);
                     } else {
@@ -281,7 +280,7 @@ public class ShoppingcartAdapter extends BaseAdapter implements View.OnClickList
         LinearLayout liner_edit, liner_finish;//编辑页面布局/完成页面布局
         CheckBox check_cart;//选择
         TextView numbers, number;//数量
-        ImageView reduce, add;//1.编辑界面增加/减少按钮
+        LinearLayout reduce, add;//1.编辑界面增加/减少按钮
         LinearLayout finish_reduce, finish_add;//2.完成界面增加/减少按钮
         LinearLayout itempayment;
 
@@ -289,8 +288,8 @@ public class ShoppingcartAdapter extends BaseAdapter implements View.OnClickList
             this.check_cart = (CheckBox) view.findViewById(R.id.check_cart);
             this.numbers = (TextView) view.findViewById(R.id.one);
             this.number = (TextView) view.findViewById(R.id.numbers);
-            this.reduce = (ImageView) view.findViewById(R.id.reduce);
-            this.add = (ImageView) view.findViewById(R.id.plus);
+            this.reduce = (LinearLayout) view.findViewById(R.id.reduce);
+            this.add = (LinearLayout) view.findViewById(R.id.plus);
             this.liner_finish = (LinearLayout) view.findViewById(R.id.liner_finish);
             this.liner_edit = (LinearLayout) view.findViewById(R.id.liner_edit);
             this.finish_reduce = (LinearLayout) view.findViewById(R.id.finish_reduce);
