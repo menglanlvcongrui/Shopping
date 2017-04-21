@@ -85,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         Fragment fshow = fragmentList.get(currentIndex);
         Fragment fHide = fragmentList.get(previousIndex);
+
         //判断显示的碎片是否添加
         if (!fshow.isAdded()) {
             ft.add(R.id.main_container, fshow);
