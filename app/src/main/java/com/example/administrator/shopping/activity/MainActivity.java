@@ -49,6 +49,16 @@ public class MainActivity extends AppCompatActivity {
        // setTranslucentStatus();
         showFragmentByPosition(currentIndex, previousIndex);
         ((RadioButton) rgTabs.getChildAt(currentIndex)).setChecked(true);
+        //监听的时候动态切换
+        rgTabs.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton rb = (RadioButton) group.findViewById(checkedId);
+                currentIndex = group.indexOfChild(rb);
+                showFragmentByPosition(currentIndex, previousIndex);
+                previousIndex = currentIndex;
+            }
+        });
         //点击购物车图标，跳转到购物车碎片
         if (getIntent().getExtras() != null) {
             Bundle bundle = getIntent().getExtras();
@@ -66,16 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 name = "";
             }
 
-        }//监听的时候动态切换
-        rgTabs.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                RadioButton rb = (RadioButton) group.findViewById(checkedId);
-                currentIndex = group.indexOfChild(rb);
-                showFragmentByPosition(currentIndex, previousIndex);
-                previousIndex = currentIndex;
-            }
-        });
+        }
     }
 
     /**
