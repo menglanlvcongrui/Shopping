@@ -185,22 +185,6 @@ public class ShoppingcartFragment extends Fragment implements View.OnClickListen
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.check_all:
-//                if (isAll) {
-//                    isAll = false;
-//                    Message message = new Message();
-//                    message.what = 0x02;
-//                    shoppingcartAdapter.handler.sendMessage(message);
-//                    cartlist = shoppingcartAdapter.getCartlist();
-//                    text_price.setText("0");
-//                    text_piece.setText("0");
-//                } else {
-//                    Message message = new Message();
-//                    message.what = 0x01;
-//                    shoppingcartAdapter.handler.sendMessage(message);
-//                    isAll = true;
-//                }
-                break;
             case R.id.is_edit:
                 if (!isEdit) {
                     is_edit.setText("完成");
@@ -236,6 +220,7 @@ public class ShoppingcartFragment extends Fragment implements View.OnClickListen
                     shoppingcartAdapter.handler.sendMessage(message);
                     deleteMsg(shoppingcartAdapter.getCartlist());
                     isEdit = false;
+                    check_all.setChecked(false);
                     return;
                 }
                 if (payment.getText().equals("去结算")) {
