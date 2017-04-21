@@ -18,6 +18,7 @@ import com.example.administrator.shopping.R;
 import com.example.administrator.shopping.activity.ShoppingcartPaymentActivity;
 import com.example.administrator.shopping.adapter.ShoppingcartAdapter;
 import com.example.administrator.shopping.bean.CartBean;
+import com.example.administrator.shopping.utils.GetstatusBarHeight;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,11 +40,11 @@ public class ShoppingcartFragment extends Fragment implements View.OnClickListen
         @Override
         public void handleMessage(Message msg) {
             switch (msg.what) {
-                case 0x01://每次点击增加件数/价格
+                case 0x01://每次点击增加/减少件数/价格
                     text_price.setText(msg.getData().getString("total"));
                     text_piece.setText(msg.getData().getString("count"));
                     break;
-                case 0x02://全选/非全选刷新
+                case 0x02://全选/非全选刷新 每次点击增加件数/价格
                     int j = 0;
                     for (int i = 0; i < cartlist.size(); i++)
                         if (!msg.getData().getBooleanArray("isselect")[i]) {
@@ -72,6 +73,7 @@ public class ShoppingcartFragment extends Fragment implements View.OnClickListen
         initview(view);
         initdata();
         shoppingcartAdapter = new ShoppingcartAdapter(getActivity(), cartlist);
+        GetstatusBarHeight barHeight = new GetstatusBarHeight(getActivity(), view);
         list.setAdapter(shoppingcartAdapter);
         check_all.setOnClickListener(this);
         is_edit.setOnClickListener(this);
@@ -190,6 +192,8 @@ public class ShoppingcartFragment extends Fragment implements View.OnClickListen
                     message.what = 0x03;
                     shoppingcartAdapter.handler.sendMessage(message);
                     isEdit = true;
+                    text_price.setText("0");
+                    text_piece.setText("0");
                 } else {
                     is_edit.setText("编辑");
                     payment.setText("去结算");
@@ -199,6 +203,7 @@ public class ShoppingcartFragment extends Fragment implements View.OnClickListen
                     message.what = 0x04;
                     shoppingcartAdapter.handler.sendMessage(message);
                     isEdit = false;
+
                 }
                 break;
             case R.id.payment:
@@ -222,6 +227,8 @@ public class ShoppingcartFragment extends Fragment implements View.OnClickListen
             case R.id.check_linear:
                 if (isAll) {
                     isAll = false;
+                    text_price.setText("0");
+                    text_piece.setText("0");
                     check_all.setChecked(false);
                     Message message = new Message();
                     message.what = 0x02;
